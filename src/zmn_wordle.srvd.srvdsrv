@@ -1,0 +1,4 @@
+@EndUserText.label: 'wordle'
+define service Zmn_wordle {
+  expose zwordle;
+}
