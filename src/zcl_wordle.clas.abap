@@ -44,9 +44,37 @@ CLASS zcl_wordle IMPLEMENTATION.
                 lt_data = value #( ( line = 10 text = 'Please use the flag to set a target' ) ).
 
           elseif <guesses> is assigned.
-              lt_data = value #( ( line = 10 text = | Target {  target } Guesses { lines( <guesses>-range ) } | ) ).
+            if lines( <guesses>-range ) > 6.
+            lt_data = value #( ( line = 10 text = 'Please enter up to 6 guesses' ) ) .
+            else.
+            do lines(  <guesses>-range ) times.
+               data(status) = ``.
+               data(guess) = replace( val =  to_upper( <guesses>-range[ sy-index ]-low ) sub = ` ` with = `` occ = 0 ).
+               data(fullguess) = guess && `        `.
+               if strlen( guess ) < 5.
+                status = 'Guess too short'.
+
+                endif.
+                linecounter += 1.
+                " criticality 0 is gray, 1 is red, 2 is orange, 3 is green
+                data(c1) = 0.
+                data(c2) = 2.
+                data(c3) = 3.
+                data(c4) = 0.
+                data(c5) = 3.
+                data(t1) = substring(  val = fullguess off = 0 len = 1 ) .
+                 data(t2) = substring(  val = fullguess  off = 1 len = 1 ).
+                 data(t3) = substring(  val = fullguess off = 2 len = 1 ).
+                  data(t4) = substring(  val = fullguess off = 3 len = 1 ).
+                  data(t5) = substring(  val = fullguess off = 4 len = 1 ).
+
+              lt_data = value #( base lt_data  ( line = linecounter
+              char1 = t1 char2 = t2 char3 = t3 char4 = t4 char5 = t5
+              crit1 = c1 crit2 = c2 crit3 = c3 crit4 = c4 crit5 = c5 text = status ) ).
+              enddo.
+              endif.
           else.
-           lt_data = value #( ( line = 10 text = 'Please enter some guesses' ) ) .
+           lt_data = value #( ( line = 10 text = 'Please enter up to 6 guesses' ) ) .
           ENDIF.
           io_response->set_data( lt_data ).
           io_response->set_total_number_of_records( lines( lt_data ) ).

@@ -9,22 +9,32 @@ define custom entity zwordle
   @UI.selectionField: [{ position:  10 }]
   @EndUserText.label: 'Guesses'
   guesses : abap.char( 5 );
-       @UI.lineItem: [{ position:  10 }]
+       @UI.lineItem: [{ position:  10, criticality: 'crit1' }]
  
   char1 : abap.char(1);
-       @UI.lineItem: [{ position:  20 }]
+       @UI.lineItem: [{ position:  20, criticality : 'crit2' }]
  
   char2 : abap.char(1);
-       @UI.lineItem: [{ position:  30 }]
+       @UI.lineItem: [{ position:  30 , criticality: 'crit3'}]
  
   char3 : abap.char(1);
-       @UI.lineItem: [{ position:  40 }]
+       @UI.lineItem: [{ position:  40, criticality: 'crit4' }]
  
-  cha41 : abap.char(1);
-       @UI.lineItem: [{ position:  50 }]
+  char4 : abap.char(1);
+       @UI.lineItem: [{ position:  50, criticality: 'crit5' }]
  
   char5 : abap.char(1);
        @UI.lineItem: [{ position:  60 }]
  text : abap.char(40);
+ @UI.hidden: true
+  crit1: abap.int1;
+ @UI.hidden: true
+  crit2: abap.int1;
+ @UI.hidden: true
+  crit3: abap.int1;
+ @UI.hidden: true
+  crit4 : abap.int1;
+ @UI.hidden: true
+  crit5 : abap.int1;
   
 }
