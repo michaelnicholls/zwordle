@@ -17,6 +17,7 @@ CLASS zcl_wordle IMPLEMENTATION.
 
   METHOD if_rap_query_provider~select.
     DATA lt_data TYPE TABLE OF zwordle.
+    DATA myparameter type memoryid VALUE 'WORDLE'.
     TRY.
         IF io_request->is_data_requested(  ).
 
@@ -37,18 +38,22 @@ CLASS zcl_wordle IMPLEMENTATION.
           ENDIF.
           IF <newword> IS ASSIGNED AND <newword>-range[ 1 ]-low = 'X'.
             target = lcl_things=>getword(  ).
-            CALL FUNCTION 'G_SET_USER_PARAMETER' EXPORTING parameter_id = 'WORDLE' parameter_value = target.
+            CALL FUNCTION 'G_SET_USER_PARAMETER' EXPORTING parameter_id = myparameter parameter_value = target.
+            lt_data = value #( ( line = 1 text = 'New target created' ) ( line = 2 text = 'Remember to unset the flag' ) ).
           ENDIF.
-          CALL FUNCTION 'G_GET_USER_PARAMETER' EXPORTING parameter_id = 'WORDLE' IMPORTING parameter_value = target rc = rc.
+          CALL FUNCTION 'G_GET_USER_PARAMETER' EXPORTING parameter_id = myparameter IMPORTING parameter_value = target rc = rc.
           IF rc <> 0.
-            lt_data = VALUE #( ( line = 10 text = 'Please use the flag to set a target' ) ).
+            lt_data = VALUE #( base lt_data ( line = 10 text = 'Please use the flag to set a target' ) ).
 
           ELSEIF <guesses> IS ASSIGNED.
             IF lines( <guesses>-range ) > 6.
-              lt_data = VALUE #( ( line = 10 text = 'Please enter up to 6 guesses' ) ) .
+              lt_data = VALUE #(  base lt_data ( line = 10 text = 'Please enter up to 6 guesses' ) ) .
             ELSE.
+             data lt_unused type SORTED TABLE OF string WITH UNIQUE  KEY table_line.
+
               DO lines(  <guesses>-range ) TIMES.
-                DATA(status) = target && `         `.
+              "  DATA(status) = target && `         `.
+              data status type string.
                 DATA(guess) = replace( val =  to_upper( <guesses>-range[ sy-index ]-low ) sub = ` ` with = `` occ = 0 ).
                 DATA(fullguess) = guess && `        `.
                 IF strlen( guess ) < 5.
@@ -75,23 +80,32 @@ CLASS zcl_wordle IMPLEMENTATION.
                 IF t5 = target+4(1). c5 = 3. lt_target[ 5 ] = '_'. ENDIF.
 
                 find FIRST OCCURRENCE OF t1 in TABLE lt_target MATCH LINE data(matchline).
-                if sy-subrc = 0. c1 = 2. lt_target[ matchline ] = '_'. endif.
+                if sy-subrc = 0 and c1 <> 3. c1 = 2. lt_target[ matchline ] = '_'. endif.
                 find FIRST OCCURRENCE OF t2 in TABLE lt_target MATCH LINE matchline.
-                if sy-subrc = 0. c2 = 2. lt_target[ matchline ] = '_'. endif.
+                if sy-subrc = 0 and c2 <> 3. c2 = 2. lt_target[ matchline ] = '_'. endif.
                 find FIRST OCCURRENCE OF t3 in TABLE lt_target MATCH LINE matchline.
-                if sy-subrc = 0. c3 = 2. lt_target[ matchline ] = '_'. endif.
+                if sy-subrc = 0 and c3 <> 3. c3 = 2. lt_target[ matchline ] = '_'. endif.
                 find FIRST OCCURRENCE OF t4 in TABLE lt_target MATCH LINE matchline.
-                if sy-subrc = 0. c4 = 2. lt_target[ matchline ] = '_'. endif.
+                if sy-subrc = 0 and c4 <> 3. c4 = 2. lt_target[ matchline ] = '_'. endif.
                 find FIRST OCCURRENCE OF t5 in TABLE lt_target MATCH LINE matchline.
-                if sy-subrc = 0. c5 = 2. lt_target[ matchline ] = '_'. endif.
-
+                if sy-subrc = 0 and c5 <> 3. c5 = 2. lt_target[ matchline ] = '_'. endif.
+                if c1 = 0. INSERT t1 into table lt_unused. endif.
+                if c2 = 0. INSERT t2 into table lt_unused. endif.
+                if c3 = 0. INSERT t3 into table lt_unused. endif.
+                if c4 = 0. INSERT t4 into table lt_unused. endif.
+                if c5 = 0. INSERT t5 into table lt_unused. endif.
+                if c1 + c2 + c3 + c4 + c5 = 15.
+                status = 'Congratulations'.
+                elseif lines( <guesses>-range ) = 6 and linecounter = 6.
+                    status = 'Target: ' && target.
+                endif.
                 lt_data = VALUE #( BASE lt_data  ( line = linecounter
                 char1 = t1 char2 = t2 char3 = t3 char4 = t4 char5 = t5
-                crit1 = c1 crit2 = c2 crit3 = c3 crit4 = c4 crit5 = c5 text = status ) ).
+                crit1 = c1 crit2 = c2 crit3 = c3 crit4 = c4 crit5 = c5 unused = concat_lines_of( lt_unused ) text = status ) ).
               ENDDO.
             ENDIF.
           ELSE.
-            lt_data = VALUE #( ( line = 10 text = 'Please enter up to 6 guesses' ) ) .
+            lt_data = VALUE #( base lt_data ( line = 10 text = 'Please enter up to 6 guesses' ) ) .
           ENDIF.
           io_response->set_data( lt_data ).
           io_response->set_total_number_of_records( lines( lt_data ) ).
