@@ -31,6 +31,7 @@ CLASS zcl_wordle IMPLEMENTATION.
           DATA(lv_page_size) = lo_paging->get_page_size(  ).
           DATA(linecounter) = 0.
           DATA target TYPE c LENGTH 40.
+
           DATA rc LIKE sy-subrc.
           IF lt_filter_ranges IS NOT INITIAL.
             READ TABLE lt_filter_ranges WITH KEY name = 'NEWWORD' ASSIGNING  FIELD-SYMBOL(<newword>).
