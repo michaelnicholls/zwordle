@@ -1,2334 +1,2407 @@
-class lcl_things definition create private.
+CLASS lcl_things DEFINITION CREATE PRIVATE.
 
-  public section.
- class-METHODS getword RETURNING VALUE(word) type string.
-  protected section.
-  private section.
+  PUBLIC SECTION.
+    CLASS-METHODS getword RETURNING VALUE(word) TYPE string.
+    CLASS-METHODS getword2 RETURNING VALUE(target) TYPE string.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 
-endclass.
+ENDCLASS.
 
-class lcl_things implementation.
+CLASS lcl_things IMPLEMENTATION.
 
-  method getword.
-              DATa(lo_rand) = cl_abap_random=>create( seed = cl_abap_random=>seed( ) ).
-            data(num) = lo_rand->intinrange( low = 1 high = 2315 ).
+  METHOD getword.
+    DATA(lo_rand) = cl_abap_random=>create( seed = cl_abap_random=>seed( ) ).
+    DATA(num) = lo_rand->intinrange( low = 1 high = 2315 ).
 
-if num = 1. Word = 'aback'. Endif.
-if num = 2. Word = 'abase'. Endif.
-if num = 3. Word = 'abate'. Endif.
-if num = 4. Word = 'abbey'. Endif.
-if num = 5. Word = 'abbot'. Endif.
-if num = 6. Word = 'abhor'. Endif.
-if num = 7. Word = 'abide'. Endif.
-if num = 8. Word = 'abled'. Endif.
-if num = 9. Word = 'abode'. Endif.
-if num = 10. Word = 'abort'. Endif.
-if num = 11. Word = 'about'. Endif.
-if num = 12. Word = 'above'. Endif.
-if num = 13. Word = 'abuse'. Endif.
-if num = 14. Word = 'abyss'. Endif.
-if num = 15. Word = 'acorn'. Endif.
-if num = 16. Word = 'acrid'. Endif.
-if num = 17. Word = 'actor'. Endif.
-if num = 18. Word = 'acute'. Endif.
-if num = 19. Word = 'adage'. Endif.
-if num = 20. Word = 'adapt'. Endif.
-if num = 21. Word = 'adept'. Endif.
-if num = 22. Word = 'admin'. Endif.
-if num = 23. Word = 'admit'. Endif.
-if num = 24. Word = 'adobe'. Endif.
-if num = 25. Word = 'adopt'. Endif.
-if num = 26. Word = 'adore'. Endif.
-if num = 27. Word = 'adorn'. Endif.
-if num = 28. Word = 'adult'. Endif.
-if num = 29. Word = 'affix'. Endif.
-if num = 30. Word = 'afire'. Endif.
-if num = 31. Word = 'afoot'. Endif.
-if num = 32. Word = 'afoul'. Endif.
-if num = 33. Word = 'after'. Endif.
-if num = 34. Word = 'again'. Endif.
-if num = 35. Word = 'agape'. Endif.
-if num = 36. Word = 'agate'. Endif.
-if num = 37. Word = 'agent'. Endif.
-if num = 38. Word = 'agile'. Endif.
-if num = 39. Word = 'aging'. Endif.
-if num = 40. Word = 'aglow'. Endif.
-if num = 41. Word = 'agony'. Endif.
-if num = 42. Word = 'agora'. Endif.
-if num = 43. Word = 'agree'. Endif.
-if num = 44. Word = 'ahead'. Endif.
-if num = 45. Word = 'aider'. Endif.
-if num = 46. Word = 'aisle'. Endif.
-if num = 47. Word = 'alarm'. Endif.
-if num = 48. Word = 'album'. Endif.
-if num = 49. Word = 'alert'. Endif.
-if num = 50. Word = 'algae'. Endif.
-if num = 51. Word = 'alibi'. Endif.
-if num = 52. Word = 'alien'. Endif.
-if num = 53. Word = 'align'. Endif.
-if num = 54. Word = 'alike'. Endif.
-if num = 55. Word = 'alive'. Endif.
-if num = 56. Word = 'allay'. Endif.
-if num = 57. Word = 'alley'. Endif.
-if num = 58. Word = 'allot'. Endif.
-if num = 59. Word = 'allow'. Endif.
-if num = 60. Word = 'alloy'. Endif.
-if num = 61. Word = 'aloft'. Endif.
-if num = 62. Word = 'alone'. Endif.
-if num = 63. Word = 'along'. Endif.
-if num = 64. Word = 'aloof'. Endif.
-if num = 65. Word = 'aloud'. Endif.
-if num = 66. Word = 'alpha'. Endif.
-if num = 67. Word = 'altar'. Endif.
-if num = 68. Word = 'alter'. Endif.
-if num = 69. Word = 'amass'. Endif.
-if num = 70. Word = 'amaze'. Endif.
-if num = 71. Word = 'amber'. Endif.
-if num = 72. Word = 'amble'. Endif.
-if num = 73. Word = 'amend'. Endif.
-if num = 74. Word = 'amiss'. Endif.
-if num = 75. Word = 'amity'. Endif.
-if num = 76. Word = 'among'. Endif.
-if num = 77. Word = 'ample'. Endif.
-if num = 78. Word = 'amply'. Endif.
-if num = 79. Word = 'amuse'. Endif.
-if num = 80. Word = 'angel'. Endif.
-if num = 81. Word = 'anger'. Endif.
-if num = 82. Word = 'angle'. Endif.
-if num = 83. Word = 'angry'. Endif.
-if num = 84. Word = 'angst'. Endif.
-if num = 85. Word = 'anime'. Endif.
-if num = 86. Word = 'ankle'. Endif.
-if num = 87. Word = 'annex'. Endif.
-if num = 88. Word = 'annoy'. Endif.
-if num = 89. Word = 'annul'. Endif.
-if num = 90. Word = 'anode'. Endif.
-if num = 91. Word = 'antic'. Endif.
-if num = 92. Word = 'anvil'. Endif.
-if num = 93. Word = 'aorta'. Endif.
-if num = 94. Word = 'apart'. Endif.
-if num = 95. Word = 'aphid'. Endif.
-if num = 96. Word = 'aping'. Endif.
-if num = 97. Word = 'apnea'. Endif.
-if num = 98. Word = 'apple'. Endif.
-if num = 99. Word = 'apply'. Endif.
-if num = 100. Word = 'apron'. Endif.
-if num = 101. Word = 'aptly'. Endif.
-if num = 102. Word = 'arbor'. Endif.
-if num = 103. Word = 'ardor'. Endif.
-if num = 104. Word = 'arena'. Endif.
-if num = 105. Word = 'argue'. Endif.
-if num = 106. Word = 'arise'. Endif.
-if num = 107. Word = 'armor'. Endif.
-if num = 108. Word = 'aroma'. Endif.
-if num = 109. Word = 'arose'. Endif.
-if num = 110. Word = 'array'. Endif.
-if num = 111. Word = 'arrow'. Endif.
-if num = 112. Word = 'arson'. Endif.
-if num = 113. Word = 'artsy'. Endif.
-if num = 114. Word = 'ascot'. Endif.
-if num = 115. Word = 'ashen'. Endif.
-if num = 116. Word = 'aside'. Endif.
-if num = 117. Word = 'askew'. Endif.
-if num = 118. Word = 'assay'. Endif.
-if num = 119. Word = 'asset'. Endif.
-if num = 120. Word = 'atoll'. Endif.
-if num = 121. Word = 'atone'. Endif.
-if num = 122. Word = 'attic'. Endif.
-if num = 123. Word = 'audio'. Endif.
-if num = 124. Word = 'audit'. Endif.
-if num = 125. Word = 'augur'. Endif.
-if num = 126. Word = 'aunty'. Endif.
-if num = 127. Word = 'avail'. Endif.
-if num = 128. Word = 'avert'. Endif.
-if num = 129. Word = 'avian'. Endif.
-if num = 130. Word = 'avoid'. Endif.
-if num = 131. Word = 'await'. Endif.
-if num = 132. Word = 'awake'. Endif.
-if num = 133. Word = 'award'. Endif.
-if num = 134. Word = 'aware'. Endif.
-if num = 135. Word = 'awash'. Endif.
-if num = 136. Word = 'awful'. Endif.
-if num = 137. Word = 'awoke'. Endif.
-if num = 138. Word = 'axial'. Endif.
-if num = 139. Word = 'axiom'. Endif.
-if num = 140. Word = 'axion'. Endif.
-if num = 141. Word = 'azure'. Endif.
-if num = 142. Word = 'bacon'. Endif.
-if num = 143. Word = 'badge'. Endif.
-if num = 144. Word = 'badly'. Endif.
-if num = 145. Word = 'bagel'. Endif.
-if num = 146. Word = 'baggy'. Endif.
-if num = 147. Word = 'baker'. Endif.
-if num = 148. Word = 'baler'. Endif.
-if num = 149. Word = 'balmy'. Endif.
-if num = 150. Word = 'banal'. Endif.
-if num = 151. Word = 'banjo'. Endif.
-if num = 152. Word = 'barge'. Endif.
-if num = 153. Word = 'baron'. Endif.
-if num = 154. Word = 'basal'. Endif.
-if num = 155. Word = 'basic'. Endif.
-if num = 156. Word = 'basil'. Endif.
-if num = 157. Word = 'basin'. Endif.
-if num = 158. Word = 'basis'. Endif.
-if num = 159. Word = 'baste'. Endif.
-if num = 160. Word = 'batch'. Endif.
-if num = 161. Word = 'bathe'. Endif.
-if num = 162. Word = 'baton'. Endif.
-if num = 163. Word = 'batty'. Endif.
-if num = 164. Word = 'bawdy'. Endif.
-if num = 165. Word = 'bayou'. Endif.
-if num = 166. Word = 'beach'. Endif.
-if num = 167. Word = 'beady'. Endif.
-if num = 168. Word = 'beard'. Endif.
-if num = 169. Word = 'beast'. Endif.
-if num = 170. Word = 'beech'. Endif.
-if num = 171. Word = 'beefy'. Endif.
-if num = 172. Word = 'befit'. Endif.
-if num = 173. Word = 'began'. Endif.
-if num = 174. Word = 'begat'. Endif.
-if num = 175. Word = 'beget'. Endif.
-if num = 176. Word = 'begin'. Endif.
-if num = 177. Word = 'begun'. Endif.
-if num = 178. Word = 'being'. Endif.
-if num = 179. Word = 'belch'. Endif.
-if num = 180. Word = 'belie'. Endif.
-if num = 181. Word = 'belle'. Endif.
-if num = 182. Word = 'belly'. Endif.
-if num = 183. Word = 'below'. Endif.
-if num = 184. Word = 'bench'. Endif.
-if num = 185. Word = 'beret'. Endif.
-if num = 186. Word = 'berry'. Endif.
-if num = 187. Word = 'berth'. Endif.
-if num = 188. Word = 'beset'. Endif.
-if num = 189. Word = 'betel'. Endif.
-if num = 190. Word = 'bevel'. Endif.
-if num = 191. Word = 'bezel'. Endif.
-if num = 192. Word = 'bible'. Endif.
-if num = 193. Word = 'bicep'. Endif.
-if num = 194. Word = 'biddy'. Endif.
-if num = 195. Word = 'bigot'. Endif.
-if num = 196. Word = 'bilge'. Endif.
-if num = 197. Word = 'billy'. Endif.
-if num = 198. Word = 'binge'. Endif.
-if num = 199. Word = 'bingo'. Endif.
-if num = 200. Word = 'biome'. Endif.
-if num = 201. Word = 'birch'. Endif.
-if num = 202. Word = 'birth'. Endif.
-if num = 203. Word = 'bison'. Endif.
-if num = 204. Word = 'bitty'. Endif.
-if num = 205. Word = 'black'. Endif.
-if num = 206. Word = 'blade'. Endif.
-if num = 207. Word = 'blame'. Endif.
-if num = 208. Word = 'bland'. Endif.
-if num = 209. Word = 'blank'. Endif.
-if num = 210. Word = 'blare'. Endif.
-if num = 211. Word = 'blast'. Endif.
-if num = 212. Word = 'blaze'. Endif.
-if num = 213. Word = 'bleak'. Endif.
-if num = 214. Word = 'bleat'. Endif.
-if num = 215. Word = 'bleed'. Endif.
-if num = 216. Word = 'bleep'. Endif.
-if num = 217. Word = 'blend'. Endif.
-if num = 218. Word = 'bless'. Endif.
-if num = 219. Word = 'blimp'. Endif.
-if num = 220. Word = 'blind'. Endif.
-if num = 221. Word = 'blink'. Endif.
-if num = 222. Word = 'bliss'. Endif.
-if num = 223. Word = 'blitz'. Endif.
-if num = 224. Word = 'bloat'. Endif.
-if num = 225. Word = 'block'. Endif.
-if num = 226. Word = 'bloke'. Endif.
-if num = 227. Word = 'blond'. Endif.
-if num = 228. Word = 'blood'. Endif.
-if num = 229. Word = 'bloom'. Endif.
-if num = 230. Word = 'blown'. Endif.
-if num = 231. Word = 'bluer'. Endif.
-if num = 232. Word = 'bluff'. Endif.
-if num = 233. Word = 'blunt'. Endif.
-if num = 234. Word = 'blurb'. Endif.
-if num = 235. Word = 'blurt'. Endif.
-if num = 236. Word = 'blush'. Endif.
-if num = 237. Word = 'board'. Endif.
-if num = 238. Word = 'boast'. Endif.
-if num = 239. Word = 'bobby'. Endif.
-if num = 240. Word = 'boney'. Endif.
-if num = 241. Word = 'bongo'. Endif.
-if num = 242. Word = 'bonus'. Endif.
-if num = 243. Word = 'booby'. Endif.
-if num = 244. Word = 'boost'. Endif.
-if num = 245. Word = 'booth'. Endif.
-if num = 246. Word = 'booty'. Endif.
-if num = 247. Word = 'booze'. Endif.
-if num = 248. Word = 'boozy'. Endif.
-if num = 249. Word = 'borax'. Endif.
-if num = 250. Word = 'borne'. Endif.
-if num = 251. Word = 'bosom'. Endif.
-if num = 252. Word = 'bossy'. Endif.
-if num = 253. Word = 'botch'. Endif.
-if num = 254. Word = 'bough'. Endif.
-if num = 255. Word = 'boule'. Endif.
-if num = 256. Word = 'bound'. Endif.
-if num = 257. Word = 'bowel'. Endif.
-if num = 258. Word = 'boxer'. Endif.
-if num = 259. Word = 'brace'. Endif.
-if num = 260. Word = 'braid'. Endif.
-if num = 261. Word = 'brain'. Endif.
-if num = 262. Word = 'brake'. Endif.
-if num = 263. Word = 'brand'. Endif.
-if num = 264. Word = 'brash'. Endif.
-if num = 265. Word = 'brass'. Endif.
-if num = 266. Word = 'brave'. Endif.
-if num = 267. Word = 'bravo'. Endif.
-if num = 268. Word = 'brawl'. Endif.
-if num = 269. Word = 'brawn'. Endif.
-if num = 270. Word = 'bread'. Endif.
-if num = 271. Word = 'break'. Endif.
-if num = 272. Word = 'breed'. Endif.
-if num = 273. Word = 'briar'. Endif.
-if num = 274. Word = 'bribe'. Endif.
-if num = 275. Word = 'brick'. Endif.
-if num = 276. Word = 'bride'. Endif.
-if num = 277. Word = 'brief'. Endif.
-if num = 278. Word = 'brine'. Endif.
-if num = 279. Word = 'bring'. Endif.
-if num = 280. Word = 'brink'. Endif.
-if num = 281. Word = 'briny'. Endif.
-if num = 282. Word = 'brisk'. Endif.
-if num = 283. Word = 'broad'. Endif.
-if num = 284. Word = 'broil'. Endif.
-if num = 285. Word = 'broke'. Endif.
-if num = 286. Word = 'brood'. Endif.
-if num = 287. Word = 'brook'. Endif.
-if num = 288. Word = 'broom'. Endif.
-if num = 289. Word = 'broth'. Endif.
-if num = 290. Word = 'brown'. Endif.
-if num = 291. Word = 'brunt'. Endif.
-if num = 292. Word = 'brush'. Endif.
-if num = 293. Word = 'brute'. Endif.
-if num = 294. Word = 'buddy'. Endif.
-if num = 295. Word = 'budge'. Endif.
-if num = 296. Word = 'buggy'. Endif.
-if num = 297. Word = 'bugle'. Endif.
-if num = 298. Word = 'build'. Endif.
-if num = 299. Word = 'built'. Endif.
-if num = 300. Word = 'bulge'. Endif.
-if num = 301. Word = 'bulky'. Endif.
-if num = 302. Word = 'bully'. Endif.
-if num = 303. Word = 'bunch'. Endif.
-if num = 304. Word = 'bunny'. Endif.
-if num = 305. Word = 'burly'. Endif.
-if num = 306. Word = 'burnt'. Endif.
-if num = 307. Word = 'burst'. Endif.
-if num = 308. Word = 'bused'. Endif.
-if num = 309. Word = 'bushy'. Endif.
-if num = 310. Word = 'butch'. Endif.
-if num = 311. Word = 'butte'. Endif.
-if num = 312. Word = 'buxom'. Endif.
-if num = 313. Word = 'buyer'. Endif.
-if num = 314. Word = 'bylaw'. Endif.
-if num = 315. Word = 'cabal'. Endif.
-if num = 316. Word = 'cabby'. Endif.
-if num = 317. Word = 'cabin'. Endif.
-if num = 318. Word = 'cable'. Endif.
-if num = 319. Word = 'cacao'. Endif.
-if num = 320. Word = 'cache'. Endif.
-if num = 321. Word = 'cacti'. Endif.
-if num = 322. Word = 'caddy'. Endif.
-if num = 323. Word = 'cadet'. Endif.
-if num = 324. Word = 'cagey'. Endif.
-if num = 325. Word = 'cairn'. Endif.
-if num = 326. Word = 'camel'. Endif.
-if num = 327. Word = 'cameo'. Endif.
-if num = 328. Word = 'canal'. Endif.
-if num = 329. Word = 'candy'. Endif.
-if num = 330. Word = 'canny'. Endif.
-if num = 331. Word = 'canoe'. Endif.
-if num = 332. Word = 'canon'. Endif.
-if num = 333. Word = 'caper'. Endif.
-if num = 334. Word = 'caput'. Endif.
-if num = 335. Word = 'carat'. Endif.
-if num = 336. Word = 'cargo'. Endif.
-if num = 337. Word = 'carol'. Endif.
-if num = 338. Word = 'carry'. Endif.
-if num = 339. Word = 'carve'. Endif.
-if num = 340. Word = 'caste'. Endif.
-if num = 341. Word = 'catch'. Endif.
-if num = 342. Word = 'cater'. Endif.
-if num = 343. Word = 'catty'. Endif.
-if num = 344. Word = 'caulk'. Endif.
-if num = 345. Word = 'cause'. Endif.
-if num = 346. Word = 'cavil'. Endif.
-if num = 347. Word = 'cease'. Endif.
-if num = 348. Word = 'cedar'. Endif.
-if num = 349. Word = 'cello'. Endif.
-if num = 350. Word = 'chafe'. Endif.
-if num = 351. Word = 'chaff'. Endif.
-if num = 352. Word = 'chain'. Endif.
-if num = 353. Word = 'chair'. Endif.
-if num = 354. Word = 'chalk'. Endif.
-if num = 355. Word = 'champ'. Endif.
-if num = 356. Word = 'chant'. Endif.
-if num = 357. Word = 'chaos'. Endif.
-if num = 358. Word = 'chard'. Endif.
-if num = 359. Word = 'charm'. Endif.
-if num = 360. Word = 'chart'. Endif.
-if num = 361. Word = 'chase'. Endif.
-if num = 362. Word = 'chasm'. Endif.
-if num = 363. Word = 'cheap'. Endif.
-if num = 364. Word = 'cheat'. Endif.
-if num = 365. Word = 'check'. Endif.
-if num = 366. Word = 'cheek'. Endif.
-if num = 367. Word = 'cheer'. Endif.
-if num = 368. Word = 'chess'. Endif.
-if num = 369. Word = 'chest'. Endif.
-if num = 370. Word = 'chick'. Endif.
-if num = 371. Word = 'chide'. Endif.
-if num = 372. Word = 'chief'. Endif.
-if num = 373. Word = 'child'. Endif.
-if num = 374. Word = 'chili'. Endif.
-if num = 375. Word = 'chill'. Endif.
-if num = 376. Word = 'chime'. Endif.
-if num = 377. Word = 'china'. Endif.
-if num = 378. Word = 'chirp'. Endif.
-if num = 379. Word = 'chock'. Endif.
-if num = 380. Word = 'choir'. Endif.
-if num = 381. Word = 'choke'. Endif.
-if num = 382. Word = 'chord'. Endif.
-if num = 383. Word = 'chore'. Endif.
-if num = 384. Word = 'chose'. Endif.
-if num = 385. Word = 'chuck'. Endif.
-if num = 386. Word = 'chump'. Endif.
-if num = 387. Word = 'chunk'. Endif.
-if num = 388. Word = 'churn'. Endif.
-if num = 389. Word = 'chute'. Endif.
-if num = 390. Word = 'cider'. Endif.
-if num = 391. Word = 'cigar'. Endif.
-if num = 392. Word = 'cinch'. Endif.
-if num = 393. Word = 'circa'. Endif.
-if num = 394. Word = 'civic'. Endif.
-if num = 395. Word = 'civil'. Endif.
-if num = 396. Word = 'clack'. Endif.
-if num = 397. Word = 'claim'. Endif.
-if num = 398. Word = 'clamp'. Endif.
-if num = 399. Word = 'clang'. Endif.
-if num = 400. Word = 'clank'. Endif.
-if num = 401. Word = 'clash'. Endif.
-if num = 402. Word = 'clasp'. Endif.
-if num = 403. Word = 'class'. Endif.
-if num = 404. Word = 'clean'. Endif.
-if num = 405. Word = 'clear'. Endif.
-if num = 406. Word = 'cleat'. Endif.
-if num = 407. Word = 'cleft'. Endif.
-if num = 408. Word = 'clerk'. Endif.
-if num = 409. Word = 'click'. Endif.
-if num = 410. Word = 'cliff'. Endif.
-if num = 411. Word = 'climb'. Endif.
-if num = 412. Word = 'cling'. Endif.
-if num = 413. Word = 'clink'. Endif.
-if num = 414. Word = 'cloak'. Endif.
-if num = 415. Word = 'clock'. Endif.
-if num = 416. Word = 'clone'. Endif.
-if num = 417. Word = 'close'. Endif.
-if num = 418. Word = 'cloth'. Endif.
-if num = 419. Word = 'cloud'. Endif.
-if num = 420. Word = 'clout'. Endif.
-if num = 421. Word = 'clove'. Endif.
-if num = 422. Word = 'clown'. Endif.
-if num = 423. Word = 'cluck'. Endif.
-if num = 424. Word = 'clued'. Endif.
-if num = 425. Word = 'clump'. Endif.
-if num = 426. Word = 'clung'. Endif.
-if num = 427. Word = 'coach'. Endif.
-if num = 428. Word = 'coast'. Endif.
-if num = 429. Word = 'cobra'. Endif.
-if num = 430. Word = 'cocoa'. Endif.
-if num = 431. Word = 'colon'. Endif.
-if num = 432. Word = 'color'. Endif.
-if num = 433. Word = 'comet'. Endif.
-if num = 434. Word = 'comfy'. Endif.
-if num = 435. Word = 'comic'. Endif.
-if num = 436. Word = 'comma'. Endif.
-if num = 437. Word = 'conch'. Endif.
-if num = 438. Word = 'condo'. Endif.
-if num = 439. Word = 'conic'. Endif.
-if num = 440. Word = 'copse'. Endif.
-if num = 441. Word = 'coral'. Endif.
-if num = 442. Word = 'corer'. Endif.
-if num = 443. Word = 'corny'. Endif.
-if num = 444. Word = 'couch'. Endif.
-if num = 445. Word = 'cough'. Endif.
-if num = 446. Word = 'could'. Endif.
-if num = 447. Word = 'count'. Endif.
-if num = 448. Word = 'coupe'. Endif.
-if num = 449. Word = 'court'. Endif.
-if num = 450. Word = 'coven'. Endif.
-if num = 451. Word = 'cover'. Endif.
-if num = 452. Word = 'covet'. Endif.
-if num = 453. Word = 'covey'. Endif.
-if num = 454. Word = 'cower'. Endif.
-if num = 455. Word = 'coyly'. Endif.
-if num = 456. Word = 'crack'. Endif.
-if num = 457. Word = 'craft'. Endif.
-if num = 458. Word = 'cramp'. Endif.
-if num = 459. Word = 'crane'. Endif.
-if num = 460. Word = 'crank'. Endif.
-if num = 461. Word = 'crash'. Endif.
-if num = 462. Word = 'crass'. Endif.
-if num = 463. Word = 'crate'. Endif.
-if num = 464. Word = 'crave'. Endif.
-if num = 465. Word = 'crawl'. Endif.
-if num = 466. Word = 'craze'. Endif.
-if num = 467. Word = 'crazy'. Endif.
-if num = 468. Word = 'creak'. Endif.
-if num = 469. Word = 'cream'. Endif.
-if num = 470. Word = 'credo'. Endif.
-if num = 471. Word = 'creed'. Endif.
-if num = 472. Word = 'creek'. Endif.
-if num = 473. Word = 'creep'. Endif.
-if num = 474. Word = 'creme'. Endif.
-if num = 475. Word = 'crepe'. Endif.
-if num = 476. Word = 'crept'. Endif.
-if num = 477. Word = 'cress'. Endif.
-if num = 478. Word = 'crest'. Endif.
-if num = 479. Word = 'crick'. Endif.
-if num = 480. Word = 'cried'. Endif.
-if num = 481. Word = 'crier'. Endif.
-if num = 482. Word = 'crime'. Endif.
-if num = 483. Word = 'crimp'. Endif.
-if num = 484. Word = 'crisp'. Endif.
-if num = 485. Word = 'croak'. Endif.
-if num = 486. Word = 'crock'. Endif.
-if num = 487. Word = 'crone'. Endif.
-if num = 488. Word = 'crony'. Endif.
-if num = 489. Word = 'crook'. Endif.
-if num = 490. Word = 'cross'. Endif.
-if num = 491. Word = 'croup'. Endif.
-if num = 492. Word = 'crowd'. Endif.
-if num = 493. Word = 'crown'. Endif.
-if num = 494. Word = 'crude'. Endif.
-if num = 495. Word = 'cruel'. Endif.
-if num = 496. Word = 'crumb'. Endif.
-if num = 497. Word = 'crump'. Endif.
-if num = 498. Word = 'crush'. Endif.
-if num = 499. Word = 'crust'. Endif.
-if num = 500. Word = 'crypt'. Endif.
-if num = 501. Word = 'cubic'. Endif.
-if num = 502. Word = 'cumin'. Endif.
-if num = 503. Word = 'curio'. Endif.
-if num = 504. Word = 'curly'. Endif.
-if num = 505. Word = 'curry'. Endif.
-if num = 506. Word = 'curse'. Endif.
-if num = 507. Word = 'curve'. Endif.
-if num = 508. Word = 'curvy'. Endif.
-if num = 509. Word = 'cutie'. Endif.
-if num = 510. Word = 'cyber'. Endif.
-if num = 511. Word = 'cycle'. Endif.
-if num = 512. Word = 'cynic'. Endif.
-if num = 513. Word = 'daddy'. Endif.
-if num = 514. Word = 'daily'. Endif.
-if num = 515. Word = 'dairy'. Endif.
-if num = 516. Word = 'daisy'. Endif.
-if num = 517. Word = 'dally'. Endif.
-if num = 518. Word = 'dance'. Endif.
-if num = 519. Word = 'dandy'. Endif.
-if num = 520. Word = 'datum'. Endif.
-if num = 521. Word = 'daunt'. Endif.
-if num = 522. Word = 'dealt'. Endif.
-if num = 523. Word = 'death'. Endif.
-if num = 524. Word = 'debar'. Endif.
-if num = 525. Word = 'debit'. Endif.
-if num = 526. Word = 'debug'. Endif.
-if num = 527. Word = 'debut'. Endif.
-if num = 528. Word = 'decal'. Endif.
-if num = 529. Word = 'decay'. Endif.
-if num = 530. Word = 'decor'. Endif.
-if num = 531. Word = 'decoy'. Endif.
-if num = 532. Word = 'decry'. Endif.
-if num = 533. Word = 'defer'. Endif.
-if num = 534. Word = 'deign'. Endif.
-if num = 535. Word = 'deity'. Endif.
-if num = 536. Word = 'delay'. Endif.
-if num = 537. Word = 'delta'. Endif.
-if num = 538. Word = 'delve'. Endif.
-if num = 539. Word = 'demon'. Endif.
-if num = 540. Word = 'demur'. Endif.
-if num = 541. Word = 'denim'. Endif.
-if num = 542. Word = 'dense'. Endif.
-if num = 543. Word = 'depot'. Endif.
-if num = 544. Word = 'depth'. Endif.
-if num = 545. Word = 'derby'. Endif.
-if num = 546. Word = 'deter'. Endif.
-if num = 547. Word = 'detox'. Endif.
-if num = 548. Word = 'deuce'. Endif.
-if num = 549. Word = 'devil'. Endif.
-if num = 550. Word = 'diary'. Endif.
-if num = 551. Word = 'dicey'. Endif.
-if num = 552. Word = 'digit'. Endif.
-if num = 553. Word = 'dilly'. Endif.
-if num = 554. Word = 'dimly'. Endif.
-if num = 555. Word = 'diner'. Endif.
-if num = 556. Word = 'dingo'. Endif.
-if num = 557. Word = 'dingy'. Endif.
-if num = 558. Word = 'diode'. Endif.
-if num = 559. Word = 'dirge'. Endif.
-if num = 560. Word = 'dirty'. Endif.
-if num = 561. Word = 'disco'. Endif.
-if num = 562. Word = 'ditch'. Endif.
-if num = 563. Word = 'ditto'. Endif.
-if num = 564. Word = 'ditty'. Endif.
-if num = 565. Word = 'diver'. Endif.
-if num = 566. Word = 'dizzy'. Endif.
-if num = 567. Word = 'dodge'. Endif.
-if num = 568. Word = 'dodgy'. Endif.
-if num = 569. Word = 'dogma'. Endif.
-if num = 570. Word = 'doing'. Endif.
-if num = 571. Word = 'dolly'. Endif.
-if num = 572. Word = 'donor'. Endif.
-if num = 573. Word = 'donut'. Endif.
-if num = 574. Word = 'dopey'. Endif.
-if num = 575. Word = 'doubt'. Endif.
-if num = 576. Word = 'dough'. Endif.
-if num = 577. Word = 'dowdy'. Endif.
-if num = 578. Word = 'dowel'. Endif.
-if num = 579. Word = 'downy'. Endif.
-if num = 580. Word = 'dowry'. Endif.
-if num = 581. Word = 'dozen'. Endif.
-if num = 582. Word = 'draft'. Endif.
-if num = 583. Word = 'drain'. Endif.
-if num = 584. Word = 'drake'. Endif.
-if num = 585. Word = 'drama'. Endif.
-if num = 586. Word = 'drank'. Endif.
-if num = 587. Word = 'drape'. Endif.
-if num = 588. Word = 'drawl'. Endif.
-if num = 589. Word = 'drawn'. Endif.
-if num = 590. Word = 'dread'. Endif.
-if num = 591. Word = 'dream'. Endif.
-if num = 592. Word = 'dress'. Endif.
-if num = 593. Word = 'dried'. Endif.
-if num = 594. Word = 'drier'. Endif.
-if num = 595. Word = 'drift'. Endif.
-if num = 596. Word = 'drill'. Endif.
-if num = 597. Word = 'drink'. Endif.
-if num = 598. Word = 'drive'. Endif.
-if num = 599. Word = 'droit'. Endif.
-if num = 600. Word = 'droll'. Endif.
-if num = 601. Word = 'drone'. Endif.
-if num = 602. Word = 'drool'. Endif.
-if num = 603. Word = 'droop'. Endif.
-if num = 604. Word = 'dross'. Endif.
-if num = 605. Word = 'drove'. Endif.
-if num = 606. Word = 'drown'. Endif.
-if num = 607. Word = 'druid'. Endif.
-if num = 608. Word = 'drunk'. Endif.
-if num = 609. Word = 'dryer'. Endif.
-if num = 610. Word = 'dryly'. Endif.
-if num = 611. Word = 'duchy'. Endif.
-if num = 612. Word = 'dully'. Endif.
-if num = 613. Word = 'dummy'. Endif.
-if num = 614. Word = 'dumpy'. Endif.
-if num = 615. Word = 'dunce'. Endif.
-if num = 616. Word = 'dusky'. Endif.
-if num = 617. Word = 'dusty'. Endif.
-if num = 618. Word = 'dutch'. Endif.
-if num = 619. Word = 'duvet'. Endif.
-if num = 620. Word = 'dwarf'. Endif.
-if num = 621. Word = 'dwell'. Endif.
-if num = 622. Word = 'dwelt'. Endif.
-if num = 623. Word = 'dying'. Endif.
-if num = 624. Word = 'eager'. Endif.
-if num = 625. Word = 'eagle'. Endif.
-if num = 626. Word = 'early'. Endif.
-if num = 627. Word = 'earth'. Endif.
-if num = 628. Word = 'easel'. Endif.
-if num = 629. Word = 'eaten'. Endif.
-if num = 630. Word = 'eater'. Endif.
-if num = 631. Word = 'ebony'. Endif.
-if num = 632. Word = 'eclat'. Endif.
-if num = 633. Word = 'edict'. Endif.
-if num = 634. Word = 'edify'. Endif.
-if num = 635. Word = 'eerie'. Endif.
-if num = 636. Word = 'egret'. Endif.
-if num = 637. Word = 'eight'. Endif.
-if num = 638. Word = 'eject'. Endif.
-if num = 639. Word = 'eking'. Endif.
-if num = 640. Word = 'elate'. Endif.
-if num = 641. Word = 'elbow'. Endif.
-if num = 642. Word = 'elder'. Endif.
-if num = 643. Word = 'elect'. Endif.
-if num = 644. Word = 'elegy'. Endif.
-if num = 645. Word = 'elfin'. Endif.
-if num = 646. Word = 'elide'. Endif.
-if num = 647. Word = 'elite'. Endif.
-if num = 648. Word = 'elope'. Endif.
-if num = 649. Word = 'elude'. Endif.
-if num = 650. Word = 'email'. Endif.
-if num = 651. Word = 'embed'. Endif.
-if num = 652. Word = 'ember'. Endif.
-if num = 653. Word = 'emcee'. Endif.
-if num = 654. Word = 'empty'. Endif.
-if num = 655. Word = 'enact'. Endif.
-if num = 656. Word = 'endow'. Endif.
-if num = 657. Word = 'enema'. Endif.
-if num = 658. Word = 'enemy'. Endif.
-if num = 659. Word = 'enjoy'. Endif.
-if num = 660. Word = 'ennui'. Endif.
-if num = 661. Word = 'ensue'. Endif.
-if num = 662. Word = 'enter'. Endif.
-if num = 663. Word = 'entry'. Endif.
-if num = 664. Word = 'envoy'. Endif.
-if num = 665. Word = 'epoch'. Endif.
-if num = 666. Word = 'epoxy'. Endif.
-if num = 667. Word = 'equal'. Endif.
-if num = 668. Word = 'equip'. Endif.
-if num = 669. Word = 'erase'. Endif.
-if num = 670. Word = 'erect'. Endif.
-if num = 671. Word = 'erode'. Endif.
-if num = 672. Word = 'error'. Endif.
-if num = 673. Word = 'erupt'. Endif.
-if num = 674. Word = 'essay'. Endif.
-if num = 675. Word = 'ester'. Endif.
-if num = 676. Word = 'ether'. Endif.
-if num = 677. Word = 'ethic'. Endif.
-if num = 678. Word = 'ethos'. Endif.
-if num = 679. Word = 'etude'. Endif.
-if num = 680. Word = 'evade'. Endif.
-if num = 681. Word = 'event'. Endif.
-if num = 682. Word = 'every'. Endif.
-if num = 683. Word = 'evict'. Endif.
-if num = 684. Word = 'evoke'. Endif.
-if num = 685. Word = 'exact'. Endif.
-if num = 686. Word = 'exalt'. Endif.
-if num = 687. Word = 'excel'. Endif.
-if num = 688. Word = 'exert'. Endif.
-if num = 689. Word = 'exile'. Endif.
-if num = 690. Word = 'exist'. Endif.
-if num = 691. Word = 'expel'. Endif.
-if num = 692. Word = 'extol'. Endif.
-if num = 693. Word = 'extra'. Endif.
-if num = 694. Word = 'exult'. Endif.
-if num = 695. Word = 'eying'. Endif.
-if num = 696. Word = 'fable'. Endif.
-if num = 697. Word = 'facet'. Endif.
-if num = 698. Word = 'faint'. Endif.
-if num = 699. Word = 'fairy'. Endif.
-if num = 700. Word = 'faith'. Endif.
-if num = 701. Word = 'FALSE'. Endif.
-if num = 702. Word = 'fancy'. Endif.
-if num = 703. Word = 'fanny'. Endif.
-if num = 704. Word = 'farce'. Endif.
-if num = 705. Word = 'fatal'. Endif.
-if num = 706. Word = 'fatty'. Endif.
-if num = 707. Word = 'fault'. Endif.
-if num = 708. Word = 'fauna'. Endif.
-if num = 709. Word = 'favor'. Endif.
-if num = 710. Word = 'feast'. Endif.
-if num = 711. Word = 'fecal'. Endif.
-if num = 712. Word = 'feign'. Endif.
-if num = 713. Word = 'fella'. Endif.
-if num = 714. Word = 'felon'. Endif.
-if num = 715. Word = 'femme'. Endif.
-if num = 716. Word = 'femur'. Endif.
-if num = 717. Word = 'fence'. Endif.
-if num = 718. Word = 'feral'. Endif.
-if num = 719. Word = 'ferry'. Endif.
-if num = 720. Word = 'fetal'. Endif.
-if num = 721. Word = 'fetch'. Endif.
-if num = 722. Word = 'fetid'. Endif.
-if num = 723. Word = 'fetus'. Endif.
-if num = 724. Word = 'fever'. Endif.
-if num = 725. Word = 'fewer'. Endif.
-if num = 726. Word = 'fiber'. Endif.
-if num = 727. Word = 'fibre'. Endif.
-if num = 728. Word = 'ficus'. Endif.
-if num = 729. Word = 'field'. Endif.
-if num = 730. Word = 'fiend'. Endif.
-if num = 731. Word = 'fiery'. Endif.
-if num = 732. Word = 'fifth'. Endif.
-if num = 733. Word = 'fifty'. Endif.
-if num = 734. Word = 'fight'. Endif.
-if num = 735. Word = 'filer'. Endif.
-if num = 736. Word = 'filet'. Endif.
-if num = 737. Word = 'filly'. Endif.
-if num = 738. Word = 'filmy'. Endif.
-if num = 739. Word = 'filth'. Endif.
-if num = 740. Word = 'final'. Endif.
-if num = 741. Word = 'finch'. Endif.
-if num = 742. Word = 'finer'. Endif.
-if num = 743. Word = 'first'. Endif.
-if num = 744. Word = 'fishy'. Endif.
-if num = 745. Word = 'fixer'. Endif.
-if num = 746. Word = 'fizzy'. Endif.
-if num = 747. Word = 'fjord'. Endif.
-if num = 748. Word = 'flack'. Endif.
-if num = 749. Word = 'flail'. Endif.
-if num = 750. Word = 'flair'. Endif.
-if num = 751. Word = 'flake'. Endif.
-if num = 752. Word = 'flaky'. Endif.
-if num = 753. Word = 'flame'. Endif.
-if num = 754. Word = 'flank'. Endif.
-if num = 755. Word = 'flare'. Endif.
-if num = 756. Word = 'flash'. Endif.
-if num = 757. Word = 'flask'. Endif.
-if num = 758. Word = 'fleck'. Endif.
-if num = 759. Word = 'fleet'. Endif.
-if num = 760. Word = 'flesh'. Endif.
-if num = 761. Word = 'flick'. Endif.
-if num = 762. Word = 'flier'. Endif.
-if num = 763. Word = 'fling'. Endif.
-if num = 764. Word = 'flint'. Endif.
-if num = 765. Word = 'flirt'. Endif.
-if num = 766. Word = 'float'. Endif.
-if num = 767. Word = 'flock'. Endif.
-if num = 768. Word = 'flood'. Endif.
-if num = 769. Word = 'floor'. Endif.
-if num = 770. Word = 'flora'. Endif.
-if num = 771. Word = 'floss'. Endif.
-if num = 772. Word = 'flour'. Endif.
-if num = 773. Word = 'flout'. Endif.
-if num = 774. Word = 'flown'. Endif.
-if num = 775. Word = 'fluff'. Endif.
-if num = 776. Word = 'fluid'. Endif.
-if num = 777. Word = 'fluke'. Endif.
-if num = 778. Word = 'flume'. Endif.
-if num = 779. Word = 'flung'. Endif.
-if num = 780. Word = 'flunk'. Endif.
-if num = 781. Word = 'flush'. Endif.
-if num = 782. Word = 'flute'. Endif.
-if num = 783. Word = 'flyer'. Endif.
-if num = 784. Word = 'foamy'. Endif.
-if num = 785. Word = 'focal'. Endif.
-if num = 786. Word = 'focus'. Endif.
-if num = 787. Word = 'foggy'. Endif.
-if num = 788. Word = 'foist'. Endif.
-if num = 789. Word = 'folio'. Endif.
-if num = 790. Word = 'folly'. Endif.
-if num = 791. Word = 'foray'. Endif.
-if num = 792. Word = 'force'. Endif.
-if num = 793. Word = 'forge'. Endif.
-if num = 794. Word = 'forgo'. Endif.
-if num = 795. Word = 'forte'. Endif.
-if num = 796. Word = 'forth'. Endif.
-if num = 797. Word = 'forty'. Endif.
-if num = 798. Word = 'forum'. Endif.
-if num = 799. Word = 'found'. Endif.
-if num = 800. Word = 'foyer'. Endif.
-if num = 801. Word = 'frail'. Endif.
-if num = 802. Word = 'frame'. Endif.
-if num = 803. Word = 'frank'. Endif.
-if num = 804. Word = 'fraud'. Endif.
-if num = 805. Word = 'freak'. Endif.
-if num = 806. Word = 'freed'. Endif.
-if num = 807. Word = 'freer'. Endif.
-if num = 808. Word = 'fresh'. Endif.
-if num = 809. Word = 'friar'. Endif.
-if num = 810. Word = 'fried'. Endif.
-if num = 811. Word = 'frill'. Endif.
-if num = 812. Word = 'frisk'. Endif.
-if num = 813. Word = 'fritz'. Endif.
-if num = 814. Word = 'frock'. Endif.
-if num = 815. Word = 'frond'. Endif.
-if num = 816. Word = 'front'. Endif.
-if num = 817. Word = 'frost'. Endif.
-if num = 818. Word = 'froth'. Endif.
-if num = 819. Word = 'frown'. Endif.
-if num = 820. Word = 'froze'. Endif.
-if num = 821. Word = 'fruit'. Endif.
-if num = 822. Word = 'fudge'. Endif.
-if num = 823. Word = 'fugue'. Endif.
-if num = 824. Word = 'fully'. Endif.
-if num = 825. Word = 'fungi'. Endif.
-if num = 826. Word = 'funky'. Endif.
-if num = 827. Word = 'funny'. Endif.
-if num = 828. Word = 'furor'. Endif.
-if num = 829. Word = 'furry'. Endif.
-if num = 830. Word = 'fussy'. Endif.
-if num = 831. Word = 'fuzzy'. Endif.
-if num = 832. Word = 'gaffe'. Endif.
-if num = 833. Word = 'gaily'. Endif.
-if num = 834. Word = 'gamer'. Endif.
-if num = 835. Word = 'gamma'. Endif.
-if num = 836. Word = 'gamut'. Endif.
-if num = 837. Word = 'gassy'. Endif.
-if num = 838. Word = 'gaudy'. Endif.
-if num = 839. Word = 'gauge'. Endif.
-if num = 840. Word = 'gaunt'. Endif.
-if num = 841. Word = 'gauze'. Endif.
-if num = 842. Word = 'gavel'. Endif.
-if num = 843. Word = 'gawky'. Endif.
-if num = 844. Word = 'gayer'. Endif.
-if num = 845. Word = 'gayly'. Endif.
-if num = 846. Word = 'gazer'. Endif.
-if num = 847. Word = 'gecko'. Endif.
-if num = 848. Word = 'geeky'. Endif.
-if num = 849. Word = 'geese'. Endif.
-if num = 850. Word = 'genie'. Endif.
-if num = 851. Word = 'genre'. Endif.
-if num = 852. Word = 'ghost'. Endif.
-if num = 853. Word = 'ghoul'. Endif.
-if num = 854. Word = 'giant'. Endif.
-if num = 855. Word = 'giddy'. Endif.
-if num = 856. Word = 'gipsy'. Endif.
-if num = 857. Word = 'girly'. Endif.
-if num = 858. Word = 'girth'. Endif.
-if num = 859. Word = 'given'. Endif.
-if num = 860. Word = 'giver'. Endif.
-if num = 861. Word = 'glade'. Endif.
-if num = 862. Word = 'gland'. Endif.
-if num = 863. Word = 'glare'. Endif.
-if num = 864. Word = 'glass'. Endif.
-if num = 865. Word = 'glaze'. Endif.
-if num = 866. Word = 'gleam'. Endif.
-if num = 867. Word = 'glean'. Endif.
-if num = 868. Word = 'glide'. Endif.
-if num = 869. Word = 'glint'. Endif.
-if num = 870. Word = 'gloat'. Endif.
-if num = 871. Word = 'globe'. Endif.
-if num = 872. Word = 'gloom'. Endif.
-if num = 873. Word = 'glory'. Endif.
-if num = 874. Word = 'gloss'. Endif.
-if num = 875. Word = 'glove'. Endif.
-if num = 876. Word = 'glyph'. Endif.
-if num = 877. Word = 'gnash'. Endif.
-if num = 878. Word = 'gnome'. Endif.
-if num = 879. Word = 'godly'. Endif.
-if num = 880. Word = 'going'. Endif.
-if num = 881. Word = 'golem'. Endif.
-if num = 882. Word = 'golly'. Endif.
-if num = 883. Word = 'gonad'. Endif.
-if num = 884. Word = 'goner'. Endif.
-if num = 885. Word = 'goody'. Endif.
-if num = 886. Word = 'gooey'. Endif.
-if num = 887. Word = 'goofy'. Endif.
-if num = 888. Word = 'goose'. Endif.
-if num = 889. Word = 'gorge'. Endif.
-if num = 890. Word = 'gouge'. Endif.
-if num = 891. Word = 'gourd'. Endif.
-if num = 892. Word = 'grace'. Endif.
-if num = 893. Word = 'grade'. Endif.
-if num = 894. Word = 'graft'. Endif.
-if num = 895. Word = 'grail'. Endif.
-if num = 896. Word = 'grain'. Endif.
-if num = 897. Word = 'grand'. Endif.
-if num = 898. Word = 'grant'. Endif.
-if num = 899. Word = 'grape'. Endif.
-if num = 900. Word = 'graph'. Endif.
-if num = 901. Word = 'grasp'. Endif.
-if num = 902. Word = 'grass'. Endif.
-if num = 903. Word = 'grate'. Endif.
-if num = 904. Word = 'grave'. Endif.
-if num = 905. Word = 'gravy'. Endif.
-if num = 906. Word = 'graze'. Endif.
-if num = 907. Word = 'great'. Endif.
-if num = 908. Word = 'greed'. Endif.
-if num = 909. Word = 'green'. Endif.
-if num = 910. Word = 'greet'. Endif.
-if num = 911. Word = 'grief'. Endif.
-if num = 912. Word = 'grill'. Endif.
-if num = 913. Word = 'grime'. Endif.
-if num = 914. Word = 'grimy'. Endif.
-if num = 915. Word = 'grind'. Endif.
-if num = 916. Word = 'gripe'. Endif.
-if num = 917. Word = 'groan'. Endif.
-if num = 918. Word = 'groin'. Endif.
-if num = 919. Word = 'groom'. Endif.
-if num = 920. Word = 'grope'. Endif.
-if num = 921. Word = 'gross'. Endif.
-if num = 922. Word = 'group'. Endif.
-if num = 923. Word = 'grout'. Endif.
-if num = 924. Word = 'grove'. Endif.
-if num = 925. Word = 'growl'. Endif.
-if num = 926. Word = 'grown'. Endif.
-if num = 927. Word = 'gruel'. Endif.
-if num = 928. Word = 'gruff'. Endif.
-if num = 929. Word = 'grunt'. Endif.
-if num = 930. Word = 'guard'. Endif.
-if num = 931. Word = 'guava'. Endif.
-if num = 932. Word = 'guess'. Endif.
-if num = 933. Word = 'guest'. Endif.
-if num = 934. Word = 'guide'. Endif.
-if num = 935. Word = 'guild'. Endif.
-if num = 936. Word = 'guile'. Endif.
-if num = 937. Word = 'guilt'. Endif.
-if num = 938. Word = 'guise'. Endif.
-if num = 939. Word = 'gulch'. Endif.
-if num = 940. Word = 'gully'. Endif.
-if num = 941. Word = 'gumbo'. Endif.
-if num = 942. Word = 'gummy'. Endif.
-if num = 943. Word = 'guppy'. Endif.
-if num = 944. Word = 'gusto'. Endif.
-if num = 945. Word = 'gusty'. Endif.
-if num = 946. Word = 'gypsy'. Endif.
-if num = 947. Word = 'habit'. Endif.
-if num = 948. Word = 'hairy'. Endif.
-if num = 949. Word = 'halve'. Endif.
-if num = 950. Word = 'handy'. Endif.
-if num = 951. Word = 'happy'. Endif.
-if num = 952. Word = 'hardy'. Endif.
-if num = 953. Word = 'harem'. Endif.
-if num = 954. Word = 'harpy'. Endif.
-if num = 955. Word = 'harry'. Endif.
-if num = 956. Word = 'harsh'. Endif.
-if num = 957. Word = 'haste'. Endif.
-if num = 958. Word = 'hasty'. Endif.
-if num = 959. Word = 'hatch'. Endif.
-if num = 960. Word = 'hater'. Endif.
-if num = 961. Word = 'haunt'. Endif.
-if num = 962. Word = 'haute'. Endif.
-if num = 963. Word = 'haven'. Endif.
-if num = 964. Word = 'havoc'. Endif.
-if num = 965. Word = 'hazel'. Endif.
-if num = 966. Word = 'heady'. Endif.
-if num = 967. Word = 'heard'. Endif.
-if num = 968. Word = 'heart'. Endif.
-if num = 969. Word = 'heath'. Endif.
-if num = 970. Word = 'heave'. Endif.
-if num = 971. Word = 'heavy'. Endif.
-if num = 972. Word = 'hedge'. Endif.
-if num = 973. Word = 'hefty'. Endif.
-if num = 974. Word = 'heist'. Endif.
-if num = 975. Word = 'helix'. Endif.
-if num = 976. Word = 'hello'. Endif.
-if num = 977. Word = 'hence'. Endif.
-if num = 978. Word = 'heron'. Endif.
-if num = 979. Word = 'hilly'. Endif.
-if num = 980. Word = 'hinge'. Endif.
-if num = 981. Word = 'hippo'. Endif.
-if num = 982. Word = 'hippy'. Endif.
-if num = 983. Word = 'hitch'. Endif.
-if num = 984. Word = 'hoard'. Endif.
-if num = 985. Word = 'hobby'. Endif.
-if num = 986. Word = 'hoist'. Endif.
-if num = 987. Word = 'holly'. Endif.
-if num = 988. Word = 'homer'. Endif.
-if num = 989. Word = 'honey'. Endif.
-if num = 990. Word = 'honor'. Endif.
-if num = 991. Word = 'horde'. Endif.
-if num = 992. Word = 'horny'. Endif.
-if num = 993. Word = 'horse'. Endif.
-if num = 994. Word = 'hotel'. Endif.
-if num = 995. Word = 'hotly'. Endif.
-if num = 996. Word = 'hound'. Endif.
-if num = 997. Word = 'house'. Endif.
-if num = 998. Word = 'hovel'. Endif.
-if num = 999. Word = 'hover'. Endif.
-if num = 1000. Word = 'howdy'. Endif.
-if num = 1001. Word = 'human'. Endif.
-if num = 1002. Word = 'humid'. Endif.
-if num = 1003. Word = 'humor'. Endif.
-if num = 1004. Word = 'humph'. Endif.
-if num = 1005. Word = 'humus'. Endif.
-if num = 1006. Word = 'hunch'. Endif.
-if num = 1007. Word = 'hunky'. Endif.
-if num = 1008. Word = 'hurry'. Endif.
-if num = 1009. Word = 'husky'. Endif.
-if num = 1010. Word = 'hussy'. Endif.
-if num = 1011. Word = 'hutch'. Endif.
-if num = 1012. Word = 'hydro'. Endif.
-if num = 1013. Word = 'hyena'. Endif.
-if num = 1014. Word = 'hymen'. Endif.
-if num = 1015. Word = 'hyper'. Endif.
-if num = 1016. Word = 'icily'. Endif.
-if num = 1017. Word = 'icing'. Endif.
-if num = 1018. Word = 'ideal'. Endif.
-if num = 1019. Word = 'idiom'. Endif.
-if num = 1020. Word = 'idiot'. Endif.
-if num = 1021. Word = 'idler'. Endif.
-if num = 1022. Word = 'idyll'. Endif.
-if num = 1023. Word = 'igloo'. Endif.
-if num = 1024. Word = 'iliac'. Endif.
-if num = 1025. Word = 'image'. Endif.
-if num = 1026. Word = 'imbue'. Endif.
-if num = 1027. Word = 'impel'. Endif.
-if num = 1028. Word = 'imply'. Endif.
-if num = 1029. Word = 'inane'. Endif.
-if num = 1030. Word = 'inbox'. Endif.
-if num = 1031. Word = 'incur'. Endif.
-if num = 1032. Word = 'index'. Endif.
-if num = 1033. Word = 'inept'. Endif.
-if num = 1034. Word = 'inert'. Endif.
-if num = 1035. Word = 'infer'. Endif.
-if num = 1036. Word = 'ingot'. Endif.
-if num = 1037. Word = 'inlay'. Endif.
-if num = 1038. Word = 'inlet'. Endif.
-if num = 1039. Word = 'inner'. Endif.
-if num = 1040. Word = 'input'. Endif.
-if num = 1041. Word = 'inter'. Endif.
-if num = 1042. Word = 'intro'. Endif.
-if num = 1043. Word = 'ionic'. Endif.
-if num = 1044. Word = 'irate'. Endif.
-if num = 1045. Word = 'irony'. Endif.
-if num = 1046. Word = 'islet'. Endif.
-if num = 1047. Word = 'issue'. Endif.
-if num = 1048. Word = 'itchy'. Endif.
-if num = 1049. Word = 'ivory'. Endif.
-if num = 1050. Word = 'jaunt'. Endif.
-if num = 1051. Word = 'jazzy'. Endif.
-if num = 1052. Word = 'jelly'. Endif.
-if num = 1053. Word = 'jerky'. Endif.
-if num = 1054. Word = 'jetty'. Endif.
-if num = 1055. Word = 'jewel'. Endif.
-if num = 1056. Word = 'jiffy'. Endif.
-if num = 1057. Word = 'joint'. Endif.
-if num = 1058. Word = 'joist'. Endif.
-if num = 1059. Word = 'joker'. Endif.
-if num = 1060. Word = 'jolly'. Endif.
-if num = 1061. Word = 'joust'. Endif.
-if num = 1062. Word = 'judge'. Endif.
-if num = 1063. Word = 'juice'. Endif.
-if num = 1064. Word = 'juicy'. Endif.
-if num = 1065. Word = 'jumbo'. Endif.
-if num = 1066. Word = 'jumpy'. Endif.
-if num = 1067. Word = 'junta'. Endif.
-if num = 1068. Word = 'junto'. Endif.
-if num = 1069. Word = 'juror'. Endif.
-if num = 1070. Word = 'kappa'. Endif.
-if num = 1071. Word = 'karma'. Endif.
-if num = 1072. Word = 'kayak'. Endif.
-if num = 1073. Word = 'kebab'. Endif.
-if num = 1074. Word = 'khaki'. Endif.
-if num = 1075. Word = 'kinky'. Endif.
-if num = 1076. Word = 'kiosk'. Endif.
-if num = 1077. Word = 'kitty'. Endif.
-if num = 1078. Word = 'knack'. Endif.
-if num = 1079. Word = 'knave'. Endif.
-if num = 1080. Word = 'knead'. Endif.
-if num = 1081. Word = 'kneed'. Endif.
-if num = 1082. Word = 'kneel'. Endif.
-if num = 1083. Word = 'knelt'. Endif.
-if num = 1084. Word = 'knife'. Endif.
-if num = 1085. Word = 'knock'. Endif.
-if num = 1086. Word = 'knoll'. Endif.
-if num = 1087. Word = 'known'. Endif.
-if num = 1088. Word = 'koala'. Endif.
-if num = 1089. Word = 'krill'. Endif.
-if num = 1090. Word = 'label'. Endif.
-if num = 1091. Word = 'labor'. Endif.
-if num = 1092. Word = 'laden'. Endif.
-if num = 1093. Word = 'ladle'. Endif.
-if num = 1094. Word = 'lager'. Endif.
-if num = 1095. Word = 'lance'. Endif.
-if num = 1096. Word = 'lanky'. Endif.
-if num = 1097. Word = 'lapel'. Endif.
-if num = 1098. Word = 'lapse'. Endif.
-if num = 1099. Word = 'large'. Endif.
-if num = 1100. Word = 'larva'. Endif.
-if num = 1101. Word = 'lasso'. Endif.
-if num = 1102. Word = 'latch'. Endif.
-if num = 1103. Word = 'later'. Endif.
-if num = 1104. Word = 'lathe'. Endif.
-if num = 1105. Word = 'latte'. Endif.
-if num = 1106. Word = 'laugh'. Endif.
-if num = 1107. Word = 'layer'. Endif.
-if num = 1108. Word = 'leach'. Endif.
-if num = 1109. Word = 'leafy'. Endif.
-if num = 1110. Word = 'leaky'. Endif.
-if num = 1111. Word = 'leant'. Endif.
-if num = 1112. Word = 'leapt'. Endif.
-if num = 1113. Word = 'learn'. Endif.
-if num = 1114. Word = 'lease'. Endif.
-if num = 1115. Word = 'leash'. Endif.
-if num = 1116. Word = 'least'. Endif.
-if num = 1117. Word = 'leave'. Endif.
-if num = 1118. Word = 'ledge'. Endif.
-if num = 1119. Word = 'leech'. Endif.
-if num = 1120. Word = 'leery'. Endif.
-if num = 1121. Word = 'lefty'. Endif.
-if num = 1122. Word = 'legal'. Endif.
-if num = 1123. Word = 'leggy'. Endif.
-if num = 1124. Word = 'lemon'. Endif.
-if num = 1125. Word = 'lemur'. Endif.
-if num = 1126. Word = 'leper'. Endif.
-if num = 1127. Word = 'level'. Endif.
-if num = 1128. Word = 'lever'. Endif.
-if num = 1129. Word = 'libel'. Endif.
-if num = 1130. Word = 'liege'. Endif.
-if num = 1131. Word = 'light'. Endif.
-if num = 1132. Word = 'liken'. Endif.
-if num = 1133. Word = 'lilac'. Endif.
-if num = 1134. Word = 'limbo'. Endif.
-if num = 1135. Word = 'limit'. Endif.
-if num = 1136. Word = 'linen'. Endif.
-if num = 1137. Word = 'liner'. Endif.
-if num = 1138. Word = 'lingo'. Endif.
-if num = 1139. Word = 'lipid'. Endif.
-if num = 1140. Word = 'lithe'. Endif.
-if num = 1141. Word = 'liver'. Endif.
-if num = 1142. Word = 'livid'. Endif.
-if num = 1143. Word = 'llama'. Endif.
-if num = 1144. Word = 'loamy'. Endif.
-if num = 1145. Word = 'loath'. Endif.
-if num = 1146. Word = 'lobby'. Endif.
-if num = 1147. Word = 'local'. Endif.
-if num = 1148. Word = 'locus'. Endif.
-if num = 1149. Word = 'lodge'. Endif.
-if num = 1150. Word = 'lofty'. Endif.
-if num = 1151. Word = 'logic'. Endif.
-if num = 1152. Word = 'login'. Endif.
-if num = 1153. Word = 'loopy'. Endif.
-if num = 1154. Word = 'loose'. Endif.
-if num = 1155. Word = 'lorry'. Endif.
-if num = 1156. Word = 'loser'. Endif.
-if num = 1157. Word = 'louse'. Endif.
-if num = 1158. Word = 'lousy'. Endif.
-if num = 1159. Word = 'lover'. Endif.
-if num = 1160. Word = 'lower'. Endif.
-if num = 1161. Word = 'lowly'. Endif.
-if num = 1162. Word = 'loyal'. Endif.
-if num = 1163. Word = 'lucid'. Endif.
-if num = 1164. Word = 'lucky'. Endif.
-if num = 1165. Word = 'lumen'. Endif.
-if num = 1166. Word = 'lumpy'. Endif.
-if num = 1167. Word = 'lunar'. Endif.
-if num = 1168. Word = 'lunch'. Endif.
-if num = 1169. Word = 'lunge'. Endif.
-if num = 1170. Word = 'lupus'. Endif.
-if num = 1171. Word = 'lurch'. Endif.
-if num = 1172. Word = 'lurid'. Endif.
-if num = 1173. Word = 'lusty'. Endif.
-if num = 1174. Word = 'lying'. Endif.
-if num = 1175. Word = 'lymph'. Endif.
-if num = 1176. Word = 'lynch'. Endif.
-if num = 1177. Word = 'lyric'. Endif.
-if num = 1178. Word = 'macaw'. Endif.
-if num = 1179. Word = 'macho'. Endif.
-if num = 1180. Word = 'macro'. Endif.
-if num = 1181. Word = 'madam'. Endif.
-if num = 1182. Word = 'madly'. Endif.
-if num = 1183. Word = 'mafia'. Endif.
-if num = 1184. Word = 'magic'. Endif.
-if num = 1185. Word = 'magma'. Endif.
-if num = 1186. Word = 'maize'. Endif.
-if num = 1187. Word = 'major'. Endif.
-if num = 1188. Word = 'maker'. Endif.
-if num = 1189. Word = 'mambo'. Endif.
-if num = 1190. Word = 'mamma'. Endif.
-if num = 1191. Word = 'mammy'. Endif.
-if num = 1192. Word = 'manga'. Endif.
-if num = 1193. Word = 'mange'. Endif.
-if num = 1194. Word = 'mango'. Endif.
-if num = 1195. Word = 'mangy'. Endif.
-if num = 1196. Word = 'mania'. Endif.
-if num = 1197. Word = 'manic'. Endif.
-if num = 1198. Word = 'manly'. Endif.
-if num = 1199. Word = 'manor'. Endif.
-if num = 1200. Word = 'maple'. Endif.
-if num = 1201. Word = 'march'. Endif.
-if num = 1202. Word = 'marry'. Endif.
-if num = 1203. Word = 'marsh'. Endif.
-if num = 1204. Word = 'mason'. Endif.
-if num = 1205. Word = 'masse'. Endif.
-if num = 1206. Word = 'match'. Endif.
-if num = 1207. Word = 'matey'. Endif.
-if num = 1208. Word = 'mauve'. Endif.
-if num = 1209. Word = 'maxim'. Endif.
-if num = 1210. Word = 'maybe'. Endif.
-if num = 1211. Word = 'mayor'. Endif.
-if num = 1212. Word = 'mealy'. Endif.
-if num = 1213. Word = 'meant'. Endif.
-if num = 1214. Word = 'meaty'. Endif.
-if num = 1215. Word = 'mecca'. Endif.
-if num = 1216. Word = 'medal'. Endif.
-if num = 1217. Word = 'media'. Endif.
-if num = 1218. Word = 'medic'. Endif.
-if num = 1219. Word = 'melee'. Endif.
-if num = 1220. Word = 'melon'. Endif.
-if num = 1221. Word = 'mercy'. Endif.
-if num = 1222. Word = 'merge'. Endif.
-if num = 1223. Word = 'merit'. Endif.
-if num = 1224. Word = 'merry'. Endif.
-if num = 1225. Word = 'metal'. Endif.
-if num = 1226. Word = 'meter'. Endif.
-if num = 1227. Word = 'metro'. Endif.
-if num = 1228. Word = 'micro'. Endif.
-if num = 1229. Word = 'midge'. Endif.
-if num = 1230. Word = 'midst'. Endif.
-if num = 1231. Word = 'might'. Endif.
-if num = 1232. Word = 'milky'. Endif.
-if num = 1233. Word = 'mimic'. Endif.
-if num = 1234. Word = 'mince'. Endif.
-if num = 1235. Word = 'miner'. Endif.
-if num = 1236. Word = 'minim'. Endif.
-if num = 1237. Word = 'minor'. Endif.
-if num = 1238. Word = 'minty'. Endif.
-if num = 1239. Word = 'minus'. Endif.
-if num = 1240. Word = 'mirth'. Endif.
-if num = 1241. Word = 'miser'. Endif.
-if num = 1242. Word = 'missy'. Endif.
-if num = 1243. Word = 'mocha'. Endif.
-if num = 1244. Word = 'modal'. Endif.
-if num = 1245. Word = 'model'. Endif.
-if num = 1246. Word = 'modem'. Endif.
-if num = 1247. Word = 'mogul'. Endif.
-if num = 1248. Word = 'moist'. Endif.
-if num = 1249. Word = 'molar'. Endif.
-if num = 1250. Word = 'moldy'. Endif.
-if num = 1251. Word = 'money'. Endif.
-if num = 1252. Word = 'month'. Endif.
-if num = 1253. Word = 'moody'. Endif.
-if num = 1254. Word = 'moose'. Endif.
-if num = 1255. Word = 'moral'. Endif.
-if num = 1256. Word = 'moron'. Endif.
-if num = 1257. Word = 'morph'. Endif.
-if num = 1258. Word = 'mossy'. Endif.
-if num = 1259. Word = 'motel'. Endif.
-if num = 1260. Word = 'motif'. Endif.
-if num = 1261. Word = 'motor'. Endif.
-if num = 1262. Word = 'motto'. Endif.
-if num = 1263. Word = 'moult'. Endif.
-if num = 1264. Word = 'mound'. Endif.
-if num = 1265. Word = 'mount'. Endif.
-if num = 1266. Word = 'mourn'. Endif.
-if num = 1267. Word = 'mouse'. Endif.
-if num = 1268. Word = 'mouth'. Endif.
-if num = 1269. Word = 'mover'. Endif.
-if num = 1270. Word = 'movie'. Endif.
-if num = 1271. Word = 'mower'. Endif.
-if num = 1272. Word = 'mucky'. Endif.
-if num = 1273. Word = 'mucus'. Endif.
-if num = 1274. Word = 'muddy'. Endif.
-if num = 1275. Word = 'mulch'. Endif.
-if num = 1276. Word = 'mummy'. Endif.
-if num = 1277. Word = 'munch'. Endif.
-if num = 1278. Word = 'mural'. Endif.
-if num = 1279. Word = 'murky'. Endif.
-if num = 1280. Word = 'mushy'. Endif.
-if num = 1281. Word = 'music'. Endif.
-if num = 1282. Word = 'musky'. Endif.
-if num = 1283. Word = 'musty'. Endif.
-if num = 1284. Word = 'myrrh'. Endif.
-if num = 1285. Word = 'nadir'. Endif.
-if num = 1286. Word = 'naive'. Endif.
-if num = 1287. Word = 'nanny'. Endif.
-if num = 1288. Word = 'nasal'. Endif.
-if num = 1289. Word = 'nasty'. Endif.
-if num = 1290. Word = 'natal'. Endif.
-if num = 1291. Word = 'naval'. Endif.
-if num = 1292. Word = 'navel'. Endif.
-if num = 1293. Word = 'needy'. Endif.
-if num = 1294. Word = 'neigh'. Endif.
-if num = 1295. Word = 'nerdy'. Endif.
-if num = 1296. Word = 'nerve'. Endif.
-if num = 1297. Word = 'never'. Endif.
-if num = 1298. Word = 'newer'. Endif.
-if num = 1299. Word = 'newly'. Endif.
-if num = 1300. Word = 'nicer'. Endif.
-if num = 1301. Word = 'niche'. Endif.
-if num = 1302. Word = 'niece'. Endif.
-if num = 1303. Word = 'night'. Endif.
-if num = 1304. Word = 'ninja'. Endif.
-if num = 1305. Word = 'ninny'. Endif.
-if num = 1306. Word = 'ninth'. Endif.
-if num = 1307. Word = 'noble'. Endif.
-if num = 1308. Word = 'nobly'. Endif.
-if num = 1309. Word = 'noise'. Endif.
-if num = 1310. Word = 'noisy'. Endif.
-if num = 1311. Word = 'nomad'. Endif.
-if num = 1312. Word = 'noose'. Endif.
-if num = 1313. Word = 'north'. Endif.
-if num = 1314. Word = 'nosey'. Endif.
-if num = 1315. Word = 'notch'. Endif.
-if num = 1316. Word = 'novel'. Endif.
-if num = 1317. Word = 'nudge'. Endif.
-if num = 1318. Word = 'nurse'. Endif.
-if num = 1319. Word = 'nutty'. Endif.
-if num = 1320. Word = 'nylon'. Endif.
-if num = 1321. Word = 'nymph'. Endif.
-if num = 1322. Word = 'oaken'. Endif.
-if num = 1323. Word = 'obese'. Endif.
-if num = 1324. Word = 'occur'. Endif.
-if num = 1325. Word = 'ocean'. Endif.
-if num = 1326. Word = 'octal'. Endif.
-if num = 1327. Word = 'octet'. Endif.
-if num = 1328. Word = 'odder'. Endif.
-if num = 1329. Word = 'oddly'. Endif.
-if num = 1330. Word = 'offal'. Endif.
-if num = 1331. Word = 'offer'. Endif.
-if num = 1332. Word = 'often'. Endif.
-if num = 1333. Word = 'olden'. Endif.
-if num = 1334. Word = 'older'. Endif.
-if num = 1335. Word = 'olive'. Endif.
-if num = 1336. Word = 'ombre'. Endif.
-if num = 1337. Word = 'omega'. Endif.
-if num = 1338. Word = 'onion'. Endif.
-if num = 1339. Word = 'onset'. Endif.
-if num = 1340. Word = 'opera'. Endif.
-if num = 1341. Word = 'opine'. Endif.
-if num = 1342. Word = 'opium'. Endif.
-if num = 1343. Word = 'optic'. Endif.
-if num = 1344. Word = 'orbit'. Endif.
-if num = 1345. Word = 'order'. Endif.
-if num = 1346. Word = 'organ'. Endif.
-if num = 1347. Word = 'other'. Endif.
-if num = 1348. Word = 'otter'. Endif.
-if num = 1349. Word = 'ought'. Endif.
-if num = 1350. Word = 'ounce'. Endif.
-if num = 1351. Word = 'outdo'. Endif.
-if num = 1352. Word = 'outer'. Endif.
-if num = 1353. Word = 'outgo'. Endif.
-if num = 1354. Word = 'ovary'. Endif.
-if num = 1355. Word = 'ovate'. Endif.
-if num = 1356. Word = 'overt'. Endif.
-if num = 1357. Word = 'ovine'. Endif.
-if num = 1358. Word = 'ovoid'. Endif.
-if num = 1359. Word = 'owing'. Endif.
-if num = 1360. Word = 'owner'. Endif.
-if num = 1361. Word = 'oxide'. Endif.
-if num = 1362. Word = 'ozone'. Endif.
-if num = 1363. Word = 'paddy'. Endif.
-if num = 1364. Word = 'pagan'. Endif.
-if num = 1365. Word = 'paint'. Endif.
-if num = 1366. Word = 'paler'. Endif.
-if num = 1367. Word = 'palsy'. Endif.
-if num = 1368. Word = 'panel'. Endif.
-if num = 1369. Word = 'panic'. Endif.
-if num = 1370. Word = 'pansy'. Endif.
-if num = 1371. Word = 'papal'. Endif.
-if num = 1372. Word = 'paper'. Endif.
-if num = 1373. Word = 'parer'. Endif.
-if num = 1374. Word = 'parka'. Endif.
-if num = 1375. Word = 'parry'. Endif.
-if num = 1376. Word = 'parse'. Endif.
-if num = 1377. Word = 'party'. Endif.
-if num = 1378. Word = 'pasta'. Endif.
-if num = 1379. Word = 'paste'. Endif.
-if num = 1380. Word = 'pasty'. Endif.
-if num = 1381. Word = 'patch'. Endif.
-if num = 1382. Word = 'patio'. Endif.
-if num = 1383. Word = 'patsy'. Endif.
-if num = 1384. Word = 'patty'. Endif.
-if num = 1385. Word = 'pause'. Endif.
-if num = 1386. Word = 'payee'. Endif.
-if num = 1387. Word = 'payer'. Endif.
-if num = 1388. Word = 'peace'. Endif.
-if num = 1389. Word = 'peach'. Endif.
-if num = 1390. Word = 'pearl'. Endif.
-if num = 1391. Word = 'pecan'. Endif.
-if num = 1392. Word = 'pedal'. Endif.
-if num = 1393. Word = 'penal'. Endif.
-if num = 1394. Word = 'pence'. Endif.
-if num = 1395. Word = 'penne'. Endif.
-if num = 1396. Word = 'penny'. Endif.
-if num = 1397. Word = 'perch'. Endif.
-if num = 1398. Word = 'peril'. Endif.
-if num = 1399. Word = 'perky'. Endif.
-if num = 1400. Word = 'pesky'. Endif.
-if num = 1401. Word = 'pesto'. Endif.
-if num = 1402. Word = 'petal'. Endif.
-if num = 1403. Word = 'petty'. Endif.
-if num = 1404. Word = 'phase'. Endif.
-if num = 1405. Word = 'phone'. Endif.
-if num = 1406. Word = 'phony'. Endif.
-if num = 1407. Word = 'photo'. Endif.
-if num = 1408. Word = 'piano'. Endif.
-if num = 1409. Word = 'picky'. Endif.
-if num = 1410. Word = 'piece'. Endif.
-if num = 1411. Word = 'piety'. Endif.
-if num = 1412. Word = 'piggy'. Endif.
-if num = 1413. Word = 'pilot'. Endif.
-if num = 1414. Word = 'pinch'. Endif.
-if num = 1415. Word = 'piney'. Endif.
-if num = 1416. Word = 'pinky'. Endif.
-if num = 1417. Word = 'pinto'. Endif.
-if num = 1418. Word = 'piper'. Endif.
-if num = 1419. Word = 'pique'. Endif.
-if num = 1420. Word = 'pitch'. Endif.
-if num = 1421. Word = 'pithy'. Endif.
-if num = 1422. Word = 'pivot'. Endif.
-if num = 1423. Word = 'pixel'. Endif.
-if num = 1424. Word = 'pixie'. Endif.
-if num = 1425. Word = 'pizza'. Endif.
-if num = 1426. Word = 'place'. Endif.
-if num = 1427. Word = 'plaid'. Endif.
-if num = 1428. Word = 'plain'. Endif.
-if num = 1429. Word = 'plait'. Endif.
-if num = 1430. Word = 'plane'. Endif.
-if num = 1431. Word = 'plank'. Endif.
-if num = 1432. Word = 'plant'. Endif.
-if num = 1433. Word = 'plate'. Endif.
-if num = 1434. Word = 'plaza'. Endif.
-if num = 1435. Word = 'plead'. Endif.
-if num = 1436. Word = 'pleat'. Endif.
-if num = 1437. Word = 'plied'. Endif.
-if num = 1438. Word = 'plier'. Endif.
-if num = 1439. Word = 'pluck'. Endif.
-if num = 1440. Word = 'plumb'. Endif.
-if num = 1441. Word = 'plume'. Endif.
-if num = 1442. Word = 'plump'. Endif.
-if num = 1443. Word = 'plunk'. Endif.
-if num = 1444. Word = 'plush'. Endif.
-if num = 1445. Word = 'poesy'. Endif.
-if num = 1446. Word = 'point'. Endif.
-if num = 1447. Word = 'poise'. Endif.
-if num = 1448. Word = 'poker'. Endif.
-if num = 1449. Word = 'polar'. Endif.
-if num = 1450. Word = 'polka'. Endif.
-if num = 1451. Word = 'polyp'. Endif.
-if num = 1452. Word = 'pooch'. Endif.
-if num = 1453. Word = 'poppy'. Endif.
-if num = 1454. Word = 'porch'. Endif.
-if num = 1455. Word = 'poser'. Endif.
-if num = 1456. Word = 'posit'. Endif.
-if num = 1457. Word = 'posse'. Endif.
-if num = 1458. Word = 'pouch'. Endif.
-if num = 1459. Word = 'pound'. Endif.
-if num = 1460. Word = 'pouty'. Endif.
-if num = 1461. Word = 'power'. Endif.
-if num = 1462. Word = 'prank'. Endif.
-if num = 1463. Word = 'prawn'. Endif.
-if num = 1464. Word = 'preen'. Endif.
-if num = 1465. Word = 'press'. Endif.
-if num = 1466. Word = 'price'. Endif.
-if num = 1467. Word = 'prick'. Endif.
-if num = 1468. Word = 'pride'. Endif.
-if num = 1469. Word = 'pried'. Endif.
-if num = 1470. Word = 'prime'. Endif.
-if num = 1471. Word = 'primo'. Endif.
-if num = 1472. Word = 'print'. Endif.
-if num = 1473. Word = 'prior'. Endif.
-if num = 1474. Word = 'prism'. Endif.
-if num = 1475. Word = 'privy'. Endif.
-if num = 1476. Word = 'prize'. Endif.
-if num = 1477. Word = 'probe'. Endif.
-if num = 1478. Word = 'prone'. Endif.
-if num = 1479. Word = 'prong'. Endif.
-if num = 1480. Word = 'proof'. Endif.
-if num = 1481. Word = 'prose'. Endif.
-if num = 1482. Word = 'proud'. Endif.
-if num = 1483. Word = 'prove'. Endif.
-if num = 1484. Word = 'prowl'. Endif.
-if num = 1485. Word = 'proxy'. Endif.
-if num = 1486. Word = 'prude'. Endif.
-if num = 1487. Word = 'prune'. Endif.
-if num = 1488. Word = 'psalm'. Endif.
-if num = 1489. Word = 'pubic'. Endif.
-if num = 1490. Word = 'pudgy'. Endif.
-if num = 1491. Word = 'puffy'. Endif.
-if num = 1492. Word = 'pulpy'. Endif.
-if num = 1493. Word = 'pulse'. Endif.
-if num = 1494. Word = 'punch'. Endif.
-if num = 1495. Word = 'pupal'. Endif.
-if num = 1496. Word = 'pupil'. Endif.
-if num = 1497. Word = 'puppy'. Endif.
-if num = 1498. Word = 'puree'. Endif.
-if num = 1499. Word = 'purer'. Endif.
-if num = 1500. Word = 'purge'. Endif.
-if num = 1501. Word = 'purse'. Endif.
-if num = 1502. Word = 'pushy'. Endif.
-if num = 1503. Word = 'putty'. Endif.
-if num = 1504. Word = 'pygmy'. Endif.
-if num = 1505. Word = 'quack'. Endif.
-if num = 1506. Word = 'quail'. Endif.
-if num = 1507. Word = 'quake'. Endif.
-if num = 1508. Word = 'qualm'. Endif.
-if num = 1509. Word = 'quark'. Endif.
-if num = 1510. Word = 'quart'. Endif.
-if num = 1511. Word = 'quash'. Endif.
-if num = 1512. Word = 'quasi'. Endif.
-if num = 1513. Word = 'queen'. Endif.
-if num = 1514. Word = 'queer'. Endif.
-if num = 1515. Word = 'quell'. Endif.
-if num = 1516. Word = 'query'. Endif.
-if num = 1517. Word = 'quest'. Endif.
-if num = 1518. Word = 'queue'. Endif.
-if num = 1519. Word = 'quick'. Endif.
-if num = 1520. Word = 'quiet'. Endif.
-if num = 1521. Word = 'quill'. Endif.
-if num = 1522. Word = 'quilt'. Endif.
-if num = 1523. Word = 'quirk'. Endif.
-if num = 1524. Word = 'quite'. Endif.
-if num = 1525. Word = 'quota'. Endif.
-if num = 1526. Word = 'quote'. Endif.
-if num = 1527. Word = 'quoth'. Endif.
-if num = 1528. Word = 'rabbi'. Endif.
-if num = 1529. Word = 'rabid'. Endif.
-if num = 1530. Word = 'racer'. Endif.
-if num = 1531. Word = 'radar'. Endif.
-if num = 1532. Word = 'radii'. Endif.
-if num = 1533. Word = 'radio'. Endif.
-if num = 1534. Word = 'rainy'. Endif.
-if num = 1535. Word = 'raise'. Endif.
-if num = 1536. Word = 'rajah'. Endif.
-if num = 1537. Word = 'rally'. Endif.
-if num = 1538. Word = 'ralph'. Endif.
-if num = 1539. Word = 'ramen'. Endif.
-if num = 1540. Word = 'ranch'. Endif.
-if num = 1541. Word = 'randy'. Endif.
-if num = 1542. Word = 'range'. Endif.
-if num = 1543. Word = 'rapid'. Endif.
-if num = 1544. Word = 'rarer'. Endif.
-if num = 1545. Word = 'raspy'. Endif.
-if num = 1546. Word = 'ratio'. Endif.
-if num = 1547. Word = 'ratty'. Endif.
-if num = 1548. Word = 'raven'. Endif.
-if num = 1549. Word = 'rayon'. Endif.
-if num = 1550. Word = 'razor'. Endif.
-if num = 1551. Word = 'reach'. Endif.
-if num = 1552. Word = 'react'. Endif.
-if num = 1553. Word = 'ready'. Endif.
-if num = 1554. Word = 'realm'. Endif.
-if num = 1555. Word = 'rearm'. Endif.
-if num = 1556. Word = 'rebar'. Endif.
-if num = 1557. Word = 'rebel'. Endif.
-if num = 1558. Word = 'rebus'. Endif.
-if num = 1559. Word = 'rebut'. Endif.
-if num = 1560. Word = 'recap'. Endif.
-if num = 1561. Word = 'recur'. Endif.
-if num = 1562. Word = 'recut'. Endif.
-if num = 1563. Word = 'reedy'. Endif.
-if num = 1564. Word = 'refer'. Endif.
-if num = 1565. Word = 'refit'. Endif.
-if num = 1566. Word = 'regal'. Endif.
-if num = 1567. Word = 'rehab'. Endif.
-if num = 1568. Word = 'reign'. Endif.
-if num = 1569. Word = 'relax'. Endif.
-if num = 1570. Word = 'relay'. Endif.
-if num = 1571. Word = 'relic'. Endif.
-if num = 1572. Word = 'remit'. Endif.
-if num = 1573. Word = 'renal'. Endif.
-if num = 1574. Word = 'renew'. Endif.
-if num = 1575. Word = 'repay'. Endif.
-if num = 1576. Word = 'repel'. Endif.
-if num = 1577. Word = 'reply'. Endif.
-if num = 1578. Word = 'rerun'. Endif.
-if num = 1579. Word = 'reset'. Endif.
-if num = 1580. Word = 'resin'. Endif.
-if num = 1581. Word = 'retch'. Endif.
-if num = 1582. Word = 'retro'. Endif.
-if num = 1583. Word = 'retry'. Endif.
-if num = 1584. Word = 'reuse'. Endif.
-if num = 1585. Word = 'revel'. Endif.
-if num = 1586. Word = 'revue'. Endif.
-if num = 1587. Word = 'rhino'. Endif.
-if num = 1588. Word = 'rhyme'. Endif.
-if num = 1589. Word = 'rider'. Endif.
-if num = 1590. Word = 'ridge'. Endif.
-if num = 1591. Word = 'rifle'. Endif.
-if num = 1592. Word = 'right'. Endif.
-if num = 1593. Word = 'rigid'. Endif.
-if num = 1594. Word = 'rigor'. Endif.
-if num = 1595. Word = 'rinse'. Endif.
-if num = 1596. Word = 'ripen'. Endif.
-if num = 1597. Word = 'riper'. Endif.
-if num = 1598. Word = 'risen'. Endif.
-if num = 1599. Word = 'riser'. Endif.
-if num = 1600. Word = 'risky'. Endif.
-if num = 1601. Word = 'rival'. Endif.
-if num = 1602. Word = 'river'. Endif.
-if num = 1603. Word = 'rivet'. Endif.
-if num = 1604. Word = 'roach'. Endif.
-if num = 1605. Word = 'roast'. Endif.
-if num = 1606. Word = 'robin'. Endif.
-if num = 1607. Word = 'robot'. Endif.
-if num = 1608. Word = 'rocky'. Endif.
-if num = 1609. Word = 'rodeo'. Endif.
-if num = 1610. Word = 'roger'. Endif.
-if num = 1611. Word = 'rogue'. Endif.
-if num = 1612. Word = 'roomy'. Endif.
-if num = 1613. Word = 'roost'. Endif.
-if num = 1614. Word = 'rotor'. Endif.
-if num = 1615. Word = 'rouge'. Endif.
-if num = 1616. Word = 'rough'. Endif.
-if num = 1617. Word = 'round'. Endif.
-if num = 1618. Word = 'rouse'. Endif.
-if num = 1619. Word = 'route'. Endif.
-if num = 1620. Word = 'rover'. Endif.
-if num = 1621. Word = 'rowdy'. Endif.
-if num = 1622. Word = 'rower'. Endif.
-if num = 1623. Word = 'royal'. Endif.
-if num = 1624. Word = 'ruddy'. Endif.
-if num = 1625. Word = 'ruder'. Endif.
-if num = 1626. Word = 'rugby'. Endif.
-if num = 1627. Word = 'ruler'. Endif.
-if num = 1628. Word = 'rumba'. Endif.
-if num = 1629. Word = 'rumor'. Endif.
-if num = 1630. Word = 'rupee'. Endif.
-if num = 1631. Word = 'rural'. Endif.
-if num = 1632. Word = 'rusty'. Endif.
-if num = 1633. Word = 'sadly'. Endif.
-if num = 1634. Word = 'safer'. Endif.
-if num = 1635. Word = 'saint'. Endif.
-if num = 1636. Word = 'salad'. Endif.
-if num = 1637. Word = 'sally'. Endif.
-if num = 1638. Word = 'salon'. Endif.
-if num = 1639. Word = 'salsa'. Endif.
-if num = 1640. Word = 'salty'. Endif.
-if num = 1641. Word = 'salve'. Endif.
-if num = 1642. Word = 'salvo'. Endif.
-if num = 1643. Word = 'sandy'. Endif.
-if num = 1644. Word = 'saner'. Endif.
-if num = 1645. Word = 'sappy'. Endif.
-if num = 1646. Word = 'sassy'. Endif.
-if num = 1647. Word = 'satin'. Endif.
-if num = 1648. Word = 'satyr'. Endif.
-if num = 1649. Word = 'sauce'. Endif.
-if num = 1650. Word = 'saucy'. Endif.
-if num = 1651. Word = 'sauna'. Endif.
-if num = 1652. Word = 'saute'. Endif.
-if num = 1653. Word = 'savor'. Endif.
-if num = 1654. Word = 'savoy'. Endif.
-if num = 1655. Word = 'savvy'. Endif.
-if num = 1656. Word = 'scald'. Endif.
-if num = 1657. Word = 'scale'. Endif.
-if num = 1658. Word = 'scalp'. Endif.
-if num = 1659. Word = 'scaly'. Endif.
-if num = 1660. Word = 'scamp'. Endif.
-if num = 1661. Word = 'scant'. Endif.
-if num = 1662. Word = 'scare'. Endif.
-if num = 1663. Word = 'scarf'. Endif.
-if num = 1664. Word = 'scary'. Endif.
-if num = 1665. Word = 'scene'. Endif.
-if num = 1666. Word = 'scent'. Endif.
-if num = 1667. Word = 'scion'. Endif.
-if num = 1668. Word = 'scoff'. Endif.
-if num = 1669. Word = 'scold'. Endif.
-if num = 1670. Word = 'scone'. Endif.
-if num = 1671. Word = 'scoop'. Endif.
-if num = 1672. Word = 'scope'. Endif.
-if num = 1673. Word = 'score'. Endif.
-if num = 1674. Word = 'scorn'. Endif.
-if num = 1675. Word = 'scour'. Endif.
-if num = 1676. Word = 'scout'. Endif.
-if num = 1677. Word = 'scowl'. Endif.
-if num = 1678. Word = 'scram'. Endif.
-if num = 1679. Word = 'scrap'. Endif.
-if num = 1680. Word = 'scree'. Endif.
-if num = 1681. Word = 'screw'. Endif.
-if num = 1682. Word = 'scrub'. Endif.
-if num = 1683. Word = 'scrum'. Endif.
-if num = 1684. Word = 'scuba'. Endif.
-if num = 1685. Word = 'sedan'. Endif.
-if num = 1686. Word = 'seedy'. Endif.
-if num = 1687. Word = 'segue'. Endif.
-if num = 1688. Word = 'seize'. Endif.
-if num = 1689. Word = 'semen'. Endif.
-if num = 1690. Word = 'sense'. Endif.
-if num = 1691. Word = 'sepia'. Endif.
-if num = 1692. Word = 'serif'. Endif.
-if num = 1693. Word = 'serum'. Endif.
-if num = 1694. Word = 'serve'. Endif.
-if num = 1695. Word = 'setup'. Endif.
-if num = 1696. Word = 'seven'. Endif.
-if num = 1697. Word = 'sever'. Endif.
-if num = 1698. Word = 'sewer'. Endif.
-if num = 1699. Word = 'shack'. Endif.
-if num = 1700. Word = 'shade'. Endif.
-if num = 1701. Word = 'shady'. Endif.
-if num = 1702. Word = 'shaft'. Endif.
-if num = 1703. Word = 'shake'. Endif.
-if num = 1704. Word = 'shaky'. Endif.
-if num = 1705. Word = 'shale'. Endif.
-if num = 1706. Word = 'shall'. Endif.
-if num = 1707. Word = 'shalt'. Endif.
-if num = 1708. Word = 'shame'. Endif.
-if num = 1709. Word = 'shank'. Endif.
-if num = 1710. Word = 'shape'. Endif.
-if num = 1711. Word = 'shard'. Endif.
-if num = 1712. Word = 'share'. Endif.
-if num = 1713. Word = 'shark'. Endif.
-if num = 1714. Word = 'sharp'. Endif.
-if num = 1715. Word = 'shave'. Endif.
-if num = 1716. Word = 'shawl'. Endif.
-if num = 1717. Word = 'shear'. Endif.
-if num = 1718. Word = 'sheen'. Endif.
-if num = 1719. Word = 'sheep'. Endif.
-if num = 1720. Word = 'sheer'. Endif.
-if num = 1721. Word = 'sheet'. Endif.
-if num = 1722. Word = 'sheik'. Endif.
-if num = 1723. Word = 'shelf'. Endif.
-if num = 1724. Word = 'shell'. Endif.
-if num = 1725. Word = 'shied'. Endif.
-if num = 1726. Word = 'shift'. Endif.
-if num = 1727. Word = 'shine'. Endif.
-if num = 1728. Word = 'shiny'. Endif.
-if num = 1729. Word = 'shire'. Endif.
-if num = 1730. Word = 'shirk'. Endif.
-if num = 1731. Word = 'shirt'. Endif.
-if num = 1732. Word = 'shoal'. Endif.
-if num = 1733. Word = 'shock'. Endif.
-if num = 1734. Word = 'shone'. Endif.
-if num = 1735. Word = 'shook'. Endif.
-if num = 1736. Word = 'shoot'. Endif.
-if num = 1737. Word = 'shore'. Endif.
-if num = 1738. Word = 'shorn'. Endif.
-if num = 1739. Word = 'short'. Endif.
-if num = 1740. Word = 'shout'. Endif.
-if num = 1741. Word = 'shove'. Endif.
-if num = 1742. Word = 'shown'. Endif.
-if num = 1743. Word = 'showy'. Endif.
-if num = 1744. Word = 'shrew'. Endif.
-if num = 1745. Word = 'shrub'. Endif.
-if num = 1746. Word = 'shrug'. Endif.
-if num = 1747. Word = 'shuck'. Endif.
-if num = 1748. Word = 'shunt'. Endif.
-if num = 1749. Word = 'shush'. Endif.
-if num = 1750. Word = 'shyly'. Endif.
-if num = 1751. Word = 'siege'. Endif.
-if num = 1752. Word = 'sieve'. Endif.
-if num = 1753. Word = 'sight'. Endif.
-if num = 1754. Word = 'sigma'. Endif.
-if num = 1755. Word = 'silky'. Endif.
-if num = 1756. Word = 'silly'. Endif.
-if num = 1757. Word = 'since'. Endif.
-if num = 1758. Word = 'sinew'. Endif.
-if num = 1759. Word = 'singe'. Endif.
-if num = 1760. Word = 'siren'. Endif.
-if num = 1761. Word = 'sissy'. Endif.
-if num = 1762. Word = 'sixth'. Endif.
-if num = 1763. Word = 'sixty'. Endif.
-if num = 1764. Word = 'skate'. Endif.
-if num = 1765. Word = 'skier'. Endif.
-if num = 1766. Word = 'skiff'. Endif.
-if num = 1767. Word = 'skill'. Endif.
-if num = 1768. Word = 'skimp'. Endif.
-if num = 1769. Word = 'skirt'. Endif.
-if num = 1770. Word = 'skulk'. Endif.
-if num = 1771. Word = 'skull'. Endif.
-if num = 1772. Word = 'skunk'. Endif.
-if num = 1773. Word = 'slack'. Endif.
-if num = 1774. Word = 'slain'. Endif.
-if num = 1775. Word = 'slang'. Endif.
-if num = 1776. Word = 'slant'. Endif.
-if num = 1777. Word = 'slash'. Endif.
-if num = 1778. Word = 'slate'. Endif.
-if num = 1779. Word = 'slave'. Endif.
-if num = 1780. Word = 'sleek'. Endif.
-if num = 1781. Word = 'sleep'. Endif.
-if num = 1782. Word = 'sleet'. Endif.
-if num = 1783. Word = 'slept'. Endif.
-if num = 1784. Word = 'slice'. Endif.
-if num = 1785. Word = 'slick'. Endif.
-if num = 1786. Word = 'slide'. Endif.
-if num = 1787. Word = 'slime'. Endif.
-if num = 1788. Word = 'slimy'. Endif.
-if num = 1789. Word = 'sling'. Endif.
-if num = 1790. Word = 'slink'. Endif.
-if num = 1791. Word = 'sloop'. Endif.
-if num = 1792. Word = 'slope'. Endif.
-if num = 1793. Word = 'slosh'. Endif.
-if num = 1794. Word = 'sloth'. Endif.
-if num = 1795. Word = 'slump'. Endif.
-if num = 1796. Word = 'slung'. Endif.
-if num = 1797. Word = 'slunk'. Endif.
-if num = 1798. Word = 'slurp'. Endif.
-if num = 1799. Word = 'slush'. Endif.
-if num = 1800. Word = 'slyly'. Endif.
-if num = 1801. Word = 'smack'. Endif.
-if num = 1802. Word = 'small'. Endif.
-if num = 1803. Word = 'smart'. Endif.
-if num = 1804. Word = 'smash'. Endif.
-if num = 1805. Word = 'smear'. Endif.
-if num = 1806. Word = 'smell'. Endif.
-if num = 1807. Word = 'smelt'. Endif.
-if num = 1808. Word = 'smile'. Endif.
-if num = 1809. Word = 'smirk'. Endif.
-if num = 1810. Word = 'smite'. Endif.
-if num = 1811. Word = 'smith'. Endif.
-if num = 1812. Word = 'smock'. Endif.
-if num = 1813. Word = 'smoke'. Endif.
-if num = 1814. Word = 'smoky'. Endif.
-if num = 1815. Word = 'smote'. Endif.
-if num = 1816. Word = 'snack'. Endif.
-if num = 1817. Word = 'snail'. Endif.
-if num = 1818. Word = 'snake'. Endif.
-if num = 1819. Word = 'snaky'. Endif.
-if num = 1820. Word = 'snare'. Endif.
-if num = 1821. Word = 'snarl'. Endif.
-if num = 1822. Word = 'sneak'. Endif.
-if num = 1823. Word = 'sneer'. Endif.
-if num = 1824. Word = 'snide'. Endif.
-if num = 1825. Word = 'sniff'. Endif.
-if num = 1826. Word = 'snipe'. Endif.
-if num = 1827. Word = 'snoop'. Endif.
-if num = 1828. Word = 'snore'. Endif.
-if num = 1829. Word = 'snort'. Endif.
-if num = 1830. Word = 'snout'. Endif.
-if num = 1831. Word = 'snowy'. Endif.
-if num = 1832. Word = 'snuck'. Endif.
-if num = 1833. Word = 'snuff'. Endif.
-if num = 1834. Word = 'soapy'. Endif.
-if num = 1835. Word = 'sober'. Endif.
-if num = 1836. Word = 'soggy'. Endif.
-if num = 1837. Word = 'solar'. Endif.
-if num = 1838. Word = 'solid'. Endif.
-if num = 1839. Word = 'solve'. Endif.
-if num = 1840. Word = 'sonar'. Endif.
-if num = 1841. Word = 'sonic'. Endif.
-if num = 1842. Word = 'sooth'. Endif.
-if num = 1843. Word = 'sooty'. Endif.
-if num = 1844. Word = 'sorry'. Endif.
-if num = 1845. Word = 'sound'. Endif.
-if num = 1846. Word = 'south'. Endif.
-if num = 1847. Word = 'sower'. Endif.
-if num = 1848. Word = 'space'. Endif.
-if num = 1849. Word = 'spade'. Endif.
-if num = 1850. Word = 'spank'. Endif.
-if num = 1851. Word = 'spare'. Endif.
-if num = 1852. Word = 'spark'. Endif.
-if num = 1853. Word = 'spasm'. Endif.
-if num = 1854. Word = 'spawn'. Endif.
-if num = 1855. Word = 'speak'. Endif.
-if num = 1856. Word = 'spear'. Endif.
-if num = 1857. Word = 'speck'. Endif.
-if num = 1858. Word = 'speed'. Endif.
-if num = 1859. Word = 'spell'. Endif.
-if num = 1860. Word = 'spelt'. Endif.
-if num = 1861. Word = 'spend'. Endif.
-if num = 1862. Word = 'spent'. Endif.
-if num = 1863. Word = 'sperm'. Endif.
-if num = 1864. Word = 'spice'. Endif.
-if num = 1865. Word = 'spicy'. Endif.
-if num = 1866. Word = 'spied'. Endif.
-if num = 1867. Word = 'spiel'. Endif.
-if num = 1868. Word = 'spike'. Endif.
-if num = 1869. Word = 'spiky'. Endif.
-if num = 1870. Word = 'spill'. Endif.
-if num = 1871. Word = 'spilt'. Endif.
-if num = 1872. Word = 'spine'. Endif.
-if num = 1873. Word = 'spiny'. Endif.
-if num = 1874. Word = 'spire'. Endif.
-if num = 1875. Word = 'spite'. Endif.
-if num = 1876. Word = 'splat'. Endif.
-if num = 1877. Word = 'split'. Endif.
-if num = 1878. Word = 'spoil'. Endif.
-if num = 1879. Word = 'spoke'. Endif.
-if num = 1880. Word = 'spoof'. Endif.
-if num = 1881. Word = 'spook'. Endif.
-if num = 1882. Word = 'spool'. Endif.
-if num = 1883. Word = 'spoon'. Endif.
-if num = 1884. Word = 'spore'. Endif.
-if num = 1885. Word = 'sport'. Endif.
-if num = 1886. Word = 'spout'. Endif.
-if num = 1887. Word = 'spray'. Endif.
-if num = 1888. Word = 'spree'. Endif.
-if num = 1889. Word = 'sprig'. Endif.
-if num = 1890. Word = 'spunk'. Endif.
-if num = 1891. Word = 'spurn'. Endif.
-if num = 1892. Word = 'spurt'. Endif.
-if num = 1893. Word = 'squad'. Endif.
-if num = 1894. Word = 'squat'. Endif.
-if num = 1895. Word = 'squib'. Endif.
-if num = 1896. Word = 'stack'. Endif.
-if num = 1897. Word = 'staff'. Endif.
-if num = 1898. Word = 'stage'. Endif.
-if num = 1899. Word = 'staid'. Endif.
-if num = 1900. Word = 'stain'. Endif.
-if num = 1901. Word = 'stair'. Endif.
-if num = 1902. Word = 'stake'. Endif.
-if num = 1903. Word = 'stale'. Endif.
-if num = 1904. Word = 'stalk'. Endif.
-if num = 1905. Word = 'stall'. Endif.
-if num = 1906. Word = 'stamp'. Endif.
-if num = 1907. Word = 'stand'. Endif.
-if num = 1908. Word = 'stank'. Endif.
-if num = 1909. Word = 'stare'. Endif.
-if num = 1910. Word = 'stark'. Endif.
-if num = 1911. Word = 'start'. Endif.
-if num = 1912. Word = 'stash'. Endif.
-if num = 1913. Word = 'state'. Endif.
-if num = 1914. Word = 'stave'. Endif.
-if num = 1915. Word = 'stead'. Endif.
-if num = 1916. Word = 'steak'. Endif.
-if num = 1917. Word = 'steal'. Endif.
-if num = 1918. Word = 'steam'. Endif.
-if num = 1919. Word = 'steed'. Endif.
-if num = 1920. Word = 'steel'. Endif.
-if num = 1921. Word = 'steep'. Endif.
-if num = 1922. Word = 'steer'. Endif.
-if num = 1923. Word = 'stein'. Endif.
-if num = 1924. Word = 'stern'. Endif.
-if num = 1925. Word = 'stick'. Endif.
-if num = 1926. Word = 'stiff'. Endif.
-if num = 1927. Word = 'still'. Endif.
-if num = 1928. Word = 'stilt'. Endif.
-if num = 1929. Word = 'sting'. Endif.
-if num = 1930. Word = 'stink'. Endif.
-if num = 1931. Word = 'stint'. Endif.
-if num = 1932. Word = 'stock'. Endif.
-if num = 1933. Word = 'stoic'. Endif.
-if num = 1934. Word = 'stoke'. Endif.
-if num = 1935. Word = 'stole'. Endif.
-if num = 1936. Word = 'stomp'. Endif.
-if num = 1937. Word = 'stone'. Endif.
-if num = 1938. Word = 'stony'. Endif.
-if num = 1939. Word = 'stood'. Endif.
-if num = 1940. Word = 'stool'. Endif.
-if num = 1941. Word = 'stoop'. Endif.
-if num = 1942. Word = 'store'. Endif.
-if num = 1943. Word = 'stork'. Endif.
-if num = 1944. Word = 'storm'. Endif.
-if num = 1945. Word = 'story'. Endif.
-if num = 1946. Word = 'stout'. Endif.
-if num = 1947. Word = 'stove'. Endif.
-if num = 1948. Word = 'strap'. Endif.
-if num = 1949. Word = 'straw'. Endif.
-if num = 1950. Word = 'stray'. Endif.
-if num = 1951. Word = 'strip'. Endif.
-if num = 1952. Word = 'strut'. Endif.
-if num = 1953. Word = 'stuck'. Endif.
-if num = 1954. Word = 'study'. Endif.
-if num = 1955. Word = 'stuff'. Endif.
-if num = 1956. Word = 'stump'. Endif.
-if num = 1957. Word = 'stung'. Endif.
-if num = 1958. Word = 'stunk'. Endif.
-if num = 1959. Word = 'stunt'. Endif.
-if num = 1960. Word = 'style'. Endif.
-if num = 1961. Word = 'suave'. Endif.
-if num = 1962. Word = 'sugar'. Endif.
-if num = 1963. Word = 'suing'. Endif.
-if num = 1964. Word = 'suite'. Endif.
-if num = 1965. Word = 'sulky'. Endif.
-if num = 1966. Word = 'sully'. Endif.
-if num = 1967. Word = 'sumac'. Endif.
-if num = 1968. Word = 'sunny'. Endif.
-if num = 1969. Word = 'super'. Endif.
-if num = 1970. Word = 'surer'. Endif.
-if num = 1971. Word = 'surge'. Endif.
-if num = 1972. Word = 'surly'. Endif.
-if num = 1973. Word = 'sushi'. Endif.
-if num = 1974. Word = 'swami'. Endif.
-if num = 1975. Word = 'swamp'. Endif.
-if num = 1976. Word = 'swarm'. Endif.
-if num = 1977. Word = 'swash'. Endif.
-if num = 1978. Word = 'swath'. Endif.
-if num = 1979. Word = 'swear'. Endif.
-if num = 1980. Word = 'sweat'. Endif.
-if num = 1981. Word = 'sweep'. Endif.
-if num = 1982. Word = 'sweet'. Endif.
-if num = 1983. Word = 'swell'. Endif.
-if num = 1984. Word = 'swept'. Endif.
-if num = 1985. Word = 'swift'. Endif.
-if num = 1986. Word = 'swill'. Endif.
-if num = 1987. Word = 'swine'. Endif.
-if num = 1988. Word = 'swing'. Endif.
-if num = 1989. Word = 'swirl'. Endif.
-if num = 1990. Word = 'swish'. Endif.
-if num = 1991. Word = 'swoon'. Endif.
-if num = 1992. Word = 'swoop'. Endif.
-if num = 1993. Word = 'sword'. Endif.
-if num = 1994. Word = 'swore'. Endif.
-if num = 1995. Word = 'sworn'. Endif.
-if num = 1996. Word = 'swung'. Endif.
-if num = 1997. Word = 'synod'. Endif.
-if num = 1998. Word = 'syrup'. Endif.
-if num = 1999. Word = 'tabby'. Endif.
-if num = 2000. Word = 'table'. Endif.
-if num = 2001. Word = 'taboo'. Endif.
-if num = 2002. Word = 'tacit'. Endif.
-if num = 2003. Word = 'tacky'. Endif.
-if num = 2004. Word = 'taffy'. Endif.
-if num = 2005. Word = 'taint'. Endif.
-if num = 2006. Word = 'taken'. Endif.
-if num = 2007. Word = 'taker'. Endif.
-if num = 2008. Word = 'tally'. Endif.
-if num = 2009. Word = 'talon'. Endif.
-if num = 2010. Word = 'tamer'. Endif.
-if num = 2011. Word = 'tango'. Endif.
-if num = 2012. Word = 'tangy'. Endif.
-if num = 2013. Word = 'taper'. Endif.
-if num = 2014. Word = 'tapir'. Endif.
-if num = 2015. Word = 'tardy'. Endif.
-if num = 2016. Word = 'tarot'. Endif.
-if num = 2017. Word = 'taste'. Endif.
-if num = 2018. Word = 'tasty'. Endif.
-if num = 2019. Word = 'tatty'. Endif.
-if num = 2020. Word = 'taunt'. Endif.
-if num = 2021. Word = 'tawny'. Endif.
-if num = 2022. Word = 'teach'. Endif.
-if num = 2023. Word = 'teary'. Endif.
-if num = 2024. Word = 'tease'. Endif.
-if num = 2025. Word = 'teddy'. Endif.
-if num = 2026. Word = 'teeth'. Endif.
-if num = 2027. Word = 'tempo'. Endif.
-if num = 2028. Word = 'tenet'. Endif.
-if num = 2029. Word = 'tenor'. Endif.
-if num = 2030. Word = 'tense'. Endif.
-if num = 2031. Word = 'tenth'. Endif.
-if num = 2032. Word = 'tepee'. Endif.
-if num = 2033. Word = 'tepid'. Endif.
-if num = 2034. Word = 'terra'. Endif.
-if num = 2035. Word = 'terse'. Endif.
-if num = 2036. Word = 'testy'. Endif.
-if num = 2037. Word = 'thank'. Endif.
-if num = 2038. Word = 'theft'. Endif.
-if num = 2039. Word = 'their'. Endif.
-if num = 2040. Word = 'theme'. Endif.
-if num = 2041. Word = 'there'. Endif.
-if num = 2042. Word = 'these'. Endif.
-if num = 2043. Word = 'theta'. Endif.
-if num = 2044. Word = 'thick'. Endif.
-if num = 2045. Word = 'thief'. Endif.
-if num = 2046. Word = 'thigh'. Endif.
-if num = 2047. Word = 'thing'. Endif.
-if num = 2048. Word = 'think'. Endif.
-if num = 2049. Word = 'third'. Endif.
-if num = 2050. Word = 'thong'. Endif.
-if num = 2051. Word = 'thorn'. Endif.
-if num = 2052. Word = 'those'. Endif.
-if num = 2053. Word = 'three'. Endif.
-if num = 2054. Word = 'threw'. Endif.
-if num = 2055. Word = 'throb'. Endif.
-if num = 2056. Word = 'throw'. Endif.
-if num = 2057. Word = 'thrum'. Endif.
-if num = 2058. Word = 'thumb'. Endif.
-if num = 2059. Word = 'thump'. Endif.
-if num = 2060. Word = 'thyme'. Endif.
-if num = 2061. Word = 'tiara'. Endif.
-if num = 2062. Word = 'tibia'. Endif.
-if num = 2063. Word = 'tidal'. Endif.
-if num = 2064. Word = 'tiger'. Endif.
-if num = 2065. Word = 'tight'. Endif.
-if num = 2066. Word = 'tilde'. Endif.
-if num = 2067. Word = 'timer'. Endif.
-if num = 2068. Word = 'timid'. Endif.
-if num = 2069. Word = 'tipsy'. Endif.
-if num = 2070. Word = 'titan'. Endif.
-if num = 2071. Word = 'tithe'. Endif.
-if num = 2072. Word = 'title'. Endif.
-if num = 2073. Word = 'toast'. Endif.
-if num = 2074. Word = 'today'. Endif.
-if num = 2075. Word = 'toddy'. Endif.
-if num = 2076. Word = 'token'. Endif.
-if num = 2077. Word = 'tonal'. Endif.
-if num = 2078. Word = 'tonga'. Endif.
-if num = 2079. Word = 'tonic'. Endif.
-if num = 2080. Word = 'tooth'. Endif.
-if num = 2081. Word = 'topaz'. Endif.
-if num = 2082. Word = 'topic'. Endif.
-if num = 2083. Word = 'torch'. Endif.
-if num = 2084. Word = 'torso'. Endif.
-if num = 2085. Word = 'torus'. Endif.
-if num = 2086. Word = 'total'. Endif.
-if num = 2087. Word = 'totem'. Endif.
-if num = 2088. Word = 'touch'. Endif.
-if num = 2089. Word = 'tough'. Endif.
-if num = 2090. Word = 'towel'. Endif.
-if num = 2091. Word = 'tower'. Endif.
-if num = 2092. Word = 'toxic'. Endif.
-if num = 2093. Word = 'toxin'. Endif.
-if num = 2094. Word = 'trace'. Endif.
-if num = 2095. Word = 'track'. Endif.
-if num = 2096. Word = 'tract'. Endif.
-if num = 2097. Word = 'trade'. Endif.
-if num = 2098. Word = 'trail'. Endif.
-if num = 2099. Word = 'train'. Endif.
-if num = 2100. Word = 'trait'. Endif.
-if num = 2101. Word = 'tramp'. Endif.
-if num = 2102. Word = 'trash'. Endif.
-if num = 2103. Word = 'trawl'. Endif.
-if num = 2104. Word = 'tread'. Endif.
-if num = 2105. Word = 'treat'. Endif.
-if num = 2106. Word = 'trend'. Endif.
-if num = 2107. Word = 'triad'. Endif.
-if num = 2108. Word = 'trial'. Endif.
-if num = 2109. Word = 'tribe'. Endif.
-if num = 2110. Word = 'trice'. Endif.
-if num = 2111. Word = 'trick'. Endif.
-if num = 2112. Word = 'tried'. Endif.
-if num = 2113. Word = 'tripe'. Endif.
-if num = 2114. Word = 'trite'. Endif.
-if num = 2115. Word = 'troll'. Endif.
-if num = 2116. Word = 'troop'. Endif.
-if num = 2117. Word = 'trope'. Endif.
-if num = 2118. Word = 'trout'. Endif.
-if num = 2119. Word = 'trove'. Endif.
-if num = 2120. Word = 'truce'. Endif.
-if num = 2121. Word = 'truck'. Endif.
-if num = 2122. Word = 'truer'. Endif.
-if num = 2123. Word = 'truly'. Endif.
-if num = 2124. Word = 'trump'. Endif.
-if num = 2125. Word = 'trunk'. Endif.
-if num = 2126. Word = 'truss'. Endif.
-if num = 2127. Word = 'trust'. Endif.
-if num = 2128. Word = 'truth'. Endif.
-if num = 2129. Word = 'tryst'. Endif.
-if num = 2130. Word = 'tubal'. Endif.
-if num = 2131. Word = 'tuber'. Endif.
-if num = 2132. Word = 'tulip'. Endif.
-if num = 2133. Word = 'tulle'. Endif.
-if num = 2134. Word = 'tumor'. Endif.
-if num = 2135. Word = 'tunic'. Endif.
-if num = 2136. Word = 'turbo'. Endif.
-if num = 2137. Word = 'tutor'. Endif.
-if num = 2138. Word = 'twang'. Endif.
-if num = 2139. Word = 'tweak'. Endif.
-if num = 2140. Word = 'tweed'. Endif.
-if num = 2141. Word = 'tweet'. Endif.
-if num = 2142. Word = 'twice'. Endif.
-if num = 2143. Word = 'twine'. Endif.
-if num = 2144. Word = 'twirl'. Endif.
-if num = 2145. Word = 'twist'. Endif.
-if num = 2146. Word = 'twixt'. Endif.
-if num = 2147. Word = 'tying'. Endif.
-if num = 2148. Word = 'udder'. Endif.
-if num = 2149. Word = 'ulcer'. Endif.
-if num = 2150. Word = 'ultra'. Endif.
-if num = 2151. Word = 'umbra'. Endif.
-if num = 2152. Word = 'uncle'. Endif.
-if num = 2153. Word = 'uncut'. Endif.
-if num = 2154. Word = 'under'. Endif.
-if num = 2155. Word = 'undid'. Endif.
-if num = 2156. Word = 'undue'. Endif.
-if num = 2157. Word = 'unfed'. Endif.
-if num = 2158. Word = 'unfit'. Endif.
-if num = 2159. Word = 'unify'. Endif.
-if num = 2160. Word = 'union'. Endif.
-if num = 2161. Word = 'unite'. Endif.
-if num = 2162. Word = 'unity'. Endif.
-if num = 2163. Word = 'unlit'. Endif.
-if num = 2164. Word = 'unmet'. Endif.
-if num = 2165. Word = 'unset'. Endif.
-if num = 2166. Word = 'untie'. Endif.
-if num = 2167. Word = 'until'. Endif.
-if num = 2168. Word = 'unwed'. Endif.
-if num = 2169. Word = 'unzip'. Endif.
-if num = 2170. Word = 'upper'. Endif.
-if num = 2171. Word = 'upset'. Endif.
-if num = 2172. Word = 'urban'. Endif.
-if num = 2173. Word = 'urine'. Endif.
-if num = 2174. Word = 'usage'. Endif.
-if num = 2175. Word = 'usher'. Endif.
-if num = 2176. Word = 'using'. Endif.
-if num = 2177. Word = 'usual'. Endif.
-if num = 2178. Word = 'usurp'. Endif.
-if num = 2179. Word = 'utile'. Endif.
-if num = 2180. Word = 'utter'. Endif.
-if num = 2181. Word = 'vague'. Endif.
-if num = 2182. Word = 'valet'. Endif.
-if num = 2183. Word = 'valid'. Endif.
-if num = 2184. Word = 'valor'. Endif.
-if num = 2185. Word = 'value'. Endif.
-if num = 2186. Word = 'valve'. Endif.
-if num = 2187. Word = 'vapid'. Endif.
-if num = 2188. Word = 'vapor'. Endif.
-if num = 2189. Word = 'vault'. Endif.
-if num = 2190. Word = 'vaunt'. Endif.
-if num = 2191. Word = 'vegan'. Endif.
-if num = 2192. Word = 'venom'. Endif.
-if num = 2193. Word = 'venue'. Endif.
-if num = 2194. Word = 'verge'. Endif.
-if num = 2195. Word = 'verse'. Endif.
-if num = 2196. Word = 'verso'. Endif.
-if num = 2197. Word = 'verve'. Endif.
-if num = 2198. Word = 'vicar'. Endif.
-if num = 2199. Word = 'video'. Endif.
-if num = 2200. Word = 'vigil'. Endif.
-if num = 2201. Word = 'vigor'. Endif.
-if num = 2202. Word = 'villa'. Endif.
-if num = 2203. Word = 'vinyl'. Endif.
-if num = 2204. Word = 'viola'. Endif.
-if num = 2205. Word = 'viper'. Endif.
-if num = 2206. Word = 'viral'. Endif.
-if num = 2207. Word = 'virus'. Endif.
-if num = 2208. Word = 'visit'. Endif.
-if num = 2209. Word = 'visor'. Endif.
-if num = 2210. Word = 'vista'. Endif.
-if num = 2211. Word = 'vital'. Endif.
-if num = 2212. Word = 'vivid'. Endif.
-if num = 2213. Word = 'vixen'. Endif.
-if num = 2214. Word = 'vocal'. Endif.
-if num = 2215. Word = 'vodka'. Endif.
-if num = 2216. Word = 'vogue'. Endif.
-if num = 2217. Word = 'voice'. Endif.
-if num = 2218. Word = 'voila'. Endif.
-if num = 2219. Word = 'vomit'. Endif.
-if num = 2220. Word = 'voter'. Endif.
-if num = 2221. Word = 'vouch'. Endif.
-if num = 2222. Word = 'vowel'. Endif.
-if num = 2223. Word = 'vying'. Endif.
-if num = 2224. Word = 'wacky'. Endif.
-if num = 2225. Word = 'wafer'. Endif.
-if num = 2226. Word = 'wager'. Endif.
-if num = 2227. Word = 'wagon'. Endif.
-if num = 2228. Word = 'waist'. Endif.
-if num = 2229. Word = 'waive'. Endif.
-if num = 2230. Word = 'waltz'. Endif.
-if num = 2231. Word = 'warty'. Endif.
-if num = 2232. Word = 'waste'. Endif.
-if num = 2233. Word = 'watch'. Endif.
-if num = 2234. Word = 'water'. Endif.
-if num = 2235. Word = 'waver'. Endif.
-if num = 2236. Word = 'waxen'. Endif.
-if num = 2237. Word = 'weary'. Endif.
-if num = 2238. Word = 'weave'. Endif.
-if num = 2239. Word = 'wedge'. Endif.
-if num = 2240. Word = 'weedy'. Endif.
-if num = 2241. Word = 'weigh'. Endif.
-if num = 2242. Word = 'weird'. Endif.
-if num = 2243. Word = 'welch'. Endif.
-if num = 2244. Word = 'welsh'. Endif.
-if num = 2245. Word = 'wench'. Endif.
-if num = 2246. Word = 'whack'. Endif.
-if num = 2247. Word = 'whale'. Endif.
-if num = 2248. Word = 'wharf'. Endif.
-if num = 2249. Word = 'wheat'. Endif.
-if num = 2250. Word = 'wheel'. Endif.
-if num = 2251. Word = 'whelp'. Endif.
-if num = 2252. Word = 'where'. Endif.
-if num = 2253. Word = 'which'. Endif.
-if num = 2254. Word = 'whiff'. Endif.
-if num = 2255. Word = 'while'. Endif.
-if num = 2256. Word = 'whine'. Endif.
-if num = 2257. Word = 'whiny'. Endif.
-if num = 2258. Word = 'whirl'. Endif.
-if num = 2259. Word = 'whisk'. Endif.
-if num = 2260. Word = 'white'. Endif.
-if num = 2261. Word = 'whole'. Endif.
-if num = 2262. Word = 'whoop'. Endif.
-if num = 2263. Word = 'whose'. Endif.
-if num = 2264. Word = 'widen'. Endif.
-if num = 2265. Word = 'wider'. Endif.
-if num = 2266. Word = 'widow'. Endif.
-if num = 2267. Word = 'width'. Endif.
-if num = 2268. Word = 'wield'. Endif.
-if num = 2269. Word = 'wight'. Endif.
-if num = 2270. Word = 'willy'. Endif.
-if num = 2271. Word = 'wimpy'. Endif.
-if num = 2272. Word = 'wince'. Endif.
-if num = 2273. Word = 'winch'. Endif.
-if num = 2274. Word = 'windy'. Endif.
-if num = 2275. Word = 'wiser'. Endif.
-if num = 2276. Word = 'wispy'. Endif.
-if num = 2277. Word = 'witch'. Endif.
-if num = 2278. Word = 'witty'. Endif.
-if num = 2279. Word = 'woken'. Endif.
-if num = 2280. Word = 'woman'. Endif.
-if num = 2281. Word = 'women'. Endif.
-if num = 2282. Word = 'woody'. Endif.
-if num = 2283. Word = 'wooer'. Endif.
-if num = 2284. Word = 'wooly'. Endif.
-if num = 2285. Word = 'woozy'. Endif.
-if num = 2286. Word = 'wordy'. Endif.
-if num = 2287. Word = 'world'. Endif.
-if num = 2288. Word = 'worry'. Endif.
-if num = 2289. Word = 'worse'. Endif.
-if num = 2290. Word = 'worst'. Endif.
-if num = 2291. Word = 'worth'. Endif.
-if num = 2292. Word = 'would'. Endif.
-if num = 2293. Word = 'wound'. Endif.
-if num = 2294. Word = 'woven'. Endif.
-if num = 2295. Word = 'wrack'. Endif.
-if num = 2296. Word = 'wrath'. Endif.
-if num = 2297. Word = 'wreak'. Endif.
-if num = 2298. Word = 'wreck'. Endif.
-if num = 2299. Word = 'wrest'. Endif.
-if num = 2300. Word = 'wring'. Endif.
-if num = 2301. Word = 'wrist'. Endif.
-if num = 2302. Word = 'write'. Endif.
-if num = 2303. Word = 'wrong'. Endif.
-if num = 2304. Word = 'wrote'. Endif.
-if num = 2305. Word = 'wrung'. Endif.
-if num = 2306. Word = 'wryly'. Endif.
-if num = 2307. Word = 'yacht'. Endif.
-if num = 2308. Word = 'yearn'. Endif.
-if num = 2309. Word = 'yeast'. Endif.
-if num = 2310. Word = 'yield'. Endif.
-if num = 2311. Word = 'young'. Endif.
-if num = 2312. Word = 'youth'. Endif.
-if num = 2313. Word = 'zebra'. Endif.
-if num = 2314. Word = 'zesty'. Endif.
-if num = 2315. Word = 'zonal'. Endif.
+    IF num = 1. Word = 'aback'. ENDIF.
+    IF num = 2. Word = 'abase'. ENDIF.
+    IF num = 3. Word = 'abate'. ENDIF.
+    IF num = 4. Word = 'abbey'. ENDIF.
+    IF num = 5. Word = 'abbot'. ENDIF.
+    IF num = 6. Word = 'abhor'. ENDIF.
+    IF num = 7. Word = 'abide'. ENDIF.
+    IF num = 8. Word = 'abled'. ENDIF.
+    IF num = 9. Word = 'abode'. ENDIF.
+    IF num = 10. Word = 'abort'. ENDIF.
+    IF num = 11. Word = 'about'. ENDIF.
+    IF num = 12. Word = 'above'. ENDIF.
+    IF num = 13. Word = 'abuse'. ENDIF.
+    IF num = 14. Word = 'abyss'. ENDIF.
+    IF num = 15. Word = 'acorn'. ENDIF.
+    IF num = 16. Word = 'acrid'. ENDIF.
+    IF num = 17. Word = 'actor'. ENDIF.
+    IF num = 18. Word = 'acute'. ENDIF.
+    IF num = 19. Word = 'adage'. ENDIF.
+    IF num = 20. Word = 'adapt'. ENDIF.
+    IF num = 21. Word = 'adept'. ENDIF.
+    IF num = 22. Word = 'admin'. ENDIF.
+    IF num = 23. Word = 'admit'. ENDIF.
+    IF num = 24. Word = 'adobe'. ENDIF.
+    IF num = 25. Word = 'adopt'. ENDIF.
+    IF num = 26. Word = 'adore'. ENDIF.
+    IF num = 27. Word = 'adorn'. ENDIF.
+    IF num = 28. Word = 'adult'. ENDIF.
+    IF num = 29. Word = 'affix'. ENDIF.
+    IF num = 30. Word = 'afire'. ENDIF.
+    IF num = 31. Word = 'afoot'. ENDIF.
+    IF num = 32. Word = 'afoul'. ENDIF.
+    IF num = 33. Word = 'after'. ENDIF.
+    IF num = 34. Word = 'again'. ENDIF.
+    IF num = 35. Word = 'agape'. ENDIF.
+    IF num = 36. Word = 'agate'. ENDIF.
+    IF num = 37. Word = 'agent'. ENDIF.
+    IF num = 38. Word = 'agile'. ENDIF.
+    IF num = 39. Word = 'aging'. ENDIF.
+    IF num = 40. Word = 'aglow'. ENDIF.
+    IF num = 41. Word = 'agony'. ENDIF.
+    IF num = 42. Word = 'agora'. ENDIF.
+    IF num = 43. Word = 'agree'. ENDIF.
+    IF num = 44. Word = 'ahead'. ENDIF.
+    IF num = 45. Word = 'aider'. ENDIF.
+    IF num = 46. Word = 'aisle'. ENDIF.
+    IF num = 47. Word = 'alarm'. ENDIF.
+    IF num = 48. Word = 'album'. ENDIF.
+    IF num = 49. Word = 'alert'. ENDIF.
+    IF num = 50. Word = 'algae'. ENDIF.
+    IF num = 51. Word = 'alibi'. ENDIF.
+    IF num = 52. Word = 'alien'. ENDIF.
+    IF num = 53. Word = 'align'. ENDIF.
+    IF num = 54. Word = 'alike'. ENDIF.
+    IF num = 55. Word = 'alive'. ENDIF.
+    IF num = 56. Word = 'allay'. ENDIF.
+    IF num = 57. Word = 'alley'. ENDIF.
+    IF num = 58. Word = 'allot'. ENDIF.
+    IF num = 59. Word = 'allow'. ENDIF.
+    IF num = 60. Word = 'alloy'. ENDIF.
+    IF num = 61. Word = 'aloft'. ENDIF.
+    IF num = 62. Word = 'alone'. ENDIF.
+    IF num = 63. Word = 'along'. ENDIF.
+    IF num = 64. Word = 'aloof'. ENDIF.
+    IF num = 65. Word = 'aloud'. ENDIF.
+    IF num = 66. Word = 'alpha'. ENDIF.
+    IF num = 67. Word = 'altar'. ENDIF.
+    IF num = 68. Word = 'alter'. ENDIF.
+    IF num = 69. Word = 'amass'. ENDIF.
+    IF num = 70. Word = 'amaze'. ENDIF.
+    IF num = 71. Word = 'amber'. ENDIF.
+    IF num = 72. Word = 'amble'. ENDIF.
+    IF num = 73. Word = 'amend'. ENDIF.
+    IF num = 74. Word = 'amiss'. ENDIF.
+    IF num = 75. Word = 'amity'. ENDIF.
+    IF num = 76. Word = 'among'. ENDIF.
+    IF num = 77. Word = 'ample'. ENDIF.
+    IF num = 78. Word = 'amply'. ENDIF.
+    IF num = 79. Word = 'amuse'. ENDIF.
+    IF num = 80. Word = 'angel'. ENDIF.
+    IF num = 81. Word = 'anger'. ENDIF.
+    IF num = 82. Word = 'angle'. ENDIF.
+    IF num = 83. Word = 'angry'. ENDIF.
+    IF num = 84. Word = 'angst'. ENDIF.
+    IF num = 85. Word = 'anime'. ENDIF.
+    IF num = 86. Word = 'ankle'. ENDIF.
+    IF num = 87. Word = 'annex'. ENDIF.
+    IF num = 88. Word = 'annoy'. ENDIF.
+    IF num = 89. Word = 'annul'. ENDIF.
+    IF num = 90. Word = 'anode'. ENDIF.
+    IF num = 91. Word = 'antic'. ENDIF.
+    IF num = 92. Word = 'anvil'. ENDIF.
+    IF num = 93. Word = 'aorta'. ENDIF.
+    IF num = 94. Word = 'apart'. ENDIF.
+    IF num = 95. Word = 'aphid'. ENDIF.
+    IF num = 96. Word = 'aping'. ENDIF.
+    IF num = 97. Word = 'apnea'. ENDIF.
+    IF num = 98. Word = 'apple'. ENDIF.
+    IF num = 99. Word = 'apply'. ENDIF.
+    IF num = 100. Word = 'apron'. ENDIF.
+    IF num = 101. Word = 'aptly'. ENDIF.
+    IF num = 102. Word = 'arbor'. ENDIF.
+    IF num = 103. Word = 'ardor'. ENDIF.
+    IF num = 104. Word = 'arena'. ENDIF.
+    IF num = 105. Word = 'argue'. ENDIF.
+    IF num = 106. Word = 'arise'. ENDIF.
+    IF num = 107. Word = 'armor'. ENDIF.
+    IF num = 108. Word = 'aroma'. ENDIF.
+    IF num = 109. Word = 'arose'. ENDIF.
+    IF num = 110. Word = 'array'. ENDIF.
+    IF num = 111. Word = 'arrow'. ENDIF.
+    IF num = 112. Word = 'arson'. ENDIF.
+    IF num = 113. Word = 'artsy'. ENDIF.
+    IF num = 114. Word = 'ascot'. ENDIF.
+    IF num = 115. Word = 'ashen'. ENDIF.
+    IF num = 116. Word = 'aside'. ENDIF.
+    IF num = 117. Word = 'askew'. ENDIF.
+    IF num = 118. Word = 'assay'. ENDIF.
+    IF num = 119. Word = 'asset'. ENDIF.
+    IF num = 120. Word = 'atoll'. ENDIF.
+    IF num = 121. Word = 'atone'. ENDIF.
+    IF num = 122. Word = 'attic'. ENDIF.
+    IF num = 123. Word = 'audio'. ENDIF.
+    IF num = 124. Word = 'audit'. ENDIF.
+    IF num = 125. Word = 'augur'. ENDIF.
+    IF num = 126. Word = 'aunty'. ENDIF.
+    IF num = 127. Word = 'avail'. ENDIF.
+    IF num = 128. Word = 'avert'. ENDIF.
+    IF num = 129. Word = 'avian'. ENDIF.
+    IF num = 130. Word = 'avoid'. ENDIF.
+    IF num = 131. Word = 'await'. ENDIF.
+    IF num = 132. Word = 'awake'. ENDIF.
+    IF num = 133. Word = 'award'. ENDIF.
+    IF num = 134. Word = 'aware'. ENDIF.
+    IF num = 135. Word = 'awash'. ENDIF.
+    IF num = 136. Word = 'awful'. ENDIF.
+    IF num = 137. Word = 'awoke'. ENDIF.
+    IF num = 138. Word = 'axial'. ENDIF.
+    IF num = 139. Word = 'axiom'. ENDIF.
+    IF num = 140. Word = 'axion'. ENDIF.
+    IF num = 141. Word = 'azure'. ENDIF.
+    IF num = 142. Word = 'bacon'. ENDIF.
+    IF num = 143. Word = 'badge'. ENDIF.
+    IF num = 144. Word = 'badly'. ENDIF.
+    IF num = 145. Word = 'bagel'. ENDIF.
+    IF num = 146. Word = 'baggy'. ENDIF.
+    IF num = 147. Word = 'baker'. ENDIF.
+    IF num = 148. Word = 'baler'. ENDIF.
+    IF num = 149. Word = 'balmy'. ENDIF.
+    IF num = 150. Word = 'banal'. ENDIF.
+    IF num = 151. Word = 'banjo'. ENDIF.
+    IF num = 152. Word = 'barge'. ENDIF.
+    IF num = 153. Word = 'baron'. ENDIF.
+    IF num = 154. Word = 'basal'. ENDIF.
+    IF num = 155. Word = 'basic'. ENDIF.
+    IF num = 156. Word = 'basil'. ENDIF.
+    IF num = 157. Word = 'basin'. ENDIF.
+    IF num = 158. Word = 'basis'. ENDIF.
+    IF num = 159. Word = 'baste'. ENDIF.
+    IF num = 160. Word = 'batch'. ENDIF.
+    IF num = 161. Word = 'bathe'. ENDIF.
+    IF num = 162. Word = 'baton'. ENDIF.
+    IF num = 163. Word = 'batty'. ENDIF.
+    IF num = 164. Word = 'bawdy'. ENDIF.
+    IF num = 165. Word = 'bayou'. ENDIF.
+    IF num = 166. Word = 'beach'. ENDIF.
+    IF num = 167. Word = 'beady'. ENDIF.
+    IF num = 168. Word = 'beard'. ENDIF.
+    IF num = 169. Word = 'beast'. ENDIF.
+    IF num = 170. Word = 'beech'. ENDIF.
+    IF num = 171. Word = 'beefy'. ENDIF.
+    IF num = 172. Word = 'befit'. ENDIF.
+    IF num = 173. Word = 'began'. ENDIF.
+    IF num = 174. Word = 'begat'. ENDIF.
+    IF num = 175. Word = 'beget'. ENDIF.
+    IF num = 176. Word = 'begin'. ENDIF.
+    IF num = 177. Word = 'begun'. ENDIF.
+    IF num = 178. Word = 'being'. ENDIF.
+    IF num = 179. Word = 'belch'. ENDIF.
+    IF num = 180. Word = 'belie'. ENDIF.
+    IF num = 181. Word = 'belle'. ENDIF.
+    IF num = 182. Word = 'belly'. ENDIF.
+    IF num = 183. Word = 'below'. ENDIF.
+    IF num = 184. Word = 'bench'. ENDIF.
+    IF num = 185. Word = 'beret'. ENDIF.
+    IF num = 186. Word = 'berry'. ENDIF.
+    IF num = 187. Word = 'berth'. ENDIF.
+    IF num = 188. Word = 'beset'. ENDIF.
+    IF num = 189. Word = 'betel'. ENDIF.
+    IF num = 190. Word = 'bevel'. ENDIF.
+    IF num = 191. Word = 'bezel'. ENDIF.
+    IF num = 192. Word = 'bible'. ENDIF.
+    IF num = 193. Word = 'bicep'. ENDIF.
+    IF num = 194. Word = 'biddy'. ENDIF.
+    IF num = 195. Word = 'bigot'. ENDIF.
+    IF num = 196. Word = 'bilge'. ENDIF.
+    IF num = 197. Word = 'billy'. ENDIF.
+    IF num = 198. Word = 'binge'. ENDIF.
+    IF num = 199. Word = 'bingo'. ENDIF.
+    IF num = 200. Word = 'biome'. ENDIF.
+    IF num = 201. Word = 'birch'. ENDIF.
+    IF num = 202. Word = 'birth'. ENDIF.
+    IF num = 203. Word = 'bison'. ENDIF.
+    IF num = 204. Word = 'bitty'. ENDIF.
+    IF num = 205. Word = 'black'. ENDIF.
+    IF num = 206. Word = 'blade'. ENDIF.
+    IF num = 207. Word = 'blame'. ENDIF.
+    IF num = 208. Word = 'bland'. ENDIF.
+    IF num = 209. Word = 'blank'. ENDIF.
+    IF num = 210. Word = 'blare'. ENDIF.
+    IF num = 211. Word = 'blast'. ENDIF.
+    IF num = 212. Word = 'blaze'. ENDIF.
+    IF num = 213. Word = 'bleak'. ENDIF.
+    IF num = 214. Word = 'bleat'. ENDIF.
+    IF num = 215. Word = 'bleed'. ENDIF.
+    IF num = 216. Word = 'bleep'. ENDIF.
+    IF num = 217. Word = 'blend'. ENDIF.
+    IF num = 218. Word = 'bless'. ENDIF.
+    IF num = 219. Word = 'blimp'. ENDIF.
+    IF num = 220. Word = 'blind'. ENDIF.
+    IF num = 221. Word = 'blink'. ENDIF.
+    IF num = 222. Word = 'bliss'. ENDIF.
+    IF num = 223. Word = 'blitz'. ENDIF.
+    IF num = 224. Word = 'bloat'. ENDIF.
+    IF num = 225. Word = 'block'. ENDIF.
+    IF num = 226. Word = 'bloke'. ENDIF.
+    IF num = 227. Word = 'blond'. ENDIF.
+    IF num = 228. Word = 'blood'. ENDIF.
+    IF num = 229. Word = 'bloom'. ENDIF.
+    IF num = 230. Word = 'blown'. ENDIF.
+    IF num = 231. Word = 'bluer'. ENDIF.
+    IF num = 232. Word = 'bluff'. ENDIF.
+    IF num = 233. Word = 'blunt'. ENDIF.
+    IF num = 234. Word = 'blurb'. ENDIF.
+    IF num = 235. Word = 'blurt'. ENDIF.
+    IF num = 236. Word = 'blush'. ENDIF.
+    IF num = 237. Word = 'board'. ENDIF.
+    IF num = 238. Word = 'boast'. ENDIF.
+    IF num = 239. Word = 'bobby'. ENDIF.
+    IF num = 240. Word = 'boney'. ENDIF.
+    IF num = 241. Word = 'bongo'. ENDIF.
+    IF num = 242. Word = 'bonus'. ENDIF.
+    IF num = 243. Word = 'booby'. ENDIF.
+    IF num = 244. Word = 'boost'. ENDIF.
+    IF num = 245. Word = 'booth'. ENDIF.
+    IF num = 246. Word = 'booty'. ENDIF.
+    IF num = 247. Word = 'booze'. ENDIF.
+    IF num = 248. Word = 'boozy'. ENDIF.
+    IF num = 249. Word = 'borax'. ENDIF.
+    IF num = 250. Word = 'borne'. ENDIF.
+    IF num = 251. Word = 'bosom'. ENDIF.
+    IF num = 252. Word = 'bossy'. ENDIF.
+    IF num = 253. Word = 'botch'. ENDIF.
+    IF num = 254. Word = 'bough'. ENDIF.
+    IF num = 255. Word = 'boule'. ENDIF.
+    IF num = 256. Word = 'bound'. ENDIF.
+    IF num = 257. Word = 'bowel'. ENDIF.
+    IF num = 258. Word = 'boxer'. ENDIF.
+    IF num = 259. Word = 'brace'. ENDIF.
+    IF num = 260. Word = 'braid'. ENDIF.
+    IF num = 261. Word = 'brain'. ENDIF.
+    IF num = 262. Word = 'brake'. ENDIF.
+    IF num = 263. Word = 'brand'. ENDIF.
+    IF num = 264. Word = 'brash'. ENDIF.
+    IF num = 265. Word = 'brass'. ENDIF.
+    IF num = 266. Word = 'brave'. ENDIF.
+    IF num = 267. Word = 'bravo'. ENDIF.
+    IF num = 268. Word = 'brawl'. ENDIF.
+    IF num = 269. Word = 'brawn'. ENDIF.
+    IF num = 270. Word = 'bread'. ENDIF.
+    IF num = 271. Word = 'break'. ENDIF.
+    IF num = 272. Word = 'breed'. ENDIF.
+    IF num = 273. Word = 'briar'. ENDIF.
+    IF num = 274. Word = 'bribe'. ENDIF.
+    IF num = 275. Word = 'brick'. ENDIF.
+    IF num = 276. Word = 'bride'. ENDIF.
+    IF num = 277. Word = 'brief'. ENDIF.
+    IF num = 278. Word = 'brine'. ENDIF.
+    IF num = 279. Word = 'bring'. ENDIF.
+    IF num = 280. Word = 'brink'. ENDIF.
+    IF num = 281. Word = 'briny'. ENDIF.
+    IF num = 282. Word = 'brisk'. ENDIF.
+    IF num = 283. Word = 'broad'. ENDIF.
+    IF num = 284. Word = 'broil'. ENDIF.
+    IF num = 285. Word = 'broke'. ENDIF.
+    IF num = 286. Word = 'brood'. ENDIF.
+    IF num = 287. Word = 'brook'. ENDIF.
+    IF num = 288. Word = 'broom'. ENDIF.
+    IF num = 289. Word = 'broth'. ENDIF.
+    IF num = 290. Word = 'brown'. ENDIF.
+    IF num = 291. Word = 'brunt'. ENDIF.
+    IF num = 292. Word = 'brush'. ENDIF.
+    IF num = 293. Word = 'brute'. ENDIF.
+    IF num = 294. Word = 'buddy'. ENDIF.
+    IF num = 295. Word = 'budge'. ENDIF.
+    IF num = 296. Word = 'buggy'. ENDIF.
+    IF num = 297. Word = 'bugle'. ENDIF.
+    IF num = 298. Word = 'build'. ENDIF.
+    IF num = 299. Word = 'built'. ENDIF.
+    IF num = 300. Word = 'bulge'. ENDIF.
+    IF num = 301. Word = 'bulky'. ENDIF.
+    IF num = 302. Word = 'bully'. ENDIF.
+    IF num = 303. Word = 'bunch'. ENDIF.
+    IF num = 304. Word = 'bunny'. ENDIF.
+    IF num = 305. Word = 'burly'. ENDIF.
+    IF num = 306. Word = 'burnt'. ENDIF.
+    IF num = 307. Word = 'burst'. ENDIF.
+    IF num = 308. Word = 'bused'. ENDIF.
+    IF num = 309. Word = 'bushy'. ENDIF.
+    IF num = 310. Word = 'butch'. ENDIF.
+    IF num = 311. Word = 'butte'. ENDIF.
+    IF num = 312. Word = 'buxom'. ENDIF.
+    IF num = 313. Word = 'buyer'. ENDIF.
+    IF num = 314. Word = 'bylaw'. ENDIF.
+    IF num = 315. Word = 'cabal'. ENDIF.
+    IF num = 316. Word = 'cabby'. ENDIF.
+    IF num = 317. Word = 'cabin'. ENDIF.
+    IF num = 318. Word = 'cable'. ENDIF.
+    IF num = 319. Word = 'cacao'. ENDIF.
+    IF num = 320. Word = 'cache'. ENDIF.
+    IF num = 321. Word = 'cacti'. ENDIF.
+    IF num = 322. Word = 'caddy'. ENDIF.
+    IF num = 323. Word = 'cadet'. ENDIF.
+    IF num = 324. Word = 'cagey'. ENDIF.
+    IF num = 325. Word = 'cairn'. ENDIF.
+    IF num = 326. Word = 'camel'. ENDIF.
+    IF num = 327. Word = 'cameo'. ENDIF.
+    IF num = 328. Word = 'canal'. ENDIF.
+    IF num = 329. Word = 'candy'. ENDIF.
+    IF num = 330. Word = 'canny'. ENDIF.
+    IF num = 331. Word = 'canoe'. ENDIF.
+    IF num = 332. Word = 'canon'. ENDIF.
+    IF num = 333. Word = 'caper'. ENDIF.
+    IF num = 334. Word = 'caput'. ENDIF.
+    IF num = 335. Word = 'carat'. ENDIF.
+    IF num = 336. Word = 'cargo'. ENDIF.
+    IF num = 337. Word = 'carol'. ENDIF.
+    IF num = 338. Word = 'carry'. ENDIF.
+    IF num = 339. Word = 'carve'. ENDIF.
+    IF num = 340. Word = 'caste'. ENDIF.
+    IF num = 341. Word = 'catch'. ENDIF.
+    IF num = 342. Word = 'cater'. ENDIF.
+    IF num = 343. Word = 'catty'. ENDIF.
+    IF num = 344. Word = 'caulk'. ENDIF.
+    IF num = 345. Word = 'cause'. ENDIF.
+    IF num = 346. Word = 'cavil'. ENDIF.
+    IF num = 347. Word = 'cease'. ENDIF.
+    IF num = 348. Word = 'cedar'. ENDIF.
+    IF num = 349. Word = 'cello'. ENDIF.
+    IF num = 350. Word = 'chafe'. ENDIF.
+    IF num = 351. Word = 'chaff'. ENDIF.
+    IF num = 352. Word = 'chain'. ENDIF.
+    IF num = 353. Word = 'chair'. ENDIF.
+    IF num = 354. Word = 'chalk'. ENDIF.
+    IF num = 355. Word = 'champ'. ENDIF.
+    IF num = 356. Word = 'chant'. ENDIF.
+    IF num = 357. Word = 'chaos'. ENDIF.
+    IF num = 358. Word = 'chard'. ENDIF.
+    IF num = 359. Word = 'charm'. ENDIF.
+    IF num = 360. Word = 'chart'. ENDIF.
+    IF num = 361. Word = 'chase'. ENDIF.
+    IF num = 362. Word = 'chasm'. ENDIF.
+    IF num = 363. Word = 'cheap'. ENDIF.
+    IF num = 364. Word = 'cheat'. ENDIF.
+    IF num = 365. Word = 'check'. ENDIF.
+    IF num = 366. Word = 'cheek'. ENDIF.
+    IF num = 367. Word = 'cheer'. ENDIF.
+    IF num = 368. Word = 'chess'. ENDIF.
+    IF num = 369. Word = 'chest'. ENDIF.
+    IF num = 370. Word = 'chick'. ENDIF.
+    IF num = 371. Word = 'chide'. ENDIF.
+    IF num = 372. Word = 'chief'. ENDIF.
+    IF num = 373. Word = 'child'. ENDIF.
+    IF num = 374. Word = 'chili'. ENDIF.
+    IF num = 375. Word = 'chill'. ENDIF.
+    IF num = 376. Word = 'chime'. ENDIF.
+    IF num = 377. Word = 'china'. ENDIF.
+    IF num = 378. Word = 'chirp'. ENDIF.
+    IF num = 379. Word = 'chock'. ENDIF.
+    IF num = 380. Word = 'choir'. ENDIF.
+    IF num = 381. Word = 'choke'. ENDIF.
+    IF num = 382. Word = 'chord'. ENDIF.
+    IF num = 383. Word = 'chore'. ENDIF.
+    IF num = 384. Word = 'chose'. ENDIF.
+    IF num = 385. Word = 'chuck'. ENDIF.
+    IF num = 386. Word = 'chump'. ENDIF.
+    IF num = 387. Word = 'chunk'. ENDIF.
+    IF num = 388. Word = 'churn'. ENDIF.
+    IF num = 389. Word = 'chute'. ENDIF.
+    IF num = 390. Word = 'cider'. ENDIF.
+    IF num = 391. Word = 'cigar'. ENDIF.
+    IF num = 392. Word = 'cinch'. ENDIF.
+    IF num = 393. Word = 'circa'. ENDIF.
+    IF num = 394. Word = 'civic'. ENDIF.
+    IF num = 395. Word = 'civil'. ENDIF.
+    IF num = 396. Word = 'clack'. ENDIF.
+    IF num = 397. Word = 'claim'. ENDIF.
+    IF num = 398. Word = 'clamp'. ENDIF.
+    IF num = 399. Word = 'clang'. ENDIF.
+    IF num = 400. Word = 'clank'. ENDIF.
+    IF num = 401. Word = 'clash'. ENDIF.
+    IF num = 402. Word = 'clasp'. ENDIF.
+    IF num = 403. Word = 'class'. ENDIF.
+    IF num = 404. Word = 'clean'. ENDIF.
+    IF num = 405. Word = 'clear'. ENDIF.
+    IF num = 406. Word = 'cleat'. ENDIF.
+    IF num = 407. Word = 'cleft'. ENDIF.
+    IF num = 408. Word = 'clerk'. ENDIF.
+    IF num = 409. Word = 'click'. ENDIF.
+    IF num = 410. Word = 'cliff'. ENDIF.
+    IF num = 411. Word = 'climb'. ENDIF.
+    IF num = 412. Word = 'cling'. ENDIF.
+    IF num = 413. Word = 'clink'. ENDIF.
+    IF num = 414. Word = 'cloak'. ENDIF.
+    IF num = 415. Word = 'clock'. ENDIF.
+    IF num = 416. Word = 'clone'. ENDIF.
+    IF num = 417. Word = 'close'. ENDIF.
+    IF num = 418. Word = 'cloth'. ENDIF.
+    IF num = 419. Word = 'cloud'. ENDIF.
+    IF num = 420. Word = 'clout'. ENDIF.
+    IF num = 421. Word = 'clove'. ENDIF.
+    IF num = 422. Word = 'clown'. ENDIF.
+    IF num = 423. Word = 'cluck'. ENDIF.
+    IF num = 424. Word = 'clued'. ENDIF.
+    IF num = 425. Word = 'clump'. ENDIF.
+    IF num = 426. Word = 'clung'. ENDIF.
+    IF num = 427. Word = 'coach'. ENDIF.
+    IF num = 428. Word = 'coast'. ENDIF.
+    IF num = 429. Word = 'cobra'. ENDIF.
+    IF num = 430. Word = 'cocoa'. ENDIF.
+    IF num = 431. Word = 'colon'. ENDIF.
+    IF num = 432. Word = 'color'. ENDIF.
+    IF num = 433. Word = 'comet'. ENDIF.
+    IF num = 434. Word = 'comfy'. ENDIF.
+    IF num = 435. Word = 'comic'. ENDIF.
+    IF num = 436. Word = 'comma'. ENDIF.
+    IF num = 437. Word = 'conch'. ENDIF.
+    IF num = 438. Word = 'condo'. ENDIF.
+    IF num = 439. Word = 'conic'. ENDIF.
+    IF num = 440. Word = 'copse'. ENDIF.
+    IF num = 441. Word = 'coral'. ENDIF.
+    IF num = 442. Word = 'corer'. ENDIF.
+    IF num = 443. Word = 'corny'. ENDIF.
+    IF num = 444. Word = 'couch'. ENDIF.
+    IF num = 445. Word = 'cough'. ENDIF.
+    IF num = 446. Word = 'could'. ENDIF.
+    IF num = 447. Word = 'count'. ENDIF.
+    IF num = 448. Word = 'coupe'. ENDIF.
+    IF num = 449. Word = 'court'. ENDIF.
+    IF num = 450. Word = 'coven'. ENDIF.
+    IF num = 451. Word = 'cover'. ENDIF.
+    IF num = 452. Word = 'covet'. ENDIF.
+    IF num = 453. Word = 'covey'. ENDIF.
+    IF num = 454. Word = 'cower'. ENDIF.
+    IF num = 455. Word = 'coyly'. ENDIF.
+    IF num = 456. Word = 'crack'. ENDIF.
+    IF num = 457. Word = 'craft'. ENDIF.
+    IF num = 458. Word = 'cramp'. ENDIF.
+    IF num = 459. Word = 'crane'. ENDIF.
+    IF num = 460. Word = 'crank'. ENDIF.
+    IF num = 461. Word = 'crash'. ENDIF.
+    IF num = 462. Word = 'crass'. ENDIF.
+    IF num = 463. Word = 'crate'. ENDIF.
+    IF num = 464. Word = 'crave'. ENDIF.
+    IF num = 465. Word = 'crawl'. ENDIF.
+    IF num = 466. Word = 'craze'. ENDIF.
+    IF num = 467. Word = 'crazy'. ENDIF.
+    IF num = 468. Word = 'creak'. ENDIF.
+    IF num = 469. Word = 'cream'. ENDIF.
+    IF num = 470. Word = 'credo'. ENDIF.
+    IF num = 471. Word = 'creed'. ENDIF.
+    IF num = 472. Word = 'creek'. ENDIF.
+    IF num = 473. Word = 'creep'. ENDIF.
+    IF num = 474. Word = 'creme'. ENDIF.
+    IF num = 475. Word = 'crepe'. ENDIF.
+    IF num = 476. Word = 'crept'. ENDIF.
+    IF num = 477. Word = 'cress'. ENDIF.
+    IF num = 478. Word = 'crest'. ENDIF.
+    IF num = 479. Word = 'crick'. ENDIF.
+    IF num = 480. Word = 'cried'. ENDIF.
+    IF num = 481. Word = 'crier'. ENDIF.
+    IF num = 482. Word = 'crime'. ENDIF.
+    IF num = 483. Word = 'crimp'. ENDIF.
+    IF num = 484. Word = 'crisp'. ENDIF.
+    IF num = 485. Word = 'croak'. ENDIF.
+    IF num = 486. Word = 'crock'. ENDIF.
+    IF num = 487. Word = 'crone'. ENDIF.
+    IF num = 488. Word = 'crony'. ENDIF.
+    IF num = 489. Word = 'crook'. ENDIF.
+    IF num = 490. Word = 'cross'. ENDIF.
+    IF num = 491. Word = 'croup'. ENDIF.
+    IF num = 492. Word = 'crowd'. ENDIF.
+    IF num = 493. Word = 'crown'. ENDIF.
+    IF num = 494. Word = 'crude'. ENDIF.
+    IF num = 495. Word = 'cruel'. ENDIF.
+    IF num = 496. Word = 'crumb'. ENDIF.
+    IF num = 497. Word = 'crump'. ENDIF.
+    IF num = 498. Word = 'crush'. ENDIF.
+    IF num = 499. Word = 'crust'. ENDIF.
+    IF num = 500. Word = 'crypt'. ENDIF.
+    IF num = 501. Word = 'cubic'. ENDIF.
+    IF num = 502. Word = 'cumin'. ENDIF.
+    IF num = 503. Word = 'curio'. ENDIF.
+    IF num = 504. Word = 'curly'. ENDIF.
+    IF num = 505. Word = 'curry'. ENDIF.
+    IF num = 506. Word = 'curse'. ENDIF.
+    IF num = 507. Word = 'curve'. ENDIF.
+    IF num = 508. Word = 'curvy'. ENDIF.
+    IF num = 509. Word = 'cutie'. ENDIF.
+    IF num = 510. Word = 'cyber'. ENDIF.
+    IF num = 511. Word = 'cycle'. ENDIF.
+    IF num = 512. Word = 'cynic'. ENDIF.
+    IF num = 513. Word = 'daddy'. ENDIF.
+    IF num = 514. Word = 'daily'. ENDIF.
+    IF num = 515. Word = 'dairy'. ENDIF.
+    IF num = 516. Word = 'daisy'. ENDIF.
+    IF num = 517. Word = 'dally'. ENDIF.
+    IF num = 518. Word = 'dance'. ENDIF.
+    IF num = 519. Word = 'dandy'. ENDIF.
+    IF num = 520. Word = 'datum'. ENDIF.
+    IF num = 521. Word = 'daunt'. ENDIF.
+    IF num = 522. Word = 'dealt'. ENDIF.
+    IF num = 523. Word = 'death'. ENDIF.
+    IF num = 524. Word = 'debar'. ENDIF.
+    IF num = 525. Word = 'debit'. ENDIF.
+    IF num = 526. Word = 'debug'. ENDIF.
+    IF num = 527. Word = 'debut'. ENDIF.
+    IF num = 528. Word = 'decal'. ENDIF.
+    IF num = 529. Word = 'decay'. ENDIF.
+    IF num = 530. Word = 'decor'. ENDIF.
+    IF num = 531. Word = 'decoy'. ENDIF.
+    IF num = 532. Word = 'decry'. ENDIF.
+    IF num = 533. Word = 'defer'. ENDIF.
+    IF num = 534. Word = 'deign'. ENDIF.
+    IF num = 535. Word = 'deity'. ENDIF.
+    IF num = 536. Word = 'delay'. ENDIF.
+    IF num = 537. Word = 'delta'. ENDIF.
+    IF num = 538. Word = 'delve'. ENDIF.
+    IF num = 539. Word = 'demon'. ENDIF.
+    IF num = 540. Word = 'demur'. ENDIF.
+    IF num = 541. Word = 'denim'. ENDIF.
+    IF num = 542. Word = 'dense'. ENDIF.
+    IF num = 543. Word = 'depot'. ENDIF.
+    IF num = 544. Word = 'depth'. ENDIF.
+    IF num = 545. Word = 'derby'. ENDIF.
+    IF num = 546. Word = 'deter'. ENDIF.
+    IF num = 547. Word = 'detox'. ENDIF.
+    IF num = 548. Word = 'deuce'. ENDIF.
+    IF num = 549. Word = 'devil'. ENDIF.
+    IF num = 550. Word = 'diary'. ENDIF.
+    IF num = 551. Word = 'dicey'. ENDIF.
+    IF num = 552. Word = 'digit'. ENDIF.
+    IF num = 553. Word = 'dilly'. ENDIF.
+    IF num = 554. Word = 'dimly'. ENDIF.
+    IF num = 555. Word = 'diner'. ENDIF.
+    IF num = 556. Word = 'dingo'. ENDIF.
+    IF num = 557. Word = 'dingy'. ENDIF.
+    IF num = 558. Word = 'diode'. ENDIF.
+    IF num = 559. Word = 'dirge'. ENDIF.
+    IF num = 560. Word = 'dirty'. ENDIF.
+    IF num = 561. Word = 'disco'. ENDIF.
+    IF num = 562. Word = 'ditch'. ENDIF.
+    IF num = 563. Word = 'ditto'. ENDIF.
+    IF num = 564. Word = 'ditty'. ENDIF.
+    IF num = 565. Word = 'diver'. ENDIF.
+    IF num = 566. Word = 'dizzy'. ENDIF.
+    IF num = 567. Word = 'dodge'. ENDIF.
+    IF num = 568. Word = 'dodgy'. ENDIF.
+    IF num = 569. Word = 'dogma'. ENDIF.
+    IF num = 570. Word = 'doing'. ENDIF.
+    IF num = 571. Word = 'dolly'. ENDIF.
+    IF num = 572. Word = 'donor'. ENDIF.
+    IF num = 573. Word = 'donut'. ENDIF.
+    IF num = 574. Word = 'dopey'. ENDIF.
+    IF num = 575. Word = 'doubt'. ENDIF.
+    IF num = 576. Word = 'dough'. ENDIF.
+    IF num = 577. Word = 'dowdy'. ENDIF.
+    IF num = 578. Word = 'dowel'. ENDIF.
+    IF num = 579. Word = 'downy'. ENDIF.
+    IF num = 580. Word = 'dowry'. ENDIF.
+    IF num = 581. Word = 'dozen'. ENDIF.
+    IF num = 582. Word = 'draft'. ENDIF.
+    IF num = 583. Word = 'drain'. ENDIF.
+    IF num = 584. Word = 'drake'. ENDIF.
+    IF num = 585. Word = 'drama'. ENDIF.
+    IF num = 586. Word = 'drank'. ENDIF.
+    IF num = 587. Word = 'drape'. ENDIF.
+    IF num = 588. Word = 'drawl'. ENDIF.
+    IF num = 589. Word = 'drawn'. ENDIF.
+    IF num = 590. Word = 'dread'. ENDIF.
+    IF num = 591. Word = 'dream'. ENDIF.
+    IF num = 592. Word = 'dress'. ENDIF.
+    IF num = 593. Word = 'dried'. ENDIF.
+    IF num = 594. Word = 'drier'. ENDIF.
+    IF num = 595. Word = 'drift'. ENDIF.
+    IF num = 596. Word = 'drill'. ENDIF.
+    IF num = 597. Word = 'drink'. ENDIF.
+    IF num = 598. Word = 'drive'. ENDIF.
+    IF num = 599. Word = 'droit'. ENDIF.
+    IF num = 600. Word = 'droll'. ENDIF.
+    IF num = 601. Word = 'drone'. ENDIF.
+    IF num = 602. Word = 'drool'. ENDIF.
+    IF num = 603. Word = 'droop'. ENDIF.
+    IF num = 604. Word = 'dross'. ENDIF.
+    IF num = 605. Word = 'drove'. ENDIF.
+    IF num = 606. Word = 'drown'. ENDIF.
+    IF num = 607. Word = 'druid'. ENDIF.
+    IF num = 608. Word = 'drunk'. ENDIF.
+    IF num = 609. Word = 'dryer'. ENDIF.
+    IF num = 610. Word = 'dryly'. ENDIF.
+    IF num = 611. Word = 'duchy'. ENDIF.
+    IF num = 612. Word = 'dully'. ENDIF.
+    IF num = 613. Word = 'dummy'. ENDIF.
+    IF num = 614. Word = 'dumpy'. ENDIF.
+    IF num = 615. Word = 'dunce'. ENDIF.
+    IF num = 616. Word = 'dusky'. ENDIF.
+    IF num = 617. Word = 'dusty'. ENDIF.
+    IF num = 618. Word = 'dutch'. ENDIF.
+    IF num = 619. Word = 'duvet'. ENDIF.
+    IF num = 620. Word = 'dwarf'. ENDIF.
+    IF num = 621. Word = 'dwell'. ENDIF.
+    IF num = 622. Word = 'dwelt'. ENDIF.
+    IF num = 623. Word = 'dying'. ENDIF.
+    IF num = 624. Word = 'eager'. ENDIF.
+    IF num = 625. Word = 'eagle'. ENDIF.
+    IF num = 626. Word = 'early'. ENDIF.
+    IF num = 627. Word = 'earth'. ENDIF.
+    IF num = 628. Word = 'easel'. ENDIF.
+    IF num = 629. Word = 'eaten'. ENDIF.
+    IF num = 630. Word = 'eater'. ENDIF.
+    IF num = 631. Word = 'ebony'. ENDIF.
+    IF num = 632. Word = 'eclat'. ENDIF.
+    IF num = 633. Word = 'edict'. ENDIF.
+    IF num = 634. Word = 'edify'. ENDIF.
+    IF num = 635. Word = 'eerie'. ENDIF.
+    IF num = 636. Word = 'egret'. ENDIF.
+    IF num = 637. Word = 'eight'. ENDIF.
+    IF num = 638. Word = 'eject'. ENDIF.
+    IF num = 639. Word = 'eking'. ENDIF.
+    IF num = 640. Word = 'elate'. ENDIF.
+    IF num = 641. Word = 'elbow'. ENDIF.
+    IF num = 642. Word = 'elder'. ENDIF.
+    IF num = 643. Word = 'elect'. ENDIF.
+    IF num = 644. Word = 'elegy'. ENDIF.
+    IF num = 645. Word = 'elfin'. ENDIF.
+    IF num = 646. Word = 'elide'. ENDIF.
+    IF num = 647. Word = 'elite'. ENDIF.
+    IF num = 648. Word = 'elope'. ENDIF.
+    IF num = 649. Word = 'elude'. ENDIF.
+    IF num = 650. Word = 'email'. ENDIF.
+    IF num = 651. Word = 'embed'. ENDIF.
+    IF num = 652. Word = 'ember'. ENDIF.
+    IF num = 653. Word = 'emcee'. ENDIF.
+    IF num = 654. Word = 'empty'. ENDIF.
+    IF num = 655. Word = 'enact'. ENDIF.
+    IF num = 656. Word = 'endow'. ENDIF.
+    IF num = 657. Word = 'enema'. ENDIF.
+    IF num = 658. Word = 'enemy'. ENDIF.
+    IF num = 659. Word = 'enjoy'. ENDIF.
+    IF num = 660. Word = 'ennui'. ENDIF.
+    IF num = 661. Word = 'ensue'. ENDIF.
+    IF num = 662. Word = 'enter'. ENDIF.
+    IF num = 663. Word = 'entry'. ENDIF.
+    IF num = 664. Word = 'envoy'. ENDIF.
+    IF num = 665. Word = 'epoch'. ENDIF.
+    IF num = 666. Word = 'epoxy'. ENDIF.
+    IF num = 667. Word = 'equal'. ENDIF.
+    IF num = 668. Word = 'equip'. ENDIF.
+    IF num = 669. Word = 'erase'. ENDIF.
+    IF num = 670. Word = 'erect'. ENDIF.
+    IF num = 671. Word = 'erode'. ENDIF.
+    IF num = 672. Word = 'error'. ENDIF.
+    IF num = 673. Word = 'erupt'. ENDIF.
+    IF num = 674. Word = 'essay'. ENDIF.
+    IF num = 675. Word = 'ester'. ENDIF.
+    IF num = 676. Word = 'ether'. ENDIF.
+    IF num = 677. Word = 'ethic'. ENDIF.
+    IF num = 678. Word = 'ethos'. ENDIF.
+    IF num = 679. Word = 'etude'. ENDIF.
+    IF num = 680. Word = 'evade'. ENDIF.
+    IF num = 681. Word = 'event'. ENDIF.
+    IF num = 682. Word = 'every'. ENDIF.
+    IF num = 683. Word = 'evict'. ENDIF.
+    IF num = 684. Word = 'evoke'. ENDIF.
+    IF num = 685. Word = 'exact'. ENDIF.
+    IF num = 686. Word = 'exalt'. ENDIF.
+    IF num = 687. Word = 'excel'. ENDIF.
+    IF num = 688. Word = 'exert'. ENDIF.
+    IF num = 689. Word = 'exile'. ENDIF.
+    IF num = 690. Word = 'exist'. ENDIF.
+    IF num = 691. Word = 'expel'. ENDIF.
+    IF num = 692. Word = 'extol'. ENDIF.
+    IF num = 693. Word = 'extra'. ENDIF.
+    IF num = 694. Word = 'exult'. ENDIF.
+    IF num = 695. Word = 'eying'. ENDIF.
+    IF num = 696. Word = 'fable'. ENDIF.
+    IF num = 697. Word = 'facet'. ENDIF.
+    IF num = 698. Word = 'faint'. ENDIF.
+    IF num = 699. Word = 'fairy'. ENDIF.
+    IF num = 700. Word = 'faith'. ENDIF.
+    IF num = 701. Word = 'FALSE'. ENDIF.
+    IF num = 702. Word = 'fancy'. ENDIF.
+    IF num = 703. Word = 'fanny'. ENDIF.
+    IF num = 704. Word = 'farce'. ENDIF.
+    IF num = 705. Word = 'fatal'. ENDIF.
+    IF num = 706. Word = 'fatty'. ENDIF.
+    IF num = 707. Word = 'fault'. ENDIF.
+    IF num = 708. Word = 'fauna'. ENDIF.
+    IF num = 709. Word = 'favor'. ENDIF.
+    IF num = 710. Word = 'feast'. ENDIF.
+    IF num = 711. Word = 'fecal'. ENDIF.
+    IF num = 712. Word = 'feign'. ENDIF.
+    IF num = 713. Word = 'fella'. ENDIF.
+    IF num = 714. Word = 'felon'. ENDIF.
+    IF num = 715. Word = 'femme'. ENDIF.
+    IF num = 716. Word = 'femur'. ENDIF.
+    IF num = 717. Word = 'fence'. ENDIF.
+    IF num = 718. Word = 'feral'. ENDIF.
+    IF num = 719. Word = 'ferry'. ENDIF.
+    IF num = 720. Word = 'fetal'. ENDIF.
+    IF num = 721. Word = 'fetch'. ENDIF.
+    IF num = 722. Word = 'fetid'. ENDIF.
+    IF num = 723. Word = 'fetus'. ENDIF.
+    IF num = 724. Word = 'fever'. ENDIF.
+    IF num = 725. Word = 'fewer'. ENDIF.
+    IF num = 726. Word = 'fiber'. ENDIF.
+    IF num = 727. Word = 'fibre'. ENDIF.
+    IF num = 728. Word = 'ficus'. ENDIF.
+    IF num = 729. Word = 'field'. ENDIF.
+    IF num = 730. Word = 'fiend'. ENDIF.
+    IF num = 731. Word = 'fiery'. ENDIF.
+    IF num = 732. Word = 'fifth'. ENDIF.
+    IF num = 733. Word = 'fifty'. ENDIF.
+    IF num = 734. Word = 'fight'. ENDIF.
+    IF num = 735. Word = 'filer'. ENDIF.
+    IF num = 736. Word = 'filet'. ENDIF.
+    IF num = 737. Word = 'filly'. ENDIF.
+    IF num = 738. Word = 'filmy'. ENDIF.
+    IF num = 739. Word = 'filth'. ENDIF.
+    IF num = 740. Word = 'final'. ENDIF.
+    IF num = 741. Word = 'finch'. ENDIF.
+    IF num = 742. Word = 'finer'. ENDIF.
+    IF num = 743. Word = 'first'. ENDIF.
+    IF num = 744. Word = 'fishy'. ENDIF.
+    IF num = 745. Word = 'fixer'. ENDIF.
+    IF num = 746. Word = 'fizzy'. ENDIF.
+    IF num = 747. Word = 'fjord'. ENDIF.
+    IF num = 748. Word = 'flack'. ENDIF.
+    IF num = 749. Word = 'flail'. ENDIF.
+    IF num = 750. Word = 'flair'. ENDIF.
+    IF num = 751. Word = 'flake'. ENDIF.
+    IF num = 752. Word = 'flaky'. ENDIF.
+    IF num = 753. Word = 'flame'. ENDIF.
+    IF num = 754. Word = 'flank'. ENDIF.
+    IF num = 755. Word = 'flare'. ENDIF.
+    IF num = 756. Word = 'flash'. ENDIF.
+    IF num = 757. Word = 'flask'. ENDIF.
+    IF num = 758. Word = 'fleck'. ENDIF.
+    IF num = 759. Word = 'fleet'. ENDIF.
+    IF num = 760. Word = 'flesh'. ENDIF.
+    IF num = 761. Word = 'flick'. ENDIF.
+    IF num = 762. Word = 'flier'. ENDIF.
+    IF num = 763. Word = 'fling'. ENDIF.
+    IF num = 764. Word = 'flint'. ENDIF.
+    IF num = 765. Word = 'flirt'. ENDIF.
+    IF num = 766. Word = 'float'. ENDIF.
+    IF num = 767. Word = 'flock'. ENDIF.
+    IF num = 768. Word = 'flood'. ENDIF.
+    IF num = 769. Word = 'floor'. ENDIF.
+    IF num = 770. Word = 'flora'. ENDIF.
+    IF num = 771. Word = 'floss'. ENDIF.
+    IF num = 772. Word = 'flour'. ENDIF.
+    IF num = 773. Word = 'flout'. ENDIF.
+    IF num = 774. Word = 'flown'. ENDIF.
+    IF num = 775. Word = 'fluff'. ENDIF.
+    IF num = 776. Word = 'fluid'. ENDIF.
+    IF num = 777. Word = 'fluke'. ENDIF.
+    IF num = 778. Word = 'flume'. ENDIF.
+    IF num = 779. Word = 'flung'. ENDIF.
+    IF num = 780. Word = 'flunk'. ENDIF.
+    IF num = 781. Word = 'flush'. ENDIF.
+    IF num = 782. Word = 'flute'. ENDIF.
+    IF num = 783. Word = 'flyer'. ENDIF.
+    IF num = 784. Word = 'foamy'. ENDIF.
+    IF num = 785. Word = 'focal'. ENDIF.
+    IF num = 786. Word = 'focus'. ENDIF.
+    IF num = 787. Word = 'foggy'. ENDIF.
+    IF num = 788. Word = 'foist'. ENDIF.
+    IF num = 789. Word = 'folio'. ENDIF.
+    IF num = 790. Word = 'folly'. ENDIF.
+    IF num = 791. Word = 'foray'. ENDIF.
+    IF num = 792. Word = 'force'. ENDIF.
+    IF num = 793. Word = 'forge'. ENDIF.
+    IF num = 794. Word = 'forgo'. ENDIF.
+    IF num = 795. Word = 'forte'. ENDIF.
+    IF num = 796. Word = 'forth'. ENDIF.
+    IF num = 797. Word = 'forty'. ENDIF.
+    IF num = 798. Word = 'forum'. ENDIF.
+    IF num = 799. Word = 'found'. ENDIF.
+    IF num = 800. Word = 'foyer'. ENDIF.
+    IF num = 801. Word = 'frail'. ENDIF.
+    IF num = 802. Word = 'frame'. ENDIF.
+    IF num = 803. Word = 'frank'. ENDIF.
+    IF num = 804. Word = 'fraud'. ENDIF.
+    IF num = 805. Word = 'freak'. ENDIF.
+    IF num = 806. Word = 'freed'. ENDIF.
+    IF num = 807. Word = 'freer'. ENDIF.
+    IF num = 808. Word = 'fresh'. ENDIF.
+    IF num = 809. Word = 'friar'. ENDIF.
+    IF num = 810. Word = 'fried'. ENDIF.
+    IF num = 811. Word = 'frill'. ENDIF.
+    IF num = 812. Word = 'frisk'. ENDIF.
+    IF num = 813. Word = 'fritz'. ENDIF.
+    IF num = 814. Word = 'frock'. ENDIF.
+    IF num = 815. Word = 'frond'. ENDIF.
+    IF num = 816. Word = 'front'. ENDIF.
+    IF num = 817. Word = 'frost'. ENDIF.
+    IF num = 818. Word = 'froth'. ENDIF.
+    IF num = 819. Word = 'frown'. ENDIF.
+    IF num = 820. Word = 'froze'. ENDIF.
+    IF num = 821. Word = 'fruit'. ENDIF.
+    IF num = 822. Word = 'fudge'. ENDIF.
+    IF num = 823. Word = 'fugue'. ENDIF.
+    IF num = 824. Word = 'fully'. ENDIF.
+    IF num = 825. Word = 'fungi'. ENDIF.
+    IF num = 826. Word = 'funky'. ENDIF.
+    IF num = 827. Word = 'funny'. ENDIF.
+    IF num = 828. Word = 'furor'. ENDIF.
+    IF num = 829. Word = 'furry'. ENDIF.
+    IF num = 830. Word = 'fussy'. ENDIF.
+    IF num = 831. Word = 'fuzzy'. ENDIF.
+    IF num = 832. Word = 'gaffe'. ENDIF.
+    IF num = 833. Word = 'gaily'. ENDIF.
+    IF num = 834. Word = 'gamer'. ENDIF.
+    IF num = 835. Word = 'gamma'. ENDIF.
+    IF num = 836. Word = 'gamut'. ENDIF.
+    IF num = 837. Word = 'gassy'. ENDIF.
+    IF num = 838. Word = 'gaudy'. ENDIF.
+    IF num = 839. Word = 'gauge'. ENDIF.
+    IF num = 840. Word = 'gaunt'. ENDIF.
+    IF num = 841. Word = 'gauze'. ENDIF.
+    IF num = 842. Word = 'gavel'. ENDIF.
+    IF num = 843. Word = 'gawky'. ENDIF.
+    IF num = 844. Word = 'gayer'. ENDIF.
+    IF num = 845. Word = 'gayly'. ENDIF.
+    IF num = 846. Word = 'gazer'. ENDIF.
+    IF num = 847. Word = 'gecko'. ENDIF.
+    IF num = 848. Word = 'geeky'. ENDIF.
+    IF num = 849. Word = 'geese'. ENDIF.
+    IF num = 850. Word = 'genie'. ENDIF.
+    IF num = 851. Word = 'genre'. ENDIF.
+    IF num = 852. Word = 'ghost'. ENDIF.
+    IF num = 853. Word = 'ghoul'. ENDIF.
+    IF num = 854. Word = 'giant'. ENDIF.
+    IF num = 855. Word = 'giddy'. ENDIF.
+    IF num = 856. Word = 'gipsy'. ENDIF.
+    IF num = 857. Word = 'girly'. ENDIF.
+    IF num = 858. Word = 'girth'. ENDIF.
+    IF num = 859. Word = 'given'. ENDIF.
+    IF num = 860. Word = 'giver'. ENDIF.
+    IF num = 861. Word = 'glade'. ENDIF.
+    IF num = 862. Word = 'gland'. ENDIF.
+    IF num = 863. Word = 'glare'. ENDIF.
+    IF num = 864. Word = 'glass'. ENDIF.
+    IF num = 865. Word = 'glaze'. ENDIF.
+    IF num = 866. Word = 'gleam'. ENDIF.
+    IF num = 867. Word = 'glean'. ENDIF.
+    IF num = 868. Word = 'glide'. ENDIF.
+    IF num = 869. Word = 'glint'. ENDIF.
+    IF num = 870. Word = 'gloat'. ENDIF.
+    IF num = 871. Word = 'globe'. ENDIF.
+    IF num = 872. Word = 'gloom'. ENDIF.
+    IF num = 873. Word = 'glory'. ENDIF.
+    IF num = 874. Word = 'gloss'. ENDIF.
+    IF num = 875. Word = 'glove'. ENDIF.
+    IF num = 876. Word = 'glyph'. ENDIF.
+    IF num = 877. Word = 'gnash'. ENDIF.
+    IF num = 878. Word = 'gnome'. ENDIF.
+    IF num = 879. Word = 'godly'. ENDIF.
+    IF num = 880. Word = 'going'. ENDIF.
+    IF num = 881. Word = 'golem'. ENDIF.
+    IF num = 882. Word = 'golly'. ENDIF.
+    IF num = 883. Word = 'gonad'. ENDIF.
+    IF num = 884. Word = 'goner'. ENDIF.
+    IF num = 885. Word = 'goody'. ENDIF.
+    IF num = 886. Word = 'gooey'. ENDIF.
+    IF num = 887. Word = 'goofy'. ENDIF.
+    IF num = 888. Word = 'goose'. ENDIF.
+    IF num = 889. Word = 'gorge'. ENDIF.
+    IF num = 890. Word = 'gouge'. ENDIF.
+    IF num = 891. Word = 'gourd'. ENDIF.
+    IF num = 892. Word = 'grace'. ENDIF.
+    IF num = 893. Word = 'grade'. ENDIF.
+    IF num = 894. Word = 'graft'. ENDIF.
+    IF num = 895. Word = 'grail'. ENDIF.
+    IF num = 896. Word = 'grain'. ENDIF.
+    IF num = 897. Word = 'grand'. ENDIF.
+    IF num = 898. Word = 'grant'. ENDIF.
+    IF num = 899. Word = 'grape'. ENDIF.
+    IF num = 900. Word = 'graph'. ENDIF.
+    IF num = 901. Word = 'grasp'. ENDIF.
+    IF num = 902. Word = 'grass'. ENDIF.
+    IF num = 903. Word = 'grate'. ENDIF.
+    IF num = 904. Word = 'grave'. ENDIF.
+    IF num = 905. Word = 'gravy'. ENDIF.
+    IF num = 906. Word = 'graze'. ENDIF.
+    IF num = 907. Word = 'great'. ENDIF.
+    IF num = 908. Word = 'greed'. ENDIF.
+    IF num = 909. Word = 'green'. ENDIF.
+    IF num = 910. Word = 'greet'. ENDIF.
+    IF num = 911. Word = 'grief'. ENDIF.
+    IF num = 912. Word = 'grill'. ENDIF.
+    IF num = 913. Word = 'grime'. ENDIF.
+    IF num = 914. Word = 'grimy'. ENDIF.
+    IF num = 915. Word = 'grind'. ENDIF.
+    IF num = 916. Word = 'gripe'. ENDIF.
+    IF num = 917. Word = 'groan'. ENDIF.
+    IF num = 918. Word = 'groin'. ENDIF.
+    IF num = 919. Word = 'groom'. ENDIF.
+    IF num = 920. Word = 'grope'. ENDIF.
+    IF num = 921. Word = 'gross'. ENDIF.
+    IF num = 922. Word = 'group'. ENDIF.
+    IF num = 923. Word = 'grout'. ENDIF.
+    IF num = 924. Word = 'grove'. ENDIF.
+    IF num = 925. Word = 'growl'. ENDIF.
+    IF num = 926. Word = 'grown'. ENDIF.
+    IF num = 927. Word = 'gruel'. ENDIF.
+    IF num = 928. Word = 'gruff'. ENDIF.
+    IF num = 929. Word = 'grunt'. ENDIF.
+    IF num = 930. Word = 'guard'. ENDIF.
+    IF num = 931. Word = 'guava'. ENDIF.
+    IF num = 932. Word = 'guess'. ENDIF.
+    IF num = 933. Word = 'guest'. ENDIF.
+    IF num = 934. Word = 'guide'. ENDIF.
+    IF num = 935. Word = 'guild'. ENDIF.
+    IF num = 936. Word = 'guile'. ENDIF.
+    IF num = 937. Word = 'guilt'. ENDIF.
+    IF num = 938. Word = 'guise'. ENDIF.
+    IF num = 939. Word = 'gulch'. ENDIF.
+    IF num = 940. Word = 'gully'. ENDIF.
+    IF num = 941. Word = 'gumbo'. ENDIF.
+    IF num = 942. Word = 'gummy'. ENDIF.
+    IF num = 943. Word = 'guppy'. ENDIF.
+    IF num = 944. Word = 'gusto'. ENDIF.
+    IF num = 945. Word = 'gusty'. ENDIF.
+    IF num = 946. Word = 'gypsy'. ENDIF.
+    IF num = 947. Word = 'habit'. ENDIF.
+    IF num = 948. Word = 'hairy'. ENDIF.
+    IF num = 949. Word = 'halve'. ENDIF.
+    IF num = 950. Word = 'handy'. ENDIF.
+    IF num = 951. Word = 'happy'. ENDIF.
+    IF num = 952. Word = 'hardy'. ENDIF.
+    IF num = 953. Word = 'harem'. ENDIF.
+    IF num = 954. Word = 'harpy'. ENDIF.
+    IF num = 955. Word = 'harry'. ENDIF.
+    IF num = 956. Word = 'harsh'. ENDIF.
+    IF num = 957. Word = 'haste'. ENDIF.
+    IF num = 958. Word = 'hasty'. ENDIF.
+    IF num = 959. Word = 'hatch'. ENDIF.
+    IF num = 960. Word = 'hater'. ENDIF.
+    IF num = 961. Word = 'haunt'. ENDIF.
+    IF num = 962. Word = 'haute'. ENDIF.
+    IF num = 963. Word = 'haven'. ENDIF.
+    IF num = 964. Word = 'havoc'. ENDIF.
+    IF num = 965. Word = 'hazel'. ENDIF.
+    IF num = 966. Word = 'heady'. ENDIF.
+    IF num = 967. Word = 'heard'. ENDIF.
+    IF num = 968. Word = 'heart'. ENDIF.
+    IF num = 969. Word = 'heath'. ENDIF.
+    IF num = 970. Word = 'heave'. ENDIF.
+    IF num = 971. Word = 'heavy'. ENDIF.
+    IF num = 972. Word = 'hedge'. ENDIF.
+    IF num = 973. Word = 'hefty'. ENDIF.
+    IF num = 974. Word = 'heist'. ENDIF.
+    IF num = 975. Word = 'helix'. ENDIF.
+    IF num = 976. Word = 'hello'. ENDIF.
+    IF num = 977. Word = 'hence'. ENDIF.
+    IF num = 978. Word = 'heron'. ENDIF.
+    IF num = 979. Word = 'hilly'. ENDIF.
+    IF num = 980. Word = 'hinge'. ENDIF.
+    IF num = 981. Word = 'hippo'. ENDIF.
+    IF num = 982. Word = 'hippy'. ENDIF.
+    IF num = 983. Word = 'hitch'. ENDIF.
+    IF num = 984. Word = 'hoard'. ENDIF.
+    IF num = 985. Word = 'hobby'. ENDIF.
+    IF num = 986. Word = 'hoist'. ENDIF.
+    IF num = 987. Word = 'holly'. ENDIF.
+    IF num = 988. Word = 'homer'. ENDIF.
+    IF num = 989. Word = 'honey'. ENDIF.
+    IF num = 990. Word = 'honor'. ENDIF.
+    IF num = 991. Word = 'horde'. ENDIF.
+    IF num = 992. Word = 'horny'. ENDIF.
+    IF num = 993. Word = 'horse'. ENDIF.
+    IF num = 994. Word = 'hotel'. ENDIF.
+    IF num = 995. Word = 'hotly'. ENDIF.
+    IF num = 996. Word = 'hound'. ENDIF.
+    IF num = 997. Word = 'house'. ENDIF.
+    IF num = 998. Word = 'hovel'. ENDIF.
+    IF num = 999. Word = 'hover'. ENDIF.
+    IF num = 1000. Word = 'howdy'. ENDIF.
+    IF num = 1001. Word = 'human'. ENDIF.
+    IF num = 1002. Word = 'humid'. ENDIF.
+    IF num = 1003. Word = 'humor'. ENDIF.
+    IF num = 1004. Word = 'humph'. ENDIF.
+    IF num = 1005. Word = 'humus'. ENDIF.
+    IF num = 1006. Word = 'hunch'. ENDIF.
+    IF num = 1007. Word = 'hunky'. ENDIF.
+    IF num = 1008. Word = 'hurry'. ENDIF.
+    IF num = 1009. Word = 'husky'. ENDIF.
+    IF num = 1010. Word = 'hussy'. ENDIF.
+    IF num = 1011. Word = 'hutch'. ENDIF.
+    IF num = 1012. Word = 'hydro'. ENDIF.
+    IF num = 1013. Word = 'hyena'. ENDIF.
+    IF num = 1014. Word = 'hymen'. ENDIF.
+    IF num = 1015. Word = 'hyper'. ENDIF.
+    IF num = 1016. Word = 'icily'. ENDIF.
+    IF num = 1017. Word = 'icing'. ENDIF.
+    IF num = 1018. Word = 'ideal'. ENDIF.
+    IF num = 1019. Word = 'idiom'. ENDIF.
+    IF num = 1020. Word = 'idiot'. ENDIF.
+    IF num = 1021. Word = 'idler'. ENDIF.
+    IF num = 1022. Word = 'idyll'. ENDIF.
+    IF num = 1023. Word = 'igloo'. ENDIF.
+    IF num = 1024. Word = 'iliac'. ENDIF.
+    IF num = 1025. Word = 'image'. ENDIF.
+    IF num = 1026. Word = 'imbue'. ENDIF.
+    IF num = 1027. Word = 'impel'. ENDIF.
+    IF num = 1028. Word = 'imply'. ENDIF.
+    IF num = 1029. Word = 'inane'. ENDIF.
+    IF num = 1030. Word = 'inbox'. ENDIF.
+    IF num = 1031. Word = 'incur'. ENDIF.
+    IF num = 1032. Word = 'index'. ENDIF.
+    IF num = 1033. Word = 'inept'. ENDIF.
+    IF num = 1034. Word = 'inert'. ENDIF.
+    IF num = 1035. Word = 'infer'. ENDIF.
+    IF num = 1036. Word = 'ingot'. ENDIF.
+    IF num = 1037. Word = 'inlay'. ENDIF.
+    IF num = 1038. Word = 'inlet'. ENDIF.
+    IF num = 1039. Word = 'inner'. ENDIF.
+    IF num = 1040. Word = 'input'. ENDIF.
+    IF num = 1041. Word = 'inter'. ENDIF.
+    IF num = 1042. Word = 'intro'. ENDIF.
+    IF num = 1043. Word = 'ionic'. ENDIF.
+    IF num = 1044. Word = 'irate'. ENDIF.
+    IF num = 1045. Word = 'irony'. ENDIF.
+    IF num = 1046. Word = 'islet'. ENDIF.
+    IF num = 1047. Word = 'issue'. ENDIF.
+    IF num = 1048. Word = 'itchy'. ENDIF.
+    IF num = 1049. Word = 'ivory'. ENDIF.
+    IF num = 1050. Word = 'jaunt'. ENDIF.
+    IF num = 1051. Word = 'jazzy'. ENDIF.
+    IF num = 1052. Word = 'jelly'. ENDIF.
+    IF num = 1053. Word = 'jerky'. ENDIF.
+    IF num = 1054. Word = 'jetty'. ENDIF.
+    IF num = 1055. Word = 'jewel'. ENDIF.
+    IF num = 1056. Word = 'jiffy'. ENDIF.
+    IF num = 1057. Word = 'joint'. ENDIF.
+    IF num = 1058. Word = 'joist'. ENDIF.
+    IF num = 1059. Word = 'joker'. ENDIF.
+    IF num = 1060. Word = 'jolly'. ENDIF.
+    IF num = 1061. Word = 'joust'. ENDIF.
+    IF num = 1062. Word = 'judge'. ENDIF.
+    IF num = 1063. Word = 'juice'. ENDIF.
+    IF num = 1064. Word = 'juicy'. ENDIF.
+    IF num = 1065. Word = 'jumbo'. ENDIF.
+    IF num = 1066. Word = 'jumpy'. ENDIF.
+    IF num = 1067. Word = 'junta'. ENDIF.
+    IF num = 1068. Word = 'junto'. ENDIF.
+    IF num = 1069. Word = 'juror'. ENDIF.
+    IF num = 1070. Word = 'kappa'. ENDIF.
+    IF num = 1071. Word = 'karma'. ENDIF.
+    IF num = 1072. Word = 'kayak'. ENDIF.
+    IF num = 1073. Word = 'kebab'. ENDIF.
+    IF num = 1074. Word = 'khaki'. ENDIF.
+    IF num = 1075. Word = 'kinky'. ENDIF.
+    IF num = 1076. Word = 'kiosk'. ENDIF.
+    IF num = 1077. Word = 'kitty'. ENDIF.
+    IF num = 1078. Word = 'knack'. ENDIF.
+    IF num = 1079. Word = 'knave'. ENDIF.
+    IF num = 1080. Word = 'knead'. ENDIF.
+    IF num = 1081. Word = 'kneed'. ENDIF.
+    IF num = 1082. Word = 'kneel'. ENDIF.
+    IF num = 1083. Word = 'knelt'. ENDIF.
+    IF num = 1084. Word = 'knife'. ENDIF.
+    IF num = 1085. Word = 'knock'. ENDIF.
+    IF num = 1086. Word = 'knoll'. ENDIF.
+    IF num = 1087. Word = 'known'. ENDIF.
+    IF num = 1088. Word = 'koala'. ENDIF.
+    IF num = 1089. Word = 'krill'. ENDIF.
+    IF num = 1090. Word = 'label'. ENDIF.
+    IF num = 1091. Word = 'labor'. ENDIF.
+    IF num = 1092. Word = 'laden'. ENDIF.
+    IF num = 1093. Word = 'ladle'. ENDIF.
+    IF num = 1094. Word = 'lager'. ENDIF.
+    IF num = 1095. Word = 'lance'. ENDIF.
+    IF num = 1096. Word = 'lanky'. ENDIF.
+    IF num = 1097. Word = 'lapel'. ENDIF.
+    IF num = 1098. Word = 'lapse'. ENDIF.
+    IF num = 1099. Word = 'large'. ENDIF.
+    IF num = 1100. Word = 'larva'. ENDIF.
+    IF num = 1101. Word = 'lasso'. ENDIF.
+    IF num = 1102. Word = 'latch'. ENDIF.
+    IF num = 1103. Word = 'later'. ENDIF.
+    IF num = 1104. Word = 'lathe'. ENDIF.
+    IF num = 1105. Word = 'latte'. ENDIF.
+    IF num = 1106. Word = 'laugh'. ENDIF.
+    IF num = 1107. Word = 'layer'. ENDIF.
+    IF num = 1108. Word = 'leach'. ENDIF.
+    IF num = 1109. Word = 'leafy'. ENDIF.
+    IF num = 1110. Word = 'leaky'. ENDIF.
+    IF num = 1111. Word = 'leant'. ENDIF.
+    IF num = 1112. Word = 'leapt'. ENDIF.
+    IF num = 1113. Word = 'learn'. ENDIF.
+    IF num = 1114. Word = 'lease'. ENDIF.
+    IF num = 1115. Word = 'leash'. ENDIF.
+    IF num = 1116. Word = 'least'. ENDIF.
+    IF num = 1117. Word = 'leave'. ENDIF.
+    IF num = 1118. Word = 'ledge'. ENDIF.
+    IF num = 1119. Word = 'leech'. ENDIF.
+    IF num = 1120. Word = 'leery'. ENDIF.
+    IF num = 1121. Word = 'lefty'. ENDIF.
+    IF num = 1122. Word = 'legal'. ENDIF.
+    IF num = 1123. Word = 'leggy'. ENDIF.
+    IF num = 1124. Word = 'lemon'. ENDIF.
+    IF num = 1125. Word = 'lemur'. ENDIF.
+    IF num = 1126. Word = 'leper'. ENDIF.
+    IF num = 1127. Word = 'level'. ENDIF.
+    IF num = 1128. Word = 'lever'. ENDIF.
+    IF num = 1129. Word = 'libel'. ENDIF.
+    IF num = 1130. Word = 'liege'. ENDIF.
+    IF num = 1131. Word = 'light'. ENDIF.
+    IF num = 1132. Word = 'liken'. ENDIF.
+    IF num = 1133. Word = 'lilac'. ENDIF.
+    IF num = 1134. Word = 'limbo'. ENDIF.
+    IF num = 1135. Word = 'limit'. ENDIF.
+    IF num = 1136. Word = 'linen'. ENDIF.
+    IF num = 1137. Word = 'liner'. ENDIF.
+    IF num = 1138. Word = 'lingo'. ENDIF.
+    IF num = 1139. Word = 'lipid'. ENDIF.
+    IF num = 1140. Word = 'lithe'. ENDIF.
+    IF num = 1141. Word = 'liver'. ENDIF.
+    IF num = 1142. Word = 'livid'. ENDIF.
+    IF num = 1143. Word = 'llama'. ENDIF.
+    IF num = 1144. Word = 'loamy'. ENDIF.
+    IF num = 1145. Word = 'loath'. ENDIF.
+    IF num = 1146. Word = 'lobby'. ENDIF.
+    IF num = 1147. Word = 'local'. ENDIF.
+    IF num = 1148. Word = 'locus'. ENDIF.
+    IF num = 1149. Word = 'lodge'. ENDIF.
+    IF num = 1150. Word = 'lofty'. ENDIF.
+    IF num = 1151. Word = 'logic'. ENDIF.
+    IF num = 1152. Word = 'login'. ENDIF.
+    IF num = 1153. Word = 'loopy'. ENDIF.
+    IF num = 1154. Word = 'loose'. ENDIF.
+    IF num = 1155. Word = 'lorry'. ENDIF.
+    IF num = 1156. Word = 'loser'. ENDIF.
+    IF num = 1157. Word = 'louse'. ENDIF.
+    IF num = 1158. Word = 'lousy'. ENDIF.
+    IF num = 1159. Word = 'lover'. ENDIF.
+    IF num = 1160. Word = 'lower'. ENDIF.
+    IF num = 1161. Word = 'lowly'. ENDIF.
+    IF num = 1162. Word = 'loyal'. ENDIF.
+    IF num = 1163. Word = 'lucid'. ENDIF.
+    IF num = 1164. Word = 'lucky'. ENDIF.
+    IF num = 1165. Word = 'lumen'. ENDIF.
+    IF num = 1166. Word = 'lumpy'. ENDIF.
+    IF num = 1167. Word = 'lunar'. ENDIF.
+    IF num = 1168. Word = 'lunch'. ENDIF.
+    IF num = 1169. Word = 'lunge'. ENDIF.
+    IF num = 1170. Word = 'lupus'. ENDIF.
+    IF num = 1171. Word = 'lurch'. ENDIF.
+    IF num = 1172. Word = 'lurid'. ENDIF.
+    IF num = 1173. Word = 'lusty'. ENDIF.
+    IF num = 1174. Word = 'lying'. ENDIF.
+    IF num = 1175. Word = 'lymph'. ENDIF.
+    IF num = 1176. Word = 'lynch'. ENDIF.
+    IF num = 1177. Word = 'lyric'. ENDIF.
+    IF num = 1178. Word = 'macaw'. ENDIF.
+    IF num = 1179. Word = 'macho'. ENDIF.
+    IF num = 1180. Word = 'macro'. ENDIF.
+    IF num = 1181. Word = 'madam'. ENDIF.
+    IF num = 1182. Word = 'madly'. ENDIF.
+    IF num = 1183. Word = 'mafia'. ENDIF.
+    IF num = 1184. Word = 'magic'. ENDIF.
+    IF num = 1185. Word = 'magma'. ENDIF.
+    IF num = 1186. Word = 'maize'. ENDIF.
+    IF num = 1187. Word = 'major'. ENDIF.
+    IF num = 1188. Word = 'maker'. ENDIF.
+    IF num = 1189. Word = 'mambo'. ENDIF.
+    IF num = 1190. Word = 'mamma'. ENDIF.
+    IF num = 1191. Word = 'mammy'. ENDIF.
+    IF num = 1192. Word = 'manga'. ENDIF.
+    IF num = 1193. Word = 'mange'. ENDIF.
+    IF num = 1194. Word = 'mango'. ENDIF.
+    IF num = 1195. Word = 'mangy'. ENDIF.
+    IF num = 1196. Word = 'mania'. ENDIF.
+    IF num = 1197. Word = 'manic'. ENDIF.
+    IF num = 1198. Word = 'manly'. ENDIF.
+    IF num = 1199. Word = 'manor'. ENDIF.
+    IF num = 1200. Word = 'maple'. ENDIF.
+    IF num = 1201. Word = 'march'. ENDIF.
+    IF num = 1202. Word = 'marry'. ENDIF.
+    IF num = 1203. Word = 'marsh'. ENDIF.
+    IF num = 1204. Word = 'mason'. ENDIF.
+    IF num = 1205. Word = 'masse'. ENDIF.
+    IF num = 1206. Word = 'match'. ENDIF.
+    IF num = 1207. Word = 'matey'. ENDIF.
+    IF num = 1208. Word = 'mauve'. ENDIF.
+    IF num = 1209. Word = 'maxim'. ENDIF.
+    IF num = 1210. Word = 'maybe'. ENDIF.
+    IF num = 1211. Word = 'mayor'. ENDIF.
+    IF num = 1212. Word = 'mealy'. ENDIF.
+    IF num = 1213. Word = 'meant'. ENDIF.
+    IF num = 1214. Word = 'meaty'. ENDIF.
+    IF num = 1215. Word = 'mecca'. ENDIF.
+    IF num = 1216. Word = 'medal'. ENDIF.
+    IF num = 1217. Word = 'media'. ENDIF.
+    IF num = 1218. Word = 'medic'. ENDIF.
+    IF num = 1219. Word = 'melee'. ENDIF.
+    IF num = 1220. Word = 'melon'. ENDIF.
+    IF num = 1221. Word = 'mercy'. ENDIF.
+    IF num = 1222. Word = 'merge'. ENDIF.
+    IF num = 1223. Word = 'merit'. ENDIF.
+    IF num = 1224. Word = 'merry'. ENDIF.
+    IF num = 1225. Word = 'metal'. ENDIF.
+    IF num = 1226. Word = 'meter'. ENDIF.
+    IF num = 1227. Word = 'metro'. ENDIF.
+    IF num = 1228. Word = 'micro'. ENDIF.
+    IF num = 1229. Word = 'midge'. ENDIF.
+    IF num = 1230. Word = 'midst'. ENDIF.
+    IF num = 1231. Word = 'might'. ENDIF.
+    IF num = 1232. Word = 'milky'. ENDIF.
+    IF num = 1233. Word = 'mimic'. ENDIF.
+    IF num = 1234. Word = 'mince'. ENDIF.
+    IF num = 1235. Word = 'miner'. ENDIF.
+    IF num = 1236. Word = 'minim'. ENDIF.
+    IF num = 1237. Word = 'minor'. ENDIF.
+    IF num = 1238. Word = 'minty'. ENDIF.
+    IF num = 1239. Word = 'minus'. ENDIF.
+    IF num = 1240. Word = 'mirth'. ENDIF.
+    IF num = 1241. Word = 'miser'. ENDIF.
+    IF num = 1242. Word = 'missy'. ENDIF.
+    IF num = 1243. Word = 'mocha'. ENDIF.
+    IF num = 1244. Word = 'modal'. ENDIF.
+    IF num = 1245. Word = 'model'. ENDIF.
+    IF num = 1246. Word = 'modem'. ENDIF.
+    IF num = 1247. Word = 'mogul'. ENDIF.
+    IF num = 1248. Word = 'moist'. ENDIF.
+    IF num = 1249. Word = 'molar'. ENDIF.
+    IF num = 1250. Word = 'moldy'. ENDIF.
+    IF num = 1251. Word = 'money'. ENDIF.
+    IF num = 1252. Word = 'month'. ENDIF.
+    IF num = 1253. Word = 'moody'. ENDIF.
+    IF num = 1254. Word = 'moose'. ENDIF.
+    IF num = 1255. Word = 'moral'. ENDIF.
+    IF num = 1256. Word = 'moron'. ENDIF.
+    IF num = 1257. Word = 'morph'. ENDIF.
+    IF num = 1258. Word = 'mossy'. ENDIF.
+    IF num = 1259. Word = 'motel'. ENDIF.
+    IF num = 1260. Word = 'motif'. ENDIF.
+    IF num = 1261. Word = 'motor'. ENDIF.
+    IF num = 1262. Word = 'motto'. ENDIF.
+    IF num = 1263. Word = 'moult'. ENDIF.
+    IF num = 1264. Word = 'mound'. ENDIF.
+    IF num = 1265. Word = 'mount'. ENDIF.
+    IF num = 1266. Word = 'mourn'. ENDIF.
+    IF num = 1267. Word = 'mouse'. ENDIF.
+    IF num = 1268. Word = 'mouth'. ENDIF.
+    IF num = 1269. Word = 'mover'. ENDIF.
+    IF num = 1270. Word = 'movie'. ENDIF.
+    IF num = 1271. Word = 'mower'. ENDIF.
+    IF num = 1272. Word = 'mucky'. ENDIF.
+    IF num = 1273. Word = 'mucus'. ENDIF.
+    IF num = 1274. Word = 'muddy'. ENDIF.
+    IF num = 1275. Word = 'mulch'. ENDIF.
+    IF num = 1276. Word = 'mummy'. ENDIF.
+    IF num = 1277. Word = 'munch'. ENDIF.
+    IF num = 1278. Word = 'mural'. ENDIF.
+    IF num = 1279. Word = 'murky'. ENDIF.
+    IF num = 1280. Word = 'mushy'. ENDIF.
+    IF num = 1281. Word = 'music'. ENDIF.
+    IF num = 1282. Word = 'musky'. ENDIF.
+    IF num = 1283. Word = 'musty'. ENDIF.
+    IF num = 1284. Word = 'myrrh'. ENDIF.
+    IF num = 1285. Word = 'nadir'. ENDIF.
+    IF num = 1286. Word = 'naive'. ENDIF.
+    IF num = 1287. Word = 'nanny'. ENDIF.
+    IF num = 1288. Word = 'nasal'. ENDIF.
+    IF num = 1289. Word = 'nasty'. ENDIF.
+    IF num = 1290. Word = 'natal'. ENDIF.
+    IF num = 1291. Word = 'naval'. ENDIF.
+    IF num = 1292. Word = 'navel'. ENDIF.
+    IF num = 1293. Word = 'needy'. ENDIF.
+    IF num = 1294. Word = 'neigh'. ENDIF.
+    IF num = 1295. Word = 'nerdy'. ENDIF.
+    IF num = 1296. Word = 'nerve'. ENDIF.
+    IF num = 1297. Word = 'never'. ENDIF.
+    IF num = 1298. Word = 'newer'. ENDIF.
+    IF num = 1299. Word = 'newly'. ENDIF.
+    IF num = 1300. Word = 'nicer'. ENDIF.
+    IF num = 1301. Word = 'niche'. ENDIF.
+    IF num = 1302. Word = 'niece'. ENDIF.
+    IF num = 1303. Word = 'night'. ENDIF.
+    IF num = 1304. Word = 'ninja'. ENDIF.
+    IF num = 1305. Word = 'ninny'. ENDIF.
+    IF num = 1306. Word = 'ninth'. ENDIF.
+    IF num = 1307. Word = 'noble'. ENDIF.
+    IF num = 1308. Word = 'nobly'. ENDIF.
+    IF num = 1309. Word = 'noise'. ENDIF.
+    IF num = 1310. Word = 'noisy'. ENDIF.
+    IF num = 1311. Word = 'nomad'. ENDIF.
+    IF num = 1312. Word = 'noose'. ENDIF.
+    IF num = 1313. Word = 'north'. ENDIF.
+    IF num = 1314. Word = 'nosey'. ENDIF.
+    IF num = 1315. Word = 'notch'. ENDIF.
+    IF num = 1316. Word = 'novel'. ENDIF.
+    IF num = 1317. Word = 'nudge'. ENDIF.
+    IF num = 1318. Word = 'nurse'. ENDIF.
+    IF num = 1319. Word = 'nutty'. ENDIF.
+    IF num = 1320. Word = 'nylon'. ENDIF.
+    IF num = 1321. Word = 'nymph'. ENDIF.
+    IF num = 1322. Word = 'oaken'. ENDIF.
+    IF num = 1323. Word = 'obese'. ENDIF.
+    IF num = 1324. Word = 'occur'. ENDIF.
+    IF num = 1325. Word = 'ocean'. ENDIF.
+    IF num = 1326. Word = 'octal'. ENDIF.
+    IF num = 1327. Word = 'octet'. ENDIF.
+    IF num = 1328. Word = 'odder'. ENDIF.
+    IF num = 1329. Word = 'oddly'. ENDIF.
+    IF num = 1330. Word = 'offal'. ENDIF.
+    IF num = 1331. Word = 'offer'. ENDIF.
+    IF num = 1332. Word = 'often'. ENDIF.
+    IF num = 1333. Word = 'olden'. ENDIF.
+    IF num = 1334. Word = 'older'. ENDIF.
+    IF num = 1335. Word = 'olive'. ENDIF.
+    IF num = 1336. Word = 'ombre'. ENDIF.
+    IF num = 1337. Word = 'omega'. ENDIF.
+    IF num = 1338. Word = 'onion'. ENDIF.
+    IF num = 1339. Word = 'onset'. ENDIF.
+    IF num = 1340. Word = 'opera'. ENDIF.
+    IF num = 1341. Word = 'opine'. ENDIF.
+    IF num = 1342. Word = 'opium'. ENDIF.
+    IF num = 1343. Word = 'optic'. ENDIF.
+    IF num = 1344. Word = 'orbit'. ENDIF.
+    IF num = 1345. Word = 'order'. ENDIF.
+    IF num = 1346. Word = 'organ'. ENDIF.
+    IF num = 1347. Word = 'other'. ENDIF.
+    IF num = 1348. Word = 'otter'. ENDIF.
+    IF num = 1349. Word = 'ought'. ENDIF.
+    IF num = 1350. Word = 'ounce'. ENDIF.
+    IF num = 1351. Word = 'outdo'. ENDIF.
+    IF num = 1352. Word = 'outer'. ENDIF.
+    IF num = 1353. Word = 'outgo'. ENDIF.
+    IF num = 1354. Word = 'ovary'. ENDIF.
+    IF num = 1355. Word = 'ovate'. ENDIF.
+    IF num = 1356. Word = 'overt'. ENDIF.
+    IF num = 1357. Word = 'ovine'. ENDIF.
+    IF num = 1358. Word = 'ovoid'. ENDIF.
+    IF num = 1359. Word = 'owing'. ENDIF.
+    IF num = 1360. Word = 'owner'. ENDIF.
+    IF num = 1361. Word = 'oxide'. ENDIF.
+    IF num = 1362. Word = 'ozone'. ENDIF.
+    IF num = 1363. Word = 'paddy'. ENDIF.
+    IF num = 1364. Word = 'pagan'. ENDIF.
+    IF num = 1365. Word = 'paint'. ENDIF.
+    IF num = 1366. Word = 'paler'. ENDIF.
+    IF num = 1367. Word = 'palsy'. ENDIF.
+    IF num = 1368. Word = 'panel'. ENDIF.
+    IF num = 1369. Word = 'panic'. ENDIF.
+    IF num = 1370. Word = 'pansy'. ENDIF.
+    IF num = 1371. Word = 'papal'. ENDIF.
+    IF num = 1372. Word = 'paper'. ENDIF.
+    IF num = 1373. Word = 'parer'. ENDIF.
+    IF num = 1374. Word = 'parka'. ENDIF.
+    IF num = 1375. Word = 'parry'. ENDIF.
+    IF num = 1376. Word = 'parse'. ENDIF.
+    IF num = 1377. Word = 'party'. ENDIF.
+    IF num = 1378. Word = 'pasta'. ENDIF.
+    IF num = 1379. Word = 'paste'. ENDIF.
+    IF num = 1380. Word = 'pasty'. ENDIF.
+    IF num = 1381. Word = 'patch'. ENDIF.
+    IF num = 1382. Word = 'patio'. ENDIF.
+    IF num = 1383. Word = 'patsy'. ENDIF.
+    IF num = 1384. Word = 'patty'. ENDIF.
+    IF num = 1385. Word = 'pause'. ENDIF.
+    IF num = 1386. Word = 'payee'. ENDIF.
+    IF num = 1387. Word = 'payer'. ENDIF.
+    IF num = 1388. Word = 'peace'. ENDIF.
+    IF num = 1389. Word = 'peach'. ENDIF.
+    IF num = 1390. Word = 'pearl'. ENDIF.
+    IF num = 1391. Word = 'pecan'. ENDIF.
+    IF num = 1392. Word = 'pedal'. ENDIF.
+    IF num = 1393. Word = 'penal'. ENDIF.
+    IF num = 1394. Word = 'pence'. ENDIF.
+    IF num = 1395. Word = 'penne'. ENDIF.
+    IF num = 1396. Word = 'penny'. ENDIF.
+    IF num = 1397. Word = 'perch'. ENDIF.
+    IF num = 1398. Word = 'peril'. ENDIF.
+    IF num = 1399. Word = 'perky'. ENDIF.
+    IF num = 1400. Word = 'pesky'. ENDIF.
+    IF num = 1401. Word = 'pesto'. ENDIF.
+    IF num = 1402. Word = 'petal'. ENDIF.
+    IF num = 1403. Word = 'petty'. ENDIF.
+    IF num = 1404. Word = 'phase'. ENDIF.
+    IF num = 1405. Word = 'phone'. ENDIF.
+    IF num = 1406. Word = 'phony'. ENDIF.
+    IF num = 1407. Word = 'photo'. ENDIF.
+    IF num = 1408. Word = 'piano'. ENDIF.
+    IF num = 1409. Word = 'picky'. ENDIF.
+    IF num = 1410. Word = 'piece'. ENDIF.
+    IF num = 1411. Word = 'piety'. ENDIF.
+    IF num = 1412. Word = 'piggy'. ENDIF.
+    IF num = 1413. Word = 'pilot'. ENDIF.
+    IF num = 1414. Word = 'pinch'. ENDIF.
+    IF num = 1415. Word = 'piney'. ENDIF.
+    IF num = 1416. Word = 'pinky'. ENDIF.
+    IF num = 1417. Word = 'pinto'. ENDIF.
+    IF num = 1418. Word = 'piper'. ENDIF.
+    IF num = 1419. Word = 'pique'. ENDIF.
+    IF num = 1420. Word = 'pitch'. ENDIF.
+    IF num = 1421. Word = 'pithy'. ENDIF.
+    IF num = 1422. Word = 'pivot'. ENDIF.
+    IF num = 1423. Word = 'pixel'. ENDIF.
+    IF num = 1424. Word = 'pixie'. ENDIF.
+    IF num = 1425. Word = 'pizza'. ENDIF.
+    IF num = 1426. Word = 'place'. ENDIF.
+    IF num = 1427. Word = 'plaid'. ENDIF.
+    IF num = 1428. Word = 'plain'. ENDIF.
+    IF num = 1429. Word = 'plait'. ENDIF.
+    IF num = 1430. Word = 'plane'. ENDIF.
+    IF num = 1431. Word = 'plank'. ENDIF.
+    IF num = 1432. Word = 'plant'. ENDIF.
+    IF num = 1433. Word = 'plate'. ENDIF.
+    IF num = 1434. Word = 'plaza'. ENDIF.
+    IF num = 1435. Word = 'plead'. ENDIF.
+    IF num = 1436. Word = 'pleat'. ENDIF.
+    IF num = 1437. Word = 'plied'. ENDIF.
+    IF num = 1438. Word = 'plier'. ENDIF.
+    IF num = 1439. Word = 'pluck'. ENDIF.
+    IF num = 1440. Word = 'plumb'. ENDIF.
+    IF num = 1441. Word = 'plume'. ENDIF.
+    IF num = 1442. Word = 'plump'. ENDIF.
+    IF num = 1443. Word = 'plunk'. ENDIF.
+    IF num = 1444. Word = 'plush'. ENDIF.
+    IF num = 1445. Word = 'poesy'. ENDIF.
+    IF num = 1446. Word = 'point'. ENDIF.
+    IF num = 1447. Word = 'poise'. ENDIF.
+    IF num = 1448. Word = 'poker'. ENDIF.
+    IF num = 1449. Word = 'polar'. ENDIF.
+    IF num = 1450. Word = 'polka'. ENDIF.
+    IF num = 1451. Word = 'polyp'. ENDIF.
+    IF num = 1452. Word = 'pooch'. ENDIF.
+    IF num = 1453. Word = 'poppy'. ENDIF.
+    IF num = 1454. Word = 'porch'. ENDIF.
+    IF num = 1455. Word = 'poser'. ENDIF.
+    IF num = 1456. Word = 'posit'. ENDIF.
+    IF num = 1457. Word = 'posse'. ENDIF.
+    IF num = 1458. Word = 'pouch'. ENDIF.
+    IF num = 1459. Word = 'pound'. ENDIF.
+    IF num = 1460. Word = 'pouty'. ENDIF.
+    IF num = 1461. Word = 'power'. ENDIF.
+    IF num = 1462. Word = 'prank'. ENDIF.
+    IF num = 1463. Word = 'prawn'. ENDIF.
+    IF num = 1464. Word = 'preen'. ENDIF.
+    IF num = 1465. Word = 'press'. ENDIF.
+    IF num = 1466. Word = 'price'. ENDIF.
+    IF num = 1467. Word = 'prick'. ENDIF.
+    IF num = 1468. Word = 'pride'. ENDIF.
+    IF num = 1469. Word = 'pried'. ENDIF.
+    IF num = 1470. Word = 'prime'. ENDIF.
+    IF num = 1471. Word = 'primo'. ENDIF.
+    IF num = 1472. Word = 'print'. ENDIF.
+    IF num = 1473. Word = 'prior'. ENDIF.
+    IF num = 1474. Word = 'prism'. ENDIF.
+    IF num = 1475. Word = 'privy'. ENDIF.
+    IF num = 1476. Word = 'prize'. ENDIF.
+    IF num = 1477. Word = 'probe'. ENDIF.
+    IF num = 1478. Word = 'prone'. ENDIF.
+    IF num = 1479. Word = 'prong'. ENDIF.
+    IF num = 1480. Word = 'proof'. ENDIF.
+    IF num = 1481. Word = 'prose'. ENDIF.
+    IF num = 1482. Word = 'proud'. ENDIF.
+    IF num = 1483. Word = 'prove'. ENDIF.
+    IF num = 1484. Word = 'prowl'. ENDIF.
+    IF num = 1485. Word = 'proxy'. ENDIF.
+    IF num = 1486. Word = 'prude'. ENDIF.
+    IF num = 1487. Word = 'prune'. ENDIF.
+    IF num = 1488. Word = 'psalm'. ENDIF.
+    IF num = 1489. Word = 'pubic'. ENDIF.
+    IF num = 1490. Word = 'pudgy'. ENDIF.
+    IF num = 1491. Word = 'puffy'. ENDIF.
+    IF num = 1492. Word = 'pulpy'. ENDIF.
+    IF num = 1493. Word = 'pulse'. ENDIF.
+    IF num = 1494. Word = 'punch'. ENDIF.
+    IF num = 1495. Word = 'pupal'. ENDIF.
+    IF num = 1496. Word = 'pupil'. ENDIF.
+    IF num = 1497. Word = 'puppy'. ENDIF.
+    IF num = 1498. Word = 'puree'. ENDIF.
+    IF num = 1499. Word = 'purer'. ENDIF.
+    IF num = 1500. Word = 'purge'. ENDIF.
+    IF num = 1501. Word = 'purse'. ENDIF.
+    IF num = 1502. Word = 'pushy'. ENDIF.
+    IF num = 1503. Word = 'putty'. ENDIF.
+    IF num = 1504. Word = 'pygmy'. ENDIF.
+    IF num = 1505. Word = 'quack'. ENDIF.
+    IF num = 1506. Word = 'quail'. ENDIF.
+    IF num = 1507. Word = 'quake'. ENDIF.
+    IF num = 1508. Word = 'qualm'. ENDIF.
+    IF num = 1509. Word = 'quark'. ENDIF.
+    IF num = 1510. Word = 'quart'. ENDIF.
+    IF num = 1511. Word = 'quash'. ENDIF.
+    IF num = 1512. Word = 'quasi'. ENDIF.
+    IF num = 1513. Word = 'queen'. ENDIF.
+    IF num = 1514. Word = 'queer'. ENDIF.
+    IF num = 1515. Word = 'quell'. ENDIF.
+    IF num = 1516. Word = 'query'. ENDIF.
+    IF num = 1517. Word = 'quest'. ENDIF.
+    IF num = 1518. Word = 'queue'. ENDIF.
+    IF num = 1519. Word = 'quick'. ENDIF.
+    IF num = 1520. Word = 'quiet'. ENDIF.
+    IF num = 1521. Word = 'quill'. ENDIF.
+    IF num = 1522. Word = 'quilt'. ENDIF.
+    IF num = 1523. Word = 'quirk'. ENDIF.
+    IF num = 1524. Word = 'quite'. ENDIF.
+    IF num = 1525. Word = 'quota'. ENDIF.
+    IF num = 1526. Word = 'quote'. ENDIF.
+    IF num = 1527. Word = 'quoth'. ENDIF.
+    IF num = 1528. Word = 'rabbi'. ENDIF.
+    IF num = 1529. Word = 'rabid'. ENDIF.
+    IF num = 1530. Word = 'racer'. ENDIF.
+    IF num = 1531. Word = 'radar'. ENDIF.
+    IF num = 1532. Word = 'radii'. ENDIF.
+    IF num = 1533. Word = 'radio'. ENDIF.
+    IF num = 1534. Word = 'rainy'. ENDIF.
+    IF num = 1535. Word = 'raise'. ENDIF.
+    IF num = 1536. Word = 'rajah'. ENDIF.
+    IF num = 1537. Word = 'rally'. ENDIF.
+    IF num = 1538. Word = 'ralph'. ENDIF.
+    IF num = 1539. Word = 'ramen'. ENDIF.
+    IF num = 1540. Word = 'ranch'. ENDIF.
+    IF num = 1541. Word = 'randy'. ENDIF.
+    IF num = 1542. Word = 'range'. ENDIF.
+    IF num = 1543. Word = 'rapid'. ENDIF.
+    IF num = 1544. Word = 'rarer'. ENDIF.
+    IF num = 1545. Word = 'raspy'. ENDIF.
+    IF num = 1546. Word = 'ratio'. ENDIF.
+    IF num = 1547. Word = 'ratty'. ENDIF.
+    IF num = 1548. Word = 'raven'. ENDIF.
+    IF num = 1549. Word = 'rayon'. ENDIF.
+    IF num = 1550. Word = 'razor'. ENDIF.
+    IF num = 1551. Word = 'reach'. ENDIF.
+    IF num = 1552. Word = 'react'. ENDIF.
+    IF num = 1553. Word = 'ready'. ENDIF.
+    IF num = 1554. Word = 'realm'. ENDIF.
+    IF num = 1555. Word = 'rearm'. ENDIF.
+    IF num = 1556. Word = 'rebar'. ENDIF.
+    IF num = 1557. Word = 'rebel'. ENDIF.
+    IF num = 1558. Word = 'rebus'. ENDIF.
+    IF num = 1559. Word = 'rebut'. ENDIF.
+    IF num = 1560. Word = 'recap'. ENDIF.
+    IF num = 1561. Word = 'recur'. ENDIF.
+    IF num = 1562. Word = 'recut'. ENDIF.
+    IF num = 1563. Word = 'reedy'. ENDIF.
+    IF num = 1564. Word = 'refer'. ENDIF.
+    IF num = 1565. Word = 'refit'. ENDIF.
+    IF num = 1566. Word = 'regal'. ENDIF.
+    IF num = 1567. Word = 'rehab'. ENDIF.
+    IF num = 1568. Word = 'reign'. ENDIF.
+    IF num = 1569. Word = 'relax'. ENDIF.
+    IF num = 1570. Word = 'relay'. ENDIF.
+    IF num = 1571. Word = 'relic'. ENDIF.
+    IF num = 1572. Word = 'remit'. ENDIF.
+    IF num = 1573. Word = 'renal'. ENDIF.
+    IF num = 1574. Word = 'renew'. ENDIF.
+    IF num = 1575. Word = 'repay'. ENDIF.
+    IF num = 1576. Word = 'repel'. ENDIF.
+    IF num = 1577. Word = 'reply'. ENDIF.
+    IF num = 1578. Word = 'rerun'. ENDIF.
+    IF num = 1579. Word = 'reset'. ENDIF.
+    IF num = 1580. Word = 'resin'. ENDIF.
+    IF num = 1581. Word = 'retch'. ENDIF.
+    IF num = 1582. Word = 'retro'. ENDIF.
+    IF num = 1583. Word = 'retry'. ENDIF.
+    IF num = 1584. Word = 'reuse'. ENDIF.
+    IF num = 1585. Word = 'revel'. ENDIF.
+    IF num = 1586. Word = 'revue'. ENDIF.
+    IF num = 1587. Word = 'rhino'. ENDIF.
+    IF num = 1588. Word = 'rhyme'. ENDIF.
+    IF num = 1589. Word = 'rider'. ENDIF.
+    IF num = 1590. Word = 'ridge'. ENDIF.
+    IF num = 1591. Word = 'rifle'. ENDIF.
+    IF num = 1592. Word = 'right'. ENDIF.
+    IF num = 1593. Word = 'rigid'. ENDIF.
+    IF num = 1594. Word = 'rigor'. ENDIF.
+    IF num = 1595. Word = 'rinse'. ENDIF.
+    IF num = 1596. Word = 'ripen'. ENDIF.
+    IF num = 1597. Word = 'riper'. ENDIF.
+    IF num = 1598. Word = 'risen'. ENDIF.
+    IF num = 1599. Word = 'riser'. ENDIF.
+    IF num = 1600. Word = 'risky'. ENDIF.
+    IF num = 1601. Word = 'rival'. ENDIF.
+    IF num = 1602. Word = 'river'. ENDIF.
+    IF num = 1603. Word = 'rivet'. ENDIF.
+    IF num = 1604. Word = 'roach'. ENDIF.
+    IF num = 1605. Word = 'roast'. ENDIF.
+    IF num = 1606. Word = 'robin'. ENDIF.
+    IF num = 1607. Word = 'robot'. ENDIF.
+    IF num = 1608. Word = 'rocky'. ENDIF.
+    IF num = 1609. Word = 'rodeo'. ENDIF.
+    IF num = 1610. Word = 'roger'. ENDIF.
+    IF num = 1611. Word = 'rogue'. ENDIF.
+    IF num = 1612. Word = 'roomy'. ENDIF.
+    IF num = 1613. Word = 'roost'. ENDIF.
+    IF num = 1614. Word = 'rotor'. ENDIF.
+    IF num = 1615. Word = 'rouge'. ENDIF.
+    IF num = 1616. Word = 'rough'. ENDIF.
+    IF num = 1617. Word = 'round'. ENDIF.
+    IF num = 1618. Word = 'rouse'. ENDIF.
+    IF num = 1619. Word = 'route'. ENDIF.
+    IF num = 1620. Word = 'rover'. ENDIF.
+    IF num = 1621. Word = 'rowdy'. ENDIF.
+    IF num = 1622. Word = 'rower'. ENDIF.
+    IF num = 1623. Word = 'royal'. ENDIF.
+    IF num = 1624. Word = 'ruddy'. ENDIF.
+    IF num = 1625. Word = 'ruder'. ENDIF.
+    IF num = 1626. Word = 'rugby'. ENDIF.
+    IF num = 1627. Word = 'ruler'. ENDIF.
+    IF num = 1628. Word = 'rumba'. ENDIF.
+    IF num = 1629. Word = 'rumor'. ENDIF.
+    IF num = 1630. Word = 'rupee'. ENDIF.
+    IF num = 1631. Word = 'rural'. ENDIF.
+    IF num = 1632. Word = 'rusty'. ENDIF.
+    IF num = 1633. Word = 'sadly'. ENDIF.
+    IF num = 1634. Word = 'safer'. ENDIF.
+    IF num = 1635. Word = 'saint'. ENDIF.
+    IF num = 1636. Word = 'salad'. ENDIF.
+    IF num = 1637. Word = 'sally'. ENDIF.
+    IF num = 1638. Word = 'salon'. ENDIF.
+    IF num = 1639. Word = 'salsa'. ENDIF.
+    IF num = 1640. Word = 'salty'. ENDIF.
+    IF num = 1641. Word = 'salve'. ENDIF.
+    IF num = 1642. Word = 'salvo'. ENDIF.
+    IF num = 1643. Word = 'sandy'. ENDIF.
+    IF num = 1644. Word = 'saner'. ENDIF.
+    IF num = 1645. Word = 'sappy'. ENDIF.
+    IF num = 1646. Word = 'sassy'. ENDIF.
+    IF num = 1647. Word = 'satin'. ENDIF.
+    IF num = 1648. Word = 'satyr'. ENDIF.
+    IF num = 1649. Word = 'sauce'. ENDIF.
+    IF num = 1650. Word = 'saucy'. ENDIF.
+    IF num = 1651. Word = 'sauna'. ENDIF.
+    IF num = 1652. Word = 'saute'. ENDIF.
+    IF num = 1653. Word = 'savor'. ENDIF.
+    IF num = 1654. Word = 'savoy'. ENDIF.
+    IF num = 1655. Word = 'savvy'. ENDIF.
+    IF num = 1656. Word = 'scald'. ENDIF.
+    IF num = 1657. Word = 'scale'. ENDIF.
+    IF num = 1658. Word = 'scalp'. ENDIF.
+    IF num = 1659. Word = 'scaly'. ENDIF.
+    IF num = 1660. Word = 'scamp'. ENDIF.
+    IF num = 1661. Word = 'scant'. ENDIF.
+    IF num = 1662. Word = 'scare'. ENDIF.
+    IF num = 1663. Word = 'scarf'. ENDIF.
+    IF num = 1664. Word = 'scary'. ENDIF.
+    IF num = 1665. Word = 'scene'. ENDIF.
+    IF num = 1666. Word = 'scent'. ENDIF.
+    IF num = 1667. Word = 'scion'. ENDIF.
+    IF num = 1668. Word = 'scoff'. ENDIF.
+    IF num = 1669. Word = 'scold'. ENDIF.
+    IF num = 1670. Word = 'scone'. ENDIF.
+    IF num = 1671. Word = 'scoop'. ENDIF.
+    IF num = 1672. Word = 'scope'. ENDIF.
+    IF num = 1673. Word = 'score'. ENDIF.
+    IF num = 1674. Word = 'scorn'. ENDIF.
+    IF num = 1675. Word = 'scour'. ENDIF.
+    IF num = 1676. Word = 'scout'. ENDIF.
+    IF num = 1677. Word = 'scowl'. ENDIF.
+    IF num = 1678. Word = 'scram'. ENDIF.
+    IF num = 1679. Word = 'scrap'. ENDIF.
+    IF num = 1680. Word = 'scree'. ENDIF.
+    IF num = 1681. Word = 'screw'. ENDIF.
+    IF num = 1682. Word = 'scrub'. ENDIF.
+    IF num = 1683. Word = 'scrum'. ENDIF.
+    IF num = 1684. Word = 'scuba'. ENDIF.
+    IF num = 1685. Word = 'sedan'. ENDIF.
+    IF num = 1686. Word = 'seedy'. ENDIF.
+    IF num = 1687. Word = 'segue'. ENDIF.
+    IF num = 1688. Word = 'seize'. ENDIF.
+    IF num = 1689. Word = 'semen'. ENDIF.
+    IF num = 1690. Word = 'sense'. ENDIF.
+    IF num = 1691. Word = 'sepia'. ENDIF.
+    IF num = 1692. Word = 'serif'. ENDIF.
+    IF num = 1693. Word = 'serum'. ENDIF.
+    IF num = 1694. Word = 'serve'. ENDIF.
+    IF num = 1695. Word = 'setup'. ENDIF.
+    IF num = 1696. Word = 'seven'. ENDIF.
+    IF num = 1697. Word = 'sever'. ENDIF.
+    IF num = 1698. Word = 'sewer'. ENDIF.
+    IF num = 1699. Word = 'shack'. ENDIF.
+    IF num = 1700. Word = 'shade'. ENDIF.
+    IF num = 1701. Word = 'shady'. ENDIF.
+    IF num = 1702. Word = 'shaft'. ENDIF.
+    IF num = 1703. Word = 'shake'. ENDIF.
+    IF num = 1704. Word = 'shaky'. ENDIF.
+    IF num = 1705. Word = 'shale'. ENDIF.
+    IF num = 1706. Word = 'shall'. ENDIF.
+    IF num = 1707. Word = 'shalt'. ENDIF.
+    IF num = 1708. Word = 'shame'. ENDIF.
+    IF num = 1709. Word = 'shank'. ENDIF.
+    IF num = 1710. Word = 'shape'. ENDIF.
+    IF num = 1711. Word = 'shard'. ENDIF.
+    IF num = 1712. Word = 'share'. ENDIF.
+    IF num = 1713. Word = 'shark'. ENDIF.
+    IF num = 1714. Word = 'sharp'. ENDIF.
+    IF num = 1715. Word = 'shave'. ENDIF.
+    IF num = 1716. Word = 'shawl'. ENDIF.
+    IF num = 1717. Word = 'shear'. ENDIF.
+    IF num = 1718. Word = 'sheen'. ENDIF.
+    IF num = 1719. Word = 'sheep'. ENDIF.
+    IF num = 1720. Word = 'sheer'. ENDIF.
+    IF num = 1721. Word = 'sheet'. ENDIF.
+    IF num = 1722. Word = 'sheik'. ENDIF.
+    IF num = 1723. Word = 'shelf'. ENDIF.
+    IF num = 1724. Word = 'shell'. ENDIF.
+    IF num = 1725. Word = 'shied'. ENDIF.
+    IF num = 1726. Word = 'shift'. ENDIF.
+    IF num = 1727. Word = 'shine'. ENDIF.
+    IF num = 1728. Word = 'shiny'. ENDIF.
+    IF num = 1729. Word = 'shire'. ENDIF.
+    IF num = 1730. Word = 'shirk'. ENDIF.
+    IF num = 1731. Word = 'shirt'. ENDIF.
+    IF num = 1732. Word = 'shoal'. ENDIF.
+    IF num = 1733. Word = 'shock'. ENDIF.
+    IF num = 1734. Word = 'shone'. ENDIF.
+    IF num = 1735. Word = 'shook'. ENDIF.
+    IF num = 1736. Word = 'shoot'. ENDIF.
+    IF num = 1737. Word = 'shore'. ENDIF.
+    IF num = 1738. Word = 'shorn'. ENDIF.
+    IF num = 1739. Word = 'short'. ENDIF.
+    IF num = 1740. Word = 'shout'. ENDIF.
+    IF num = 1741. Word = 'shove'. ENDIF.
+    IF num = 1742. Word = 'shown'. ENDIF.
+    IF num = 1743. Word = 'showy'. ENDIF.
+    IF num = 1744. Word = 'shrew'. ENDIF.
+    IF num = 1745. Word = 'shrub'. ENDIF.
+    IF num = 1746. Word = 'shrug'. ENDIF.
+    IF num = 1747. Word = 'shuck'. ENDIF.
+    IF num = 1748. Word = 'shunt'. ENDIF.
+    IF num = 1749. Word = 'shush'. ENDIF.
+    IF num = 1750. Word = 'shyly'. ENDIF.
+    IF num = 1751. Word = 'siege'. ENDIF.
+    IF num = 1752. Word = 'sieve'. ENDIF.
+    IF num = 1753. Word = 'sight'. ENDIF.
+    IF num = 1754. Word = 'sigma'. ENDIF.
+    IF num = 1755. Word = 'silky'. ENDIF.
+    IF num = 1756. Word = 'silly'. ENDIF.
+    IF num = 1757. Word = 'since'. ENDIF.
+    IF num = 1758. Word = 'sinew'. ENDIF.
+    IF num = 1759. Word = 'singe'. ENDIF.
+    IF num = 1760. Word = 'siren'. ENDIF.
+    IF num = 1761. Word = 'sissy'. ENDIF.
+    IF num = 1762. Word = 'sixth'. ENDIF.
+    IF num = 1763. Word = 'sixty'. ENDIF.
+    IF num = 1764. Word = 'skate'. ENDIF.
+    IF num = 1765. Word = 'skier'. ENDIF.
+    IF num = 1766. Word = 'skiff'. ENDIF.
+    IF num = 1767. Word = 'skill'. ENDIF.
+    IF num = 1768. Word = 'skimp'. ENDIF.
+    IF num = 1769. Word = 'skirt'. ENDIF.
+    IF num = 1770. Word = 'skulk'. ENDIF.
+    IF num = 1771. Word = 'skull'. ENDIF.
+    IF num = 1772. Word = 'skunk'. ENDIF.
+    IF num = 1773. Word = 'slack'. ENDIF.
+    IF num = 1774. Word = 'slain'. ENDIF.
+    IF num = 1775. Word = 'slang'. ENDIF.
+    IF num = 1776. Word = 'slant'. ENDIF.
+    IF num = 1777. Word = 'slash'. ENDIF.
+    IF num = 1778. Word = 'slate'. ENDIF.
+    IF num = 1779. Word = 'slave'. ENDIF.
+    IF num = 1780. Word = 'sleek'. ENDIF.
+    IF num = 1781. Word = 'sleep'. ENDIF.
+    IF num = 1782. Word = 'sleet'. ENDIF.
+    IF num = 1783. Word = 'slept'. ENDIF.
+    IF num = 1784. Word = 'slice'. ENDIF.
+    IF num = 1785. Word = 'slick'. ENDIF.
+    IF num = 1786. Word = 'slide'. ENDIF.
+    IF num = 1787. Word = 'slime'. ENDIF.
+    IF num = 1788. Word = 'slimy'. ENDIF.
+    IF num = 1789. Word = 'sling'. ENDIF.
+    IF num = 1790. Word = 'slink'. ENDIF.
+    IF num = 1791. Word = 'sloop'. ENDIF.
+    IF num = 1792. Word = 'slope'. ENDIF.
+    IF num = 1793. Word = 'slosh'. ENDIF.
+    IF num = 1794. Word = 'sloth'. ENDIF.
+    IF num = 1795. Word = 'slump'. ENDIF.
+    IF num = 1796. Word = 'slung'. ENDIF.
+    IF num = 1797. Word = 'slunk'. ENDIF.
+    IF num = 1798. Word = 'slurp'. ENDIF.
+    IF num = 1799. Word = 'slush'. ENDIF.
+    IF num = 1800. Word = 'slyly'. ENDIF.
+    IF num = 1801. Word = 'smack'. ENDIF.
+    IF num = 1802. Word = 'small'. ENDIF.
+    IF num = 1803. Word = 'smart'. ENDIF.
+    IF num = 1804. Word = 'smash'. ENDIF.
+    IF num = 1805. Word = 'smear'. ENDIF.
+    IF num = 1806. Word = 'smell'. ENDIF.
+    IF num = 1807. Word = 'smelt'. ENDIF.
+    IF num = 1808. Word = 'smile'. ENDIF.
+    IF num = 1809. Word = 'smirk'. ENDIF.
+    IF num = 1810. Word = 'smite'. ENDIF.
+    IF num = 1811. Word = 'smith'. ENDIF.
+    IF num = 1812. Word = 'smock'. ENDIF.
+    IF num = 1813. Word = 'smoke'. ENDIF.
+    IF num = 1814. Word = 'smoky'. ENDIF.
+    IF num = 1815. Word = 'smote'. ENDIF.
+    IF num = 1816. Word = 'snack'. ENDIF.
+    IF num = 1817. Word = 'snail'. ENDIF.
+    IF num = 1818. Word = 'snake'. ENDIF.
+    IF num = 1819. Word = 'snaky'. ENDIF.
+    IF num = 1820. Word = 'snare'. ENDIF.
+    IF num = 1821. Word = 'snarl'. ENDIF.
+    IF num = 1822. Word = 'sneak'. ENDIF.
+    IF num = 1823. Word = 'sneer'. ENDIF.
+    IF num = 1824. Word = 'snide'. ENDIF.
+    IF num = 1825. Word = 'sniff'. ENDIF.
+    IF num = 1826. Word = 'snipe'. ENDIF.
+    IF num = 1827. Word = 'snoop'. ENDIF.
+    IF num = 1828. Word = 'snore'. ENDIF.
+    IF num = 1829. Word = 'snort'. ENDIF.
+    IF num = 1830. Word = 'snout'. ENDIF.
+    IF num = 1831. Word = 'snowy'. ENDIF.
+    IF num = 1832. Word = 'snuck'. ENDIF.
+    IF num = 1833. Word = 'snuff'. ENDIF.
+    IF num = 1834. Word = 'soapy'. ENDIF.
+    IF num = 1835. Word = 'sober'. ENDIF.
+    IF num = 1836. Word = 'soggy'. ENDIF.
+    IF num = 1837. Word = 'solar'. ENDIF.
+    IF num = 1838. Word = 'solid'. ENDIF.
+    IF num = 1839. Word = 'solve'. ENDIF.
+    IF num = 1840. Word = 'sonar'. ENDIF.
+    IF num = 1841. Word = 'sonic'. ENDIF.
+    IF num = 1842. Word = 'sooth'. ENDIF.
+    IF num = 1843. Word = 'sooty'. ENDIF.
+    IF num = 1844. Word = 'sorry'. ENDIF.
+    IF num = 1845. Word = 'sound'. ENDIF.
+    IF num = 1846. Word = 'south'. ENDIF.
+    IF num = 1847. Word = 'sower'. ENDIF.
+    IF num = 1848. Word = 'space'. ENDIF.
+    IF num = 1849. Word = 'spade'. ENDIF.
+    IF num = 1850. Word = 'spank'. ENDIF.
+    IF num = 1851. Word = 'spare'. ENDIF.
+    IF num = 1852. Word = 'spark'. ENDIF.
+    IF num = 1853. Word = 'spasm'. ENDIF.
+    IF num = 1854. Word = 'spawn'. ENDIF.
+    IF num = 1855. Word = 'speak'. ENDIF.
+    IF num = 1856. Word = 'spear'. ENDIF.
+    IF num = 1857. Word = 'speck'. ENDIF.
+    IF num = 1858. Word = 'speed'. ENDIF.
+    IF num = 1859. Word = 'spell'. ENDIF.
+    IF num = 1860. Word = 'spelt'. ENDIF.
+    IF num = 1861. Word = 'spend'. ENDIF.
+    IF num = 1862. Word = 'spent'. ENDIF.
+    IF num = 1863. Word = 'sperm'. ENDIF.
+    IF num = 1864. Word = 'spice'. ENDIF.
+    IF num = 1865. Word = 'spicy'. ENDIF.
+    IF num = 1866. Word = 'spied'. ENDIF.
+    IF num = 1867. Word = 'spiel'. ENDIF.
+    IF num = 1868. Word = 'spike'. ENDIF.
+    IF num = 1869. Word = 'spiky'. ENDIF.
+    IF num = 1870. Word = 'spill'. ENDIF.
+    IF num = 1871. Word = 'spilt'. ENDIF.
+    IF num = 1872. Word = 'spine'. ENDIF.
+    IF num = 1873. Word = 'spiny'. ENDIF.
+    IF num = 1874. Word = 'spire'. ENDIF.
+    IF num = 1875. Word = 'spite'. ENDIF.
+    IF num = 1876. Word = 'splat'. ENDIF.
+    IF num = 1877. Word = 'split'. ENDIF.
+    IF num = 1878. Word = 'spoil'. ENDIF.
+    IF num = 1879. Word = 'spoke'. ENDIF.
+    IF num = 1880. Word = 'spoof'. ENDIF.
+    IF num = 1881. Word = 'spook'. ENDIF.
+    IF num = 1882. Word = 'spool'. ENDIF.
+    IF num = 1883. Word = 'spoon'. ENDIF.
+    IF num = 1884. Word = 'spore'. ENDIF.
+    IF num = 1885. Word = 'sport'. ENDIF.
+    IF num = 1886. Word = 'spout'. ENDIF.
+    IF num = 1887. Word = 'spray'. ENDIF.
+    IF num = 1888. Word = 'spree'. ENDIF.
+    IF num = 1889. Word = 'sprig'. ENDIF.
+    IF num = 1890. Word = 'spunk'. ENDIF.
+    IF num = 1891. Word = 'spurn'. ENDIF.
+    IF num = 1892. Word = 'spurt'. ENDIF.
+    IF num = 1893. Word = 'squad'. ENDIF.
+    IF num = 1894. Word = 'squat'. ENDIF.
+    IF num = 1895. Word = 'squib'. ENDIF.
+    IF num = 1896. Word = 'stack'. ENDIF.
+    IF num = 1897. Word = 'staff'. ENDIF.
+    IF num = 1898. Word = 'stage'. ENDIF.
+    IF num = 1899. Word = 'staid'. ENDIF.
+    IF num = 1900. Word = 'stain'. ENDIF.
+    IF num = 1901. Word = 'stair'. ENDIF.
+    IF num = 1902. Word = 'stake'. ENDIF.
+    IF num = 1903. Word = 'stale'. ENDIF.
+    IF num = 1904. Word = 'stalk'. ENDIF.
+    IF num = 1905. Word = 'stall'. ENDIF.
+    IF num = 1906. Word = 'stamp'. ENDIF.
+    IF num = 1907. Word = 'stand'. ENDIF.
+    IF num = 1908. Word = 'stank'. ENDIF.
+    IF num = 1909. Word = 'stare'. ENDIF.
+    IF num = 1910. Word = 'stark'. ENDIF.
+    IF num = 1911. Word = 'start'. ENDIF.
+    IF num = 1912. Word = 'stash'. ENDIF.
+    IF num = 1913. Word = 'state'. ENDIF.
+    IF num = 1914. Word = 'stave'. ENDIF.
+    IF num = 1915. Word = 'stead'. ENDIF.
+    IF num = 1916. Word = 'steak'. ENDIF.
+    IF num = 1917. Word = 'steal'. ENDIF.
+    IF num = 1918. Word = 'steam'. ENDIF.
+    IF num = 1919. Word = 'steed'. ENDIF.
+    IF num = 1920. Word = 'steel'. ENDIF.
+    IF num = 1921. Word = 'steep'. ENDIF.
+    IF num = 1922. Word = 'steer'. ENDIF.
+    IF num = 1923. Word = 'stein'. ENDIF.
+    IF num = 1924. Word = 'stern'. ENDIF.
+    IF num = 1925. Word = 'stick'. ENDIF.
+    IF num = 1926. Word = 'stiff'. ENDIF.
+    IF num = 1927. Word = 'still'. ENDIF.
+    IF num = 1928. Word = 'stilt'. ENDIF.
+    IF num = 1929. Word = 'sting'. ENDIF.
+    IF num = 1930. Word = 'stink'. ENDIF.
+    IF num = 1931. Word = 'stint'. ENDIF.
+    IF num = 1932. Word = 'stock'. ENDIF.
+    IF num = 1933. Word = 'stoic'. ENDIF.
+    IF num = 1934. Word = 'stoke'. ENDIF.
+    IF num = 1935. Word = 'stole'. ENDIF.
+    IF num = 1936. Word = 'stomp'. ENDIF.
+    IF num = 1937. Word = 'stone'. ENDIF.
+    IF num = 1938. Word = 'stony'. ENDIF.
+    IF num = 1939. Word = 'stood'. ENDIF.
+    IF num = 1940. Word = 'stool'. ENDIF.
+    IF num = 1941. Word = 'stoop'. ENDIF.
+    IF num = 1942. Word = 'store'. ENDIF.
+    IF num = 1943. Word = 'stork'. ENDIF.
+    IF num = 1944. Word = 'storm'. ENDIF.
+    IF num = 1945. Word = 'story'. ENDIF.
+    IF num = 1946. Word = 'stout'. ENDIF.
+    IF num = 1947. Word = 'stove'. ENDIF.
+    IF num = 1948. Word = 'strap'. ENDIF.
+    IF num = 1949. Word = 'straw'. ENDIF.
+    IF num = 1950. Word = 'stray'. ENDIF.
+    IF num = 1951. Word = 'strip'. ENDIF.
+    IF num = 1952. Word = 'strut'. ENDIF.
+    IF num = 1953. Word = 'stuck'. ENDIF.
+    IF num = 1954. Word = 'study'. ENDIF.
+    IF num = 1955. Word = 'stuff'. ENDIF.
+    IF num = 1956. Word = 'stump'. ENDIF.
+    IF num = 1957. Word = 'stung'. ENDIF.
+    IF num = 1958. Word = 'stunk'. ENDIF.
+    IF num = 1959. Word = 'stunt'. ENDIF.
+    IF num = 1960. Word = 'style'. ENDIF.
+    IF num = 1961. Word = 'suave'. ENDIF.
+    IF num = 1962. Word = 'sugar'. ENDIF.
+    IF num = 1963. Word = 'suing'. ENDIF.
+    IF num = 1964. Word = 'suite'. ENDIF.
+    IF num = 1965. Word = 'sulky'. ENDIF.
+    IF num = 1966. Word = 'sully'. ENDIF.
+    IF num = 1967. Word = 'sumac'. ENDIF.
+    IF num = 1968. Word = 'sunny'. ENDIF.
+    IF num = 1969. Word = 'super'. ENDIF.
+    IF num = 1970. Word = 'surer'. ENDIF.
+    IF num = 1971. Word = 'surge'. ENDIF.
+    IF num = 1972. Word = 'surly'. ENDIF.
+    IF num = 1973. Word = 'sushi'. ENDIF.
+    IF num = 1974. Word = 'swami'. ENDIF.
+    IF num = 1975. Word = 'swamp'. ENDIF.
+    IF num = 1976. Word = 'swarm'. ENDIF.
+    IF num = 1977. Word = 'swash'. ENDIF.
+    IF num = 1978. Word = 'swath'. ENDIF.
+    IF num = 1979. Word = 'swear'. ENDIF.
+    IF num = 1980. Word = 'sweat'. ENDIF.
+    IF num = 1981. Word = 'sweep'. ENDIF.
+    IF num = 1982. Word = 'sweet'. ENDIF.
+    IF num = 1983. Word = 'swell'. ENDIF.
+    IF num = 1984. Word = 'swept'. ENDIF.
+    IF num = 1985. Word = 'swift'. ENDIF.
+    IF num = 1986. Word = 'swill'. ENDIF.
+    IF num = 1987. Word = 'swine'. ENDIF.
+    IF num = 1988. Word = 'swing'. ENDIF.
+    IF num = 1989. Word = 'swirl'. ENDIF.
+    IF num = 1990. Word = 'swish'. ENDIF.
+    IF num = 1991. Word = 'swoon'. ENDIF.
+    IF num = 1992. Word = 'swoop'. ENDIF.
+    IF num = 1993. Word = 'sword'. ENDIF.
+    IF num = 1994. Word = 'swore'. ENDIF.
+    IF num = 1995. Word = 'sworn'. ENDIF.
+    IF num = 1996. Word = 'swung'. ENDIF.
+    IF num = 1997. Word = 'synod'. ENDIF.
+    IF num = 1998. Word = 'syrup'. ENDIF.
+    IF num = 1999. Word = 'tabby'. ENDIF.
+    IF num = 2000. Word = 'table'. ENDIF.
+    IF num = 2001. Word = 'taboo'. ENDIF.
+    IF num = 2002. Word = 'tacit'. ENDIF.
+    IF num = 2003. Word = 'tacky'. ENDIF.
+    IF num = 2004. Word = 'taffy'. ENDIF.
+    IF num = 2005. Word = 'taint'. ENDIF.
+    IF num = 2006. Word = 'taken'. ENDIF.
+    IF num = 2007. Word = 'taker'. ENDIF.
+    IF num = 2008. Word = 'tally'. ENDIF.
+    IF num = 2009. Word = 'talon'. ENDIF.
+    IF num = 2010. Word = 'tamer'. ENDIF.
+    IF num = 2011. Word = 'tango'. ENDIF.
+    IF num = 2012. Word = 'tangy'. ENDIF.
+    IF num = 2013. Word = 'taper'. ENDIF.
+    IF num = 2014. Word = 'tapir'. ENDIF.
+    IF num = 2015. Word = 'tardy'. ENDIF.
+    IF num = 2016. Word = 'tarot'. ENDIF.
+    IF num = 2017. Word = 'taste'. ENDIF.
+    IF num = 2018. Word = 'tasty'. ENDIF.
+    IF num = 2019. Word = 'tatty'. ENDIF.
+    IF num = 2020. Word = 'taunt'. ENDIF.
+    IF num = 2021. Word = 'tawny'. ENDIF.
+    IF num = 2022. Word = 'teach'. ENDIF.
+    IF num = 2023. Word = 'teary'. ENDIF.
+    IF num = 2024. Word = 'tease'. ENDIF.
+    IF num = 2025. Word = 'teddy'. ENDIF.
+    IF num = 2026. Word = 'teeth'. ENDIF.
+    IF num = 2027. Word = 'tempo'. ENDIF.
+    IF num = 2028. Word = 'tenet'. ENDIF.
+    IF num = 2029. Word = 'tenor'. ENDIF.
+    IF num = 2030. Word = 'tense'. ENDIF.
+    IF num = 2031. Word = 'tenth'. ENDIF.
+    IF num = 2032. Word = 'tepee'. ENDIF.
+    IF num = 2033. Word = 'tepid'. ENDIF.
+    IF num = 2034. Word = 'terra'. ENDIF.
+    IF num = 2035. Word = 'terse'. ENDIF.
+    IF num = 2036. Word = 'testy'. ENDIF.
+    IF num = 2037. Word = 'thank'. ENDIF.
+    IF num = 2038. Word = 'theft'. ENDIF.
+    IF num = 2039. Word = 'their'. ENDIF.
+    IF num = 2040. Word = 'theme'. ENDIF.
+    IF num = 2041. Word = 'there'. ENDIF.
+    IF num = 2042. Word = 'these'. ENDIF.
+    IF num = 2043. Word = 'theta'. ENDIF.
+    IF num = 2044. Word = 'thick'. ENDIF.
+    IF num = 2045. Word = 'thief'. ENDIF.
+    IF num = 2046. Word = 'thigh'. ENDIF.
+    IF num = 2047. Word = 'thing'. ENDIF.
+    IF num = 2048. Word = 'think'. ENDIF.
+    IF num = 2049. Word = 'third'. ENDIF.
+    IF num = 2050. Word = 'thong'. ENDIF.
+    IF num = 2051. Word = 'thorn'. ENDIF.
+    IF num = 2052. Word = 'those'. ENDIF.
+    IF num = 2053. Word = 'three'. ENDIF.
+    IF num = 2054. Word = 'threw'. ENDIF.
+    IF num = 2055. Word = 'throb'. ENDIF.
+    IF num = 2056. Word = 'throw'. ENDIF.
+    IF num = 2057. Word = 'thrum'. ENDIF.
+    IF num = 2058. Word = 'thumb'. ENDIF.
+    IF num = 2059. Word = 'thump'. ENDIF.
+    IF num = 2060. Word = 'thyme'. ENDIF.
+    IF num = 2061. Word = 'tiara'. ENDIF.
+    IF num = 2062. Word = 'tibia'. ENDIF.
+    IF num = 2063. Word = 'tidal'. ENDIF.
+    IF num = 2064. Word = 'tiger'. ENDIF.
+    IF num = 2065. Word = 'tight'. ENDIF.
+    IF num = 2066. Word = 'tilde'. ENDIF.
+    IF num = 2067. Word = 'timer'. ENDIF.
+    IF num = 2068. Word = 'timid'. ENDIF.
+    IF num = 2069. Word = 'tipsy'. ENDIF.
+    IF num = 2070. Word = 'titan'. ENDIF.
+    IF num = 2071. Word = 'tithe'. ENDIF.
+    IF num = 2072. Word = 'title'. ENDIF.
+    IF num = 2073. Word = 'toast'. ENDIF.
+    IF num = 2074. Word = 'today'. ENDIF.
+    IF num = 2075. Word = 'toddy'. ENDIF.
+    IF num = 2076. Word = 'token'. ENDIF.
+    IF num = 2077. Word = 'tonal'. ENDIF.
+    IF num = 2078. Word = 'tonga'. ENDIF.
+    IF num = 2079. Word = 'tonic'. ENDIF.
+    IF num = 2080. Word = 'tooth'. ENDIF.
+    IF num = 2081. Word = 'topaz'. ENDIF.
+    IF num = 2082. Word = 'topic'. ENDIF.
+    IF num = 2083. Word = 'torch'. ENDIF.
+    IF num = 2084. Word = 'torso'. ENDIF.
+    IF num = 2085. Word = 'torus'. ENDIF.
+    IF num = 2086. Word = 'total'. ENDIF.
+    IF num = 2087. Word = 'totem'. ENDIF.
+    IF num = 2088. Word = 'touch'. ENDIF.
+    IF num = 2089. Word = 'tough'. ENDIF.
+    IF num = 2090. Word = 'towel'. ENDIF.
+    IF num = 2091. Word = 'tower'. ENDIF.
+    IF num = 2092. Word = 'toxic'. ENDIF.
+    IF num = 2093. Word = 'toxin'. ENDIF.
+    IF num = 2094. Word = 'trace'. ENDIF.
+    IF num = 2095. Word = 'track'. ENDIF.
+    IF num = 2096. Word = 'tract'. ENDIF.
+    IF num = 2097. Word = 'trade'. ENDIF.
+    IF num = 2098. Word = 'trail'. ENDIF.
+    IF num = 2099. Word = 'train'. ENDIF.
+    IF num = 2100. Word = 'trait'. ENDIF.
+    IF num = 2101. Word = 'tramp'. ENDIF.
+    IF num = 2102. Word = 'trash'. ENDIF.
+    IF num = 2103. Word = 'trawl'. ENDIF.
+    IF num = 2104. Word = 'tread'. ENDIF.
+    IF num = 2105. Word = 'treat'. ENDIF.
+    IF num = 2106. Word = 'trend'. ENDIF.
+    IF num = 2107. Word = 'triad'. ENDIF.
+    IF num = 2108. Word = 'trial'. ENDIF.
+    IF num = 2109. Word = 'tribe'. ENDIF.
+    IF num = 2110. Word = 'trice'. ENDIF.
+    IF num = 2111. Word = 'trick'. ENDIF.
+    IF num = 2112. Word = 'tried'. ENDIF.
+    IF num = 2113. Word = 'tripe'. ENDIF.
+    IF num = 2114. Word = 'trite'. ENDIF.
+    IF num = 2115. Word = 'troll'. ENDIF.
+    IF num = 2116. Word = 'troop'. ENDIF.
+    IF num = 2117. Word = 'trope'. ENDIF.
+    IF num = 2118. Word = 'trout'. ENDIF.
+    IF num = 2119. Word = 'trove'. ENDIF.
+    IF num = 2120. Word = 'truce'. ENDIF.
+    IF num = 2121. Word = 'truck'. ENDIF.
+    IF num = 2122. Word = 'truer'. ENDIF.
+    IF num = 2123. Word = 'truly'. ENDIF.
+    IF num = 2124. Word = 'trump'. ENDIF.
+    IF num = 2125. Word = 'trunk'. ENDIF.
+    IF num = 2126. Word = 'truss'. ENDIF.
+    IF num = 2127. Word = 'trust'. ENDIF.
+    IF num = 2128. Word = 'truth'. ENDIF.
+    IF num = 2129. Word = 'tryst'. ENDIF.
+    IF num = 2130. Word = 'tubal'. ENDIF.
+    IF num = 2131. Word = 'tuber'. ENDIF.
+    IF num = 2132. Word = 'tulip'. ENDIF.
+    IF num = 2133. Word = 'tulle'. ENDIF.
+    IF num = 2134. Word = 'tumor'. ENDIF.
+    IF num = 2135. Word = 'tunic'. ENDIF.
+    IF num = 2136. Word = 'turbo'. ENDIF.
+    IF num = 2137. Word = 'tutor'. ENDIF.
+    IF num = 2138. Word = 'twang'. ENDIF.
+    IF num = 2139. Word = 'tweak'. ENDIF.
+    IF num = 2140. Word = 'tweed'. ENDIF.
+    IF num = 2141. Word = 'tweet'. ENDIF.
+    IF num = 2142. Word = 'twice'. ENDIF.
+    IF num = 2143. Word = 'twine'. ENDIF.
+    IF num = 2144. Word = 'twirl'. ENDIF.
+    IF num = 2145. Word = 'twist'. ENDIF.
+    IF num = 2146. Word = 'twixt'. ENDIF.
+    IF num = 2147. Word = 'tying'. ENDIF.
+    IF num = 2148. Word = 'udder'. ENDIF.
+    IF num = 2149. Word = 'ulcer'. ENDIF.
+    IF num = 2150. Word = 'ultra'. ENDIF.
+    IF num = 2151. Word = 'umbra'. ENDIF.
+    IF num = 2152. Word = 'uncle'. ENDIF.
+    IF num = 2153. Word = 'uncut'. ENDIF.
+    IF num = 2154. Word = 'under'. ENDIF.
+    IF num = 2155. Word = 'undid'. ENDIF.
+    IF num = 2156. Word = 'undue'. ENDIF.
+    IF num = 2157. Word = 'unfed'. ENDIF.
+    IF num = 2158. Word = 'unfit'. ENDIF.
+    IF num = 2159. Word = 'unify'. ENDIF.
+    IF num = 2160. Word = 'union'. ENDIF.
+    IF num = 2161. Word = 'unite'. ENDIF.
+    IF num = 2162. Word = 'unity'. ENDIF.
+    IF num = 2163. Word = 'unlit'. ENDIF.
+    IF num = 2164. Word = 'unmet'. ENDIF.
+    IF num = 2165. Word = 'unset'. ENDIF.
+    IF num = 2166. Word = 'untie'. ENDIF.
+    IF num = 2167. Word = 'until'. ENDIF.
+    IF num = 2168. Word = 'unwed'. ENDIF.
+    IF num = 2169. Word = 'unzip'. ENDIF.
+    IF num = 2170. Word = 'upper'. ENDIF.
+    IF num = 2171. Word = 'upset'. ENDIF.
+    IF num = 2172. Word = 'urban'. ENDIF.
+    IF num = 2173. Word = 'urine'. ENDIF.
+    IF num = 2174. Word = 'usage'. ENDIF.
+    IF num = 2175. Word = 'usher'. ENDIF.
+    IF num = 2176. Word = 'using'. ENDIF.
+    IF num = 2177. Word = 'usual'. ENDIF.
+    IF num = 2178. Word = 'usurp'. ENDIF.
+    IF num = 2179. Word = 'utile'. ENDIF.
+    IF num = 2180. Word = 'utter'. ENDIF.
+    IF num = 2181. Word = 'vague'. ENDIF.
+    IF num = 2182. Word = 'valet'. ENDIF.
+    IF num = 2183. Word = 'valid'. ENDIF.
+    IF num = 2184. Word = 'valor'. ENDIF.
+    IF num = 2185. Word = 'value'. ENDIF.
+    IF num = 2186. Word = 'valve'. ENDIF.
+    IF num = 2187. Word = 'vapid'. ENDIF.
+    IF num = 2188. Word = 'vapor'. ENDIF.
+    IF num = 2189. Word = 'vault'. ENDIF.
+    IF num = 2190. Word = 'vaunt'. ENDIF.
+    IF num = 2191. Word = 'vegan'. ENDIF.
+    IF num = 2192. Word = 'venom'. ENDIF.
+    IF num = 2193. Word = 'venue'. ENDIF.
+    IF num = 2194. Word = 'verge'. ENDIF.
+    IF num = 2195. Word = 'verse'. ENDIF.
+    IF num = 2196. Word = 'verso'. ENDIF.
+    IF num = 2197. Word = 'verve'. ENDIF.
+    IF num = 2198. Word = 'vicar'. ENDIF.
+    IF num = 2199. Word = 'video'. ENDIF.
+    IF num = 2200. Word = 'vigil'. ENDIF.
+    IF num = 2201. Word = 'vigor'. ENDIF.
+    IF num = 2202. Word = 'villa'. ENDIF.
+    IF num = 2203. Word = 'vinyl'. ENDIF.
+    IF num = 2204. Word = 'viola'. ENDIF.
+    IF num = 2205. Word = 'viper'. ENDIF.
+    IF num = 2206. Word = 'viral'. ENDIF.
+    IF num = 2207. Word = 'virus'. ENDIF.
+    IF num = 2208. Word = 'visit'. ENDIF.
+    IF num = 2209. Word = 'visor'. ENDIF.
+    IF num = 2210. Word = 'vista'. ENDIF.
+    IF num = 2211. Word = 'vital'. ENDIF.
+    IF num = 2212. Word = 'vivid'. ENDIF.
+    IF num = 2213. Word = 'vixen'. ENDIF.
+    IF num = 2214. Word = 'vocal'. ENDIF.
+    IF num = 2215. Word = 'vodka'. ENDIF.
+    IF num = 2216. Word = 'vogue'. ENDIF.
+    IF num = 2217. Word = 'voice'. ENDIF.
+    IF num = 2218. Word = 'voila'. ENDIF.
+    IF num = 2219. Word = 'vomit'. ENDIF.
+    IF num = 2220. Word = 'voter'. ENDIF.
+    IF num = 2221. Word = 'vouch'. ENDIF.
+    IF num = 2222. Word = 'vowel'. ENDIF.
+    IF num = 2223. Word = 'vying'. ENDIF.
+    IF num = 2224. Word = 'wacky'. ENDIF.
+    IF num = 2225. Word = 'wafer'. ENDIF.
+    IF num = 2226. Word = 'wager'. ENDIF.
+    IF num = 2227. Word = 'wagon'. ENDIF.
+    IF num = 2228. Word = 'waist'. ENDIF.
+    IF num = 2229. Word = 'waive'. ENDIF.
+    IF num = 2230. Word = 'waltz'. ENDIF.
+    IF num = 2231. Word = 'warty'. ENDIF.
+    IF num = 2232. Word = 'waste'. ENDIF.
+    IF num = 2233. Word = 'watch'. ENDIF.
+    IF num = 2234. Word = 'water'. ENDIF.
+    IF num = 2235. Word = 'waver'. ENDIF.
+    IF num = 2236. Word = 'waxen'. ENDIF.
+    IF num = 2237. Word = 'weary'. ENDIF.
+    IF num = 2238. Word = 'weave'. ENDIF.
+    IF num = 2239. Word = 'wedge'. ENDIF.
+    IF num = 2240. Word = 'weedy'. ENDIF.
+    IF num = 2241. Word = 'weigh'. ENDIF.
+    IF num = 2242. Word = 'weird'. ENDIF.
+    IF num = 2243. Word = 'welch'. ENDIF.
+    IF num = 2244. Word = 'welsh'. ENDIF.
+    IF num = 2245. Word = 'wench'. ENDIF.
+    IF num = 2246. Word = 'whack'. ENDIF.
+    IF num = 2247. Word = 'whale'. ENDIF.
+    IF num = 2248. Word = 'wharf'. ENDIF.
+    IF num = 2249. Word = 'wheat'. ENDIF.
+    IF num = 2250. Word = 'wheel'. ENDIF.
+    IF num = 2251. Word = 'whelp'. ENDIF.
+    IF num = 2252. Word = 'where'. ENDIF.
+    IF num = 2253. Word = 'which'. ENDIF.
+    IF num = 2254. Word = 'whiff'. ENDIF.
+    IF num = 2255. Word = 'while'. ENDIF.
+    IF num = 2256. Word = 'whine'. ENDIF.
+    IF num = 2257. Word = 'whiny'. ENDIF.
+    IF num = 2258. Word = 'whirl'. ENDIF.
+    IF num = 2259. Word = 'whisk'. ENDIF.
+    IF num = 2260. Word = 'white'. ENDIF.
+    IF num = 2261. Word = 'whole'. ENDIF.
+    IF num = 2262. Word = 'whoop'. ENDIF.
+    IF num = 2263. Word = 'whose'. ENDIF.
+    IF num = 2264. Word = 'widen'. ENDIF.
+    IF num = 2265. Word = 'wider'. ENDIF.
+    IF num = 2266. Word = 'widow'. ENDIF.
+    IF num = 2267. Word = 'width'. ENDIF.
+    IF num = 2268. Word = 'wield'. ENDIF.
+    IF num = 2269. Word = 'wight'. ENDIF.
+    IF num = 2270. Word = 'willy'. ENDIF.
+    IF num = 2271. Word = 'wimpy'. ENDIF.
+    IF num = 2272. Word = 'wince'. ENDIF.
+    IF num = 2273. Word = 'winch'. ENDIF.
+    IF num = 2274. Word = 'windy'. ENDIF.
+    IF num = 2275. Word = 'wiser'. ENDIF.
+    IF num = 2276. Word = 'wispy'. ENDIF.
+    IF num = 2277. Word = 'witch'. ENDIF.
+    IF num = 2278. Word = 'witty'. ENDIF.
+    IF num = 2279. Word = 'woken'. ENDIF.
+    IF num = 2280. Word = 'woman'. ENDIF.
+    IF num = 2281. Word = 'women'. ENDIF.
+    IF num = 2282. Word = 'woody'. ENDIF.
+    IF num = 2283. Word = 'wooer'. ENDIF.
+    IF num = 2284. Word = 'wooly'. ENDIF.
+    IF num = 2285. Word = 'woozy'. ENDIF.
+    IF num = 2286. Word = 'wordy'. ENDIF.
+    IF num = 2287. Word = 'world'. ENDIF.
+    IF num = 2288. Word = 'worry'. ENDIF.
+    IF num = 2289. Word = 'worse'. ENDIF.
+    IF num = 2290. Word = 'worst'. ENDIF.
+    IF num = 2291. Word = 'worth'. ENDIF.
+    IF num = 2292. Word = 'would'. ENDIF.
+    IF num = 2293. Word = 'wound'. ENDIF.
+    IF num = 2294. Word = 'woven'. ENDIF.
+    IF num = 2295. Word = 'wrack'. ENDIF.
+    IF num = 2296. Word = 'wrath'. ENDIF.
+    IF num = 2297. Word = 'wreak'. ENDIF.
+    IF num = 2298. Word = 'wreck'. ENDIF.
+    IF num = 2299. Word = 'wrest'. ENDIF.
+    IF num = 2300. Word = 'wring'. ENDIF.
+    IF num = 2301. Word = 'wrist'. ENDIF.
+    IF num = 2302. Word = 'write'. ENDIF.
+    IF num = 2303. Word = 'wrong'. ENDIF.
+    IF num = 2304. Word = 'wrote'. ENDIF.
+    IF num = 2305. Word = 'wrung'. ENDIF.
+    IF num = 2306. Word = 'wryly'. ENDIF.
+    IF num = 2307. Word = 'yacht'. ENDIF.
+    IF num = 2308. Word = 'yearn'. ENDIF.
+    IF num = 2309. Word = 'yeast'. ENDIF.
+    IF num = 2310. Word = 'yield'. ENDIF.
+    IF num = 2311. Word = 'young'. ENDIF.
+    IF num = 2312. Word = 'youth'. ENDIF.
+    IF num = 2313. Word = 'zebra'. ENDIF.
+    IF num = 2314. Word = 'zesty'. ENDIF.
+    IF num = 2315. Word = 'zonal'. ENDIF.
 
-word = to_upper( word ).
-ENDMETHOD.
+    word = to_upper( word ).
+  ENDMETHOD.
+  METHOD getword2.
+  types: BEGIN of ty_wordle,
+         id type string,
+         solution type string,
+         print_date type string,
+         days_since_launch type string,
+         editor type string,
+         end of ty_wordle.
+
+    DATA: lo_http_client TYPE REF TO if_http_client,
+          lv_url         TYPE string,
+          lv_json_body   TYPE string,
+          lv_response    TYPE string,
+          lv_status      TYPE i,
+          ls_data TYPE ty_wordle,
+          lv_reason      TYPE string.
+
+    DATA(lv_user) = cl_abap_context_info=>get_user_technical_name( ).
+    data(user_letters) = VALUE string_table( FOR i = 0 WHILE i < strlen( lv_user ) (  substring(  val = lv_user off = i len = 1 ) ) ).
+    data(sum_ascii) = 0.
+    LOOP AT user_letters into data(letter).
+    sum_ascii += cl_abap_conv_out_ce=>uccpi( char = letter ).
+    endloop.
+    DATA(lv_target_date) = cl_abap_context_info=>get_system_date( ).
+    lv_target_date -= 100.
+    lv_target_date += (  sum_ascii mod 400 ).
+    lv_url = |https://www.nytimes.com/svc/wordle/v2/{ lv_target_date date = iso }.json|.
+   " lv_url = 'https://www.nytimes.com/svc/wordle/v2/2026-08-30.json'.
+    target = 'ZZZZZZ'.
+
+    " 1. Create the HTTP Client Instance
+    cl_http_client=>create_by_url(
+      EXPORTING
+        url                = lv_url
+      IMPORTING
+        client             = lo_http_client
+      EXCEPTIONS
+        argument_not_found = 1
+        plugin_not_active  = 2
+        internal_error     = 3
+        OTHERS             = 4 ).
+    IF sy-subrc <> 0. RETURN. ENDIF.
+    lo_http_client->propertytype_logon_popup = if_http_client=>co_disabled.
+
+
+    lo_http_client->request->set_method( if_http_request=>co_request_method_get ).
+    lo_http_client->send(
+      EXCEPTIONS
+        http_communication_failure = 1
+        http_invalid_state         = 2
+        http_processing_failed     = 3
+
+        OTHERS                     = 4 ).
+    IF sy-subrc <> 0. lo_http_client->close( ). RETURN. ENDIF.
+    lo_http_client->receive(
+  EXCEPTIONS
+    http_communication_failure = 1
+    http_invalid_state         = 2
+
+    OTHERS                     = 3 ).
+    IF sy-subrc <> 0. lo_http_client->close( ). RETURN. ENDIF.
+
+    lv_response = lo_http_client->response->get_cdata( ).
+    /ui2/cl_json=>deserialize(
+  EXPORTING
+    json = lv_response
+  CHANGING
+    data = ls_data ).
+    lo_http_client->close(  ).
+    target = to_upper( ls_data-solution ).
+  ENDMETHOD.
+
 ENDCLASS.

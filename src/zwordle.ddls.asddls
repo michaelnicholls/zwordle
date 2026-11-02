@@ -3,9 +3,9 @@
 define custom entity zwordle
 {
   key line    : abap.int4;
-      @UI.selectionField: [{position: 20}]
-      @EndUserText.label: 'Select a new target?'
-      newword : flag;
+//      @UI.selectionField: [{position: 20}]
+//      @EndUserText.label: 'Select a new target?'
+//      newword : flag;
       @UI.selectionField: [{ position:  10 }]
       @EndUserText.label: 'Guesses'
       guesses : abap.char( 5 );
