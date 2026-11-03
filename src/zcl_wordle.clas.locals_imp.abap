@@ -11,8 +11,10 @@ ENDCLASS.
 CLASS lcl_things IMPLEMENTATION.
 
   METHOD getword.
-    DATA(lo_rand) = cl_abap_random=>create( seed = cl_abap_random=>seed( ) ).
-    DATA(num) = lo_rand->intinrange( low = 1 high = 2315 ).
+  "  DATA(lo_rand) = cl_abap_random=>create( seed = cl_abap_random=>seed( ) ).
+  "  DATA(num) = lo_rand->intinrange( low = 1 high = 2315 ).
+select single  from i_calendardate fields mod( ( cast( calendardayofyear as int4  ) + 19 )
+ * ( cast( calendarmonth as int4 ) + 33 ) * cast( calendaryear as int4 ), 1234 )  where calendardate = @sy-datum into @data(num).
 
     IF num = 1. Word = 'aback'. ENDIF.
     IF num = 2. Word = 'abase'. ENDIF.
