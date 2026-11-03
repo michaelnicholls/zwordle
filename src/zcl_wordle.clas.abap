@@ -17,7 +17,7 @@ CLASS zcl_wordle IMPLEMENTATION.
 
   METHOD if_rap_query_provider~select.
     DATA lt_data TYPE TABLE OF zwordle.
-    DATA myparameter TYPE memoryid VALUE 'WORDLE'.
+"    DATA myparameter TYPE memoryid VALUE 'WORDLE'.
     TRY.
         IF io_request->is_data_requested(  ).
 

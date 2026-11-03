@@ -2343,10 +2343,10 @@ select single  from i_calendardate fields mod( ( cast( calendardayofyear as int4
          editor type string,
          end of ty_wordle.
 
-    DATA: lo_http_client TYPE REF TO if_http_client,
+    DATA: lo_http_client TYPE REF TO if_http_client, " if_web_http_client for BTP
           lv_url         TYPE string,
           lv_json_body   TYPE string,
-          lv_response    TYPE string,
+          lv_response    TYPE string, " comment out got BTP
           lv_status      TYPE i,
           ls_data TYPE ty_wordle,
           lv_reason      TYPE string.
@@ -2355,16 +2355,23 @@ select single  from i_calendardate fields mod( ( cast( calendardayofyear as int4
     data(user_letters) = VALUE string_table( FOR i = 0 WHILE i < strlen( lv_user ) (  substring(  val = lv_user off = i len = 1 ) ) ).
     data(sum_ascii) = 0.
     LOOP AT user_letters into data(letter).
-    sum_ascii += cl_abap_conv_out_ce=>uccpi( char = letter ).
+    "sum_ascii += cl_abap_conv_out_ce=>uccpi( char = letter ).
+    sum_ascii += cl_abap_conv_codepage=>create_out( codepage = 'US-ASCII' )->convert( source = letter ).
     endloop.
     DATA(lv_target_date) = cl_abap_context_info=>get_system_date( ).
-    lv_target_date -= 100.
+    lv_target_date -= 1100.
     lv_target_date += (  sum_ascii mod 400 ).
     lv_url = |https://www.nytimes.com/svc/wordle/v2/{ lv_target_date date = iso }.json|.
    " lv_url = 'https://www.nytimes.com/svc/wordle/v2/2026-08-30.json'.
     target = 'ZZZZZZ'.
-
-    " 1. Create the HTTP Client Instance
+    " next lines for BTP
+*    try.
+*    DATA(lo_destination) = cl_http_destination_provider=>create_by_url( lv_url ).
+*DATA(lo_client) = cl_web_http_client_manager=>create_by_http_destination( lo_destination ).
+*DATA(lo_response) = lo_client->execute( if_web_http_client=>get ).
+*DATA(lv_response) = lo_response->get_text( ).
+*
+" for on prem
     cl_http_client=>create_by_url(
       EXPORTING
         url                = lv_url
@@ -2402,8 +2409,12 @@ select single  from i_calendardate fields mod( ( cast( calendardayofyear as int4
     json = lv_response
   CHANGING
     data = ls_data ).
-    lo_http_client->close(  ).
+    lo_http_client->close(  ). "lo_client=>close for BTP
+
     target = to_upper( ls_data-solution ).
+    " BTP below
+*    catch cx_root.
+*    endtry.
   ENDMETHOD.
 
 ENDCLASS.
